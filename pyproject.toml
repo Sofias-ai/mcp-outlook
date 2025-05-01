@@ -1,0 +1,22 @@
+[project]
+name = "mcp-outlook"
+version = "0.1.0"
+description = "MCP Server to integrate with outlook"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+ "mcp>=1.6.0",
+ "office365-rest-python-client>=2.6.1",
+ "python-dotenv>=1.1.0",
+ "requests>=2.32.3"
+]
+
+[[project.authors]]
+name = "sofias tech"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+mcp-outlook = "mcp_outlook_server:main"
