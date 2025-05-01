@@ -1,7 +1,7 @@
 import re
 from typing import List, Dict, Any, Optional
 from datetime import datetime
-from .common import logger, graph_client, USER_EMAIL
+from .common import logger, graph_client
 
 def _extract_email_address_from_string(text):
     if not text: return None
@@ -95,9 +95,9 @@ def _format_email_output(message) -> Dict[str, Any]:
         "web_link": message.web_link if hasattr(message, 'web_link') else None,
     }
 
-def get_email_by_id(message_id: str) -> Optional[Dict[str, Any]]:
-    logger.info(f"Getting email with ID: {message_id} for user {USER_EMAIL}")
-    message = graph_client.users[USER_EMAIL].messages[message_id].get().execute_query()
+def get_email_by_id(message_id: str, user_email: str) -> Optional[Dict[str, Any]]:
+    logger.info(f"Getting email with ID: {message_id} for user {user_email}")
+    message = graph_client.users[user_email].messages[message_id].get().execute_query()
     if message:
         logger.info(f"Successfully retrieved email with ID: {message_id}")
         return _format_email_output(message)
@@ -105,16 +105,16 @@ def get_email_by_id(message_id: str) -> Optional[Dict[str, Any]]:
         logger.warning(f"Email with ID: {message_id} not found.")
         return None
 
-def search_emails(query: str, top: int = 10, folders: List[str] = None) -> List[Dict[str, Any]]:
+def search_emails(query: str, user_email: str, top: int = 10, folders: List[str] = None) -> List[Dict[str, Any]]:
     if folders is None:
         folders = ["Inbox", "SentItems", "Drafts"]
     
-    logger.info(f"Searching emails for user {USER_EMAIL} with query: '{query}', top: {top}, folders: {folders}")
+    logger.info(f"Searching emails for user {user_email} with query: '{query}', top: {top}, folders: {folders}")
     
     all_messages = []
     for folder_name in folders:
-        folder = graph_client.users[USER_EMAIL].mail_folders[folder_name].get().execute_query()
-        messages = graph_client.users[USER_EMAIL].mail_folders[folder_name].messages.filter(query).top(top).get().execute_query()
+        folder = graph_client.users[user_email].mail_folders[folder_name].get().execute_query()
+        messages = graph_client.users[user_email].mail_folders[folder_name].messages.filter(query).top(top).get().execute_query()
         logger.info(f"Found {len(messages)} emails matching query in {folder_name}.")
         all_messages.extend(messages)
         
@@ -124,11 +124,11 @@ def search_emails(query: str, top: int = 10, folders: List[str] = None) -> List[
     
     return [_format_email_output(msg) for msg in all_messages]
 
-def download_emails_by_date(start_date_str: str, end_date_str: str, top: int = 100, folders: List[str] = None) -> List[Dict[str, Any]]:
+def download_emails_by_date(start_date_str: str, end_date_str: str, user_email: str, top: int = 100, folders: List[str] = None) -> List[Dict[str, Any]]:
     if folders is None:
         folders = ["Inbox", "SentItems", "Drafts"]
     
-    logger.info(f"Downloading emails for user {USER_EMAIL} between {start_date_str} and {end_date_str}, top: {top}, folders: {folders}")
+    logger.info(f"Downloading emails for user {user_email} between {start_date_str} and {end_date_str}, top: {top}, folders: {folders}")
     
     all_messages = []
     start_date = datetime.fromisoformat(start_date_str.replace("Z", "+00:00")).strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -139,7 +139,7 @@ def download_emails_by_date(start_date_str: str, end_date_str: str, top: int = 1
         query = f"{date_field} ge {start_date} and {date_field} le {end_date}"
         logger.info(f"Using query for {folder_name}: {query}")
         
-        messages = graph_client.users[USER_EMAIL].mail_folders[folder_name].messages.filter(query).top(top).get().execute_query()
+        messages = graph_client.users[user_email].mail_folders[folder_name].messages.filter(query).top(top).get().execute_query()
         logger.info(f"Found {len(messages)} emails in date range in {folder_name}.")
         all_messages.extend(messages)
         

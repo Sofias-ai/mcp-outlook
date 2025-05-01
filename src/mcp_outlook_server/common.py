@@ -22,12 +22,12 @@ load_dotenv()
 ID_CLIENT = os.getenv('ID_CLIENT')
 APP_SECRET = os.getenv('APP_SECRET')
 TENANT_ID = os.getenv('TENANT_ID')
-USER_EMAIL = os.getenv('USER_EMAIL')
+# USER_EMAIL variable removed - will be passed as a parameter instead
 
 # Initialize MCP server
 mcp = FastMCP(
     name="mcp_outlook",
-    instructions=f"This server provides tools to interact with Outlook emails for the user {USER_EMAIL}."
+    instructions="This server provides tools to interact with Outlook emails. Each tool requires a user_email parameter to specify which mailbox to access."
 )
 
 # Initial outlook context
