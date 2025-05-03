@@ -1,21 +1,35 @@
-import re, html2text 
+import re, bs4
 from typing import List, Dict, Any, Optional
 from datetime import datetime
 from .common import logger, graph_client
 
 def _extract_text_from_html(html_content):
-    """Converts HTML content to plain text."""
+    """Converts HTML content to plain text with improved cleaning."""
     if not html_content:
         return None
     
-    h = html2text.HTML2Text()
-    h.ignore_links = False
-    h.ignore_images = True
-    h.ignore_tables = False
-    h.ignore_emphasis = False
-    h.body_width = 0  # No line wrapping
+    try:
+        # Create BeautifulSoup object to parse HTML
+        soup = bs4.BeautifulSoup(html_content, 'html.parser')
+        
+        # Remove scripts, styles and hidden elements
+        for element in soup(['script', 'style', '[style*="display: none"]', '[style*="display:none"]']):
+            element.decompose()
+        
+        text = soup.get_text(separator='\n', strip=True)
+        text = re.sub(r'\n\s*\n', '\n\n', text)
+        text = re.sub(r'(\w)\n(\w)', r'\1 \2', text)
+        text = re.sub(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', 
+                     '[LINK]', text)
+        return text
     
-    return h.handle(html_content).strip()
+    except Exception as e:
+        # If parsing fails, return a basic cleaned version of the text
+        logger.warning(f"Error extracting text with BeautifulSoup: {e}")
+        text = html_content.replace('<br>', '\n').replace('<br/>', '\n').replace('<br />', '\n')
+        text = re.sub(r'<[^>]*>', ' ', text)
+        text = re.sub(r'\s+', ' ', text).strip()
+        return text
 
 def _extract_email_address_from_string(text):
     if not text: return None

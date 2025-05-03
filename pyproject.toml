@@ -1,6 +1,6 @@
 [project]
 name = "mcp-outlook"
-version = "0.1.1"
+version = "0.1.2"
 description = "MCP Server to integrate with outlook"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -9,7 +9,8 @@ dependencies = [
  "office365-rest-python-client>=2.6.1",
  "python-dotenv>=1.1.0",
  "requests>=2.32.3",
- "html2text>=2025.4.15"
+ "html2text>=2025.4.15",
+ "beautifulsoup4>=4.12.2"
 ]
 
 [[project.authors]]
