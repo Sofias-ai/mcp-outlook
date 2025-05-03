@@ -1,7 +1,21 @@
-import re
+import re, html2text 
 from typing import List, Dict, Any, Optional
 from datetime import datetime
 from .common import logger, graph_client
+
+def _extract_text_from_html(html_content):
+    """Converts HTML content to plain text."""
+    if not html_content:
+        return None
+    
+    h = html2text.HTML2Text()
+    h.ignore_links = False
+    h.ignore_images = True
+    h.ignore_tables = False
+    h.ignore_emphasis = False
+    h.body_width = 0  # No line wrapping
+    
+    return h.handle(html_content).strip()
 
 def _extract_email_address_from_string(text):
     if not text: return None
@@ -66,6 +80,20 @@ def _format_email_output(message) -> Dict[str, Any]:
     received_datetime = get_datetime_iso(message, ['receivedDateTime', 'received_date_time', 'received_datetime', 'dateTimeReceived'])
     sent_datetime = get_datetime_iso(message, ['sentDateTime', 'sent_date_time', 'sent_datetime', 'dateTimeSent'])
     
+    # Extract body content as plain text
+    body_content = None
+    body_type = None
+    
+    if hasattr(message, 'body') and message.body:
+        body_type = message.body.contentType if hasattr(message.body, 'contentType') else None
+        
+        if body_type and 'html' in body_type.lower() and message.body.content:
+            # Convert HTML to plain text
+            body_content = _extract_text_from_html(message.body.content)
+        else:
+            # Already plain text or unknown format
+            body_content = message.body.content
+    
     # Extract reply-to
     reply_to = []
     if hasattr(message, 'reply_to') and message.reply_to:
@@ -77,8 +105,8 @@ def _format_email_output(message) -> Dict[str, Any]:
         "id": message.id,
         "subject": message.subject,
         "body_preview": message.body_preview if hasattr(message, 'body_preview') else None,
-        "body": message.body.content if hasattr(message, 'body') and message.body else None,
-        "body_type": message.body.contentType if hasattr(message, 'body') and message.body and hasattr(message.body, 'contentType') else None,
+        "body": body_content,
+        "body_type": "text/plain",  # Always returning as plain text
         "sender": sender_email or from_email,
         "from": from_email or sender_email,
         "to_recipients": to_recipients,
