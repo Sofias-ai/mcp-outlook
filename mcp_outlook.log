@@ -1,0 +1,1381 @@
+2025-05-03 17:04:55,557 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-15T23:59:59Z, top: 20, folders: ['Inbox', 'SentItems', 'Drafts']
+2025-05-03 17:04:55,557 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:04:56,229 - mcp_outlook - INFO - Found 20 emails in date range in Inbox.
+2025-05-03 17:04:56,332 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.82961783439492
+2025-05-03 17:04:57,051 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 179.1023385539584
+2025-05-03 17:04:57,358 - mcp_outlook - INFO - Selected best text from method: html2text with score: 149.53383458646616
+2025-05-03 17:04:57,921 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.5627240143369
+2025-05-03 17:04:58,134 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 166.56480218281035
+2025-05-03 17:04:58,171 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 73.44736842105263
+2025-05-03 17:04:59,167 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 213.978044891451
+2025-05-03 17:04:59,602 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.93416572077186
+2025-05-03 17:05:00,185 - mcp_outlook - INFO - Selected best text from method: html2text with score: 155.06903991370012
+2025-05-03 17:05:00,646 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.34146341463415
+2025-05-03 17:05:02,373 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 492.6698450536353
+2025-05-03 17:05:03,101 - mcp_outlook - INFO - Selected best text from method: html2text with score: 158.13536444273043
+2025-05-03 17:05:03,139 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 80.22916666666667
+2025-05-03 17:05:03,251 - mcp_outlook - INFO - Selected best text from method: html2text with score: 125.00618238021639
+2025-05-03 17:05:03,471 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 172.78169014084506
+2025-05-03 17:05:03,488 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 75.35483870967741
+2025-05-03 17:05:03,734 - mcp_outlook - INFO - Selected best text from method: html2text with score: 169.7164393395549
+2025-05-03 17:05:04,243 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.04275534441805
+2025-05-03 17:06:26,481 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-15T23:59:59Z, top: 200, folders: ['Inbox', 'SentItems', 'Drafts']
+2025-05-03 17:06:26,481 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:06:28,512 - mcp_outlook - INFO - Found 109 emails in date range in Inbox.
+2025-05-03 17:06:28,512 - mcp_outlook - INFO - Using query for SentItems: sentDateTime ge 2025-04-01T00:00:00Z and sentDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:06:29,425 - mcp_outlook - INFO - Found 53 emails in date range in SentItems.
+2025-05-03 17:06:29,425 - mcp_outlook - INFO - Using query for Drafts: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:06:29,620 - mcp_outlook - INFO - Found 0 emails in date range in Drafts.
+2025-05-03 17:06:29,721 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.82961783439492
+2025-05-03 17:06:30,284 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 179.1023385539584
+2025-05-03 17:06:30,569 - mcp_outlook - INFO - Selected best text from method: html2text with score: 149.53383458646616
+2025-05-03 17:06:31,087 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.5627240143369
+2025-05-03 17:06:31,326 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 166.56480218281035
+2025-05-03 17:06:31,356 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 73.44736842105263
+2025-05-03 17:06:32,420 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 213.978044891451
+2025-05-03 17:06:32,829 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.93416572077186
+2025-05-03 17:06:33,341 - mcp_outlook - INFO - Selected best text from method: html2text with score: 155.06903991370012
+2025-05-03 17:06:33,815 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.34146341463415
+2025-05-03 17:06:35,632 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 492.6698450536353
+2025-05-03 17:06:36,348 - mcp_outlook - INFO - Selected best text from method: html2text with score: 158.13536444273043
+2025-05-03 17:06:36,376 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 80.22916666666667
+2025-05-03 17:06:36,479 - mcp_outlook - INFO - Selected best text from method: html2text with score: 125.00618238021639
+2025-05-03 17:06:36,761 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 172.78169014084506
+2025-05-03 17:06:36,795 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 75.35483870967741
+2025-05-03 17:06:37,105 - mcp_outlook - INFO - Selected best text from method: html2text with score: 169.7164393395549
+2025-05-03 17:06:37,580 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.04275534441805
+2025-05-03 17:06:38,405 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 130.30406043437205
+2025-05-03 17:06:38,934 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.32954545454544
+2025-05-03 17:06:39,455 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.28187919463087
+2025-05-03 17:06:40,903 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.43972210870453
+2025-05-03 17:06:41,104 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 150.96808510638297
+2025-05-03 17:06:41,330 - mcp_outlook - INFO - Selected best text from method: html2text with score: 133.82407407407408
+2025-05-03 17:06:41,682 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.54054054054055
+2025-05-03 17:06:42,176 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.35637779941578
+2025-05-03 17:06:42,295 - mcp_outlook - INFO - Selected best text from method: html2text with score: 145.27799227799227
+2025-05-03 17:06:42,394 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 129.06887755102042
+2025-05-03 17:06:42,485 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.6685288640596
+2025-05-03 17:06:42,550 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 121.33511586452764
+2025-05-03 17:06:42,641 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 129.07814407814408
+2025-05-03 17:06:42,767 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.994140625
+2025-05-03 17:06:42,916 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 150.99074074074073
+2025-05-03 17:06:43,193 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 187.55345911949686
+2025-05-03 17:06:43,224 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 98.2279792746114
+2025-05-03 17:06:44,076 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 127.6
+2025-05-03 17:06:44,570 - mcp_outlook - INFO - Selected best text from method: html2text with score: 249.31221423905944
+2025-05-03 17:06:44,605 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 73.44736842105263
+2025-05-03 17:06:44,670 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 103.69918699186992
+2025-05-03 17:06:44,885 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.67143321416964
+2025-05-03 17:06:45,615 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 183.89892233370495
+2025-05-03 17:06:45,666 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 87.5945945945946
+2025-05-03 17:06:46,246 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 137.35664335664336
+2025-05-03 17:06:46,690 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 184.24506411561163
+2025-05-03 17:06:47,047 - mcp_outlook - INFO - Selected best text from method: html2text with score: 197.39480019258548
+2025-05-03 17:06:48,098 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 190.68085106382978
+2025-05-03 17:06:48,834 - mcp_outlook - INFO - Selected best text from method: html2text with score: 273.20786156804104
+2025-05-03 17:06:48,884 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 75.44186046511628
+2025-05-03 17:06:49,433 - mcp_outlook - INFO - Selected best text from method: html2text with score: 157.9171332586786
+2025-05-03 17:06:50,351 - mcp_outlook - INFO - Selected best text from method: html2text with score: 315.13177954963635
+2025-05-03 17:06:51,456 - mcp_outlook - INFO - Selected best text from method: html2text with score: 345.03846453320875
+2025-05-03 17:06:52,644 - mcp_outlook - INFO - Selected best text from method: html2text with score: 363.06191422891226
+2025-05-03 17:06:52,855 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 109.70462633451957
+2025-05-03 17:06:54,070 - mcp_outlook - INFO - Selected best text from method: html2text with score: 381.04634721131185
+2025-05-03 17:06:54,411 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.44919786096256
+2025-05-03 17:06:54,966 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.68567141785445
+2025-05-03 17:06:55,536 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 228.11542173325614
+2025-05-03 17:06:57,763 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 660.6295518207282
+2025-05-03 17:06:57,850 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 80.1159420289855
+2025-05-03 17:06:58,200 - mcp_outlook - INFO - Selected best text from method: html2text with score: 141.699604743083
+2025-05-03 17:06:58,689 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 168.78571428571428
+2025-05-03 17:06:59,049 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.0424403183024
+2025-05-03 17:06:59,220 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 147.69435215946845
+2025-05-03 17:06:59,299 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 119.09978768577494
+2025-05-03 17:06:59,343 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 90.63276836158192
+2025-05-03 17:07:00,044 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 246.61682242990653
+2025-05-03 17:07:00,210 - mcp_outlook - INFO - Selected best text from method: html2text with score: 142.41071428571428
+2025-05-03 17:07:00,470 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 199.71578445398188
+2025-05-03 17:07:00,672 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 153.30288784419074
+2025-05-03 17:07:01,296 - mcp_outlook - INFO - Selected best text from method: html2text with score: 152.43501326259945
+2025-05-03 17:07:01,868 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 178.04545454545456
+2025-05-03 17:07:02,355 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 189.29882850009602
+2025-05-03 17:07:02,420 - mcp_outlook - INFO - Selected best text from method: html2text with score: 94.58878504672897
+2025-05-03 17:07:02,438 - mcp_outlook - INFO - Selected best text from method: html2text with score: 56.2945945945946
+2025-05-03 17:07:02,609 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.38952536824877
+2025-05-03 17:07:03,048 - mcp_outlook - INFO - Selected best text from method: html2text with score: 206.48595448021325
+2025-05-03 17:07:03,934 - mcp_outlook - INFO - Selected best text from method: html2text with score: 136.13810316139768
+2025-05-03 17:07:04,482 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 169.05252246026262
+2025-05-03 17:07:04,500 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 93.91044776119404
+2025-05-03 17:07:04,753 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 135.86413902053712
+2025-05-03 17:07:04,882 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 147.6216216216216
+2025-05-03 17:07:04,980 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 151.15784215784214
+2025-05-03 17:07:05,106 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.99447513812154
+2025-05-03 17:07:05,325 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.1353251318102
+2025-05-03 17:07:05,590 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 127.41214057507987
+2025-05-03 17:07:05,990 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.98360655737704
+2025-05-03 17:07:06,187 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 145.5065445026178
+2025-05-03 17:07:06,981 - mcp_outlook - INFO - Selected best text from method: html2text with score: 130.25417439703153
+2025-05-03 17:07:07,562 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 154.48871695680208
+2025-05-03 17:07:07,672 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.3913043478261
+2025-05-03 17:07:07,872 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 149.1934203062961
+2025-05-03 17:07:08,697 - mcp_outlook - INFO - Selected best text from method: html2text with score: 182.38858195211787
+2025-05-03 17:07:08,854 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 122.52589641434264
+2025-05-03 17:07:08,888 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 127.19444444444444
+2025-05-03 17:07:09,029 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 118.74735830931796
+2025-05-03 17:07:09,331 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.69439421338154
+2025-05-03 17:07:09,633 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 169.61736803697397
+2025-05-03 17:07:10,082 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 177.56938227394807
+2025-05-03 17:07:13,549 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 426.8036909919541
+2025-05-03 17:07:13,863 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 148.31499051233396
+2025-05-03 17:07:14,747 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.5734494015234
+2025-05-03 17:07:14,759 - mcp_outlook - INFO - Mejor resultado tiene puntuación demasiado baja (0), devolviendo vacío
+2025-05-03 17:07:15,391 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 185.00428309198452
+2025-05-03 17:07:15,413 - mcp_outlook - INFO - Mejor resultado tiene puntuación demasiado baja (0), devolviendo vacío
+2025-05-03 17:07:15,593 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 157.60433174854728
+2025-05-03 17:07:15,650 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 118.21183800623052
+2025-05-03 17:07:15,864 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 175.47669773635153
+2025-05-03 17:07:15,931 - mcp_outlook - INFO - Selected best text from method: html2text with score: 115.46031746031747
+2025-05-03 17:07:15,981 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 93.48829431438128
+2025-05-03 17:07:16,017 - mcp_outlook - INFO - Selected best text from method: html2text with score: 88.0
+2025-05-03 17:07:16,128 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.68960125097732
+2025-05-03 17:07:16,308 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.18118869013273
+2025-05-03 17:07:16,350 - mcp_outlook - INFO - Selected best text from method: html2text with score: 94.24324324324324
+2025-05-03 17:07:16,447 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.0635838150289
+2025-05-03 17:07:16,831 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 198.2422323372254
+2025-05-03 17:07:16,998 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 133.70462633451956
+2025-05-03 17:07:17,396 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 188.3825857519789
+2025-05-03 17:07:17,982 - mcp_outlook - INFO - Selected best text from method: html2text with score: 261.109756097561
+2025-05-03 17:07:18,437 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 178.11226389997339
+2025-05-03 17:07:18,798 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 203.4897245299519
+2025-05-03 17:07:19,626 - mcp_outlook - INFO - Selected best text from method: html2text with score: 294.1351109342354
+2025-05-03 17:07:20,431 - mcp_outlook - INFO - Selected best text from method: html2text with score: 300.04268589806065
+2025-05-03 17:07:20,537 - mcp_outlook - INFO - Selected best text from method: html2text with score: 133.3146473779385
+2025-05-03 17:07:21,422 - mcp_outlook - INFO - Selected best text from method: html2text with score: 321.052894555479
+2025-05-03 17:07:22,396 - mcp_outlook - INFO - Selected best text from method: html2text with score: 332.9693672581185
+2025-05-03 17:07:23,458 - mcp_outlook - INFO - Selected best text from method: html2text with score: 347.96730119742097
+2025-05-03 17:07:24,716 - mcp_outlook - INFO - Selected best text from method: html2text with score: 371.990240501917
+2025-05-03 17:07:24,812 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 126.5625
+2025-05-03 17:07:24,911 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.56594724220622
+2025-05-03 17:07:25,005 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 133.02127659574467
+2025-05-03 17:07:25,097 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 138.99057714958775
+2025-05-03 17:07:25,151 - mcp_outlook - INFO - Selected best text from method: html2text with score: 82.25842696629213
+2025-05-03 17:07:25,346 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 159.19760479041918
+2025-05-03 17:07:25,495 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.2337870296237
+2025-05-03 17:07:25,521 - mcp_outlook - INFO - Selected best text from method: html2text with score: 56.2945945945946
+2025-05-03 17:07:26,016 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 195.23803363518758
+2025-05-03 17:07:26,265 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.24470134874758
+2025-05-03 17:07:26,420 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 133.1259842519685
+2025-05-03 17:07:26,547 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 132.1931818181818
+2025-05-03 17:07:26,699 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 147.3730255164034
+2025-05-03 17:07:26,786 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.32558139534885
+2025-05-03 17:07:26,910 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 156.85059422750425
+2025-05-03 17:07:27,000 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 136.51237623762376
+2025-05-03 17:07:27,125 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 138.81034482758622
+2025-05-03 17:07:27,155 - mcp_outlook - INFO - Selected best text from method: html2text with score: 77.75
+2025-05-03 17:07:27,352 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 133.72863568215894
+2025-05-03 17:07:27,564 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 127.24751066856331
+2025-05-03 17:07:27,893 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 181.51959428307975
+2025-05-03 17:07:27,960 - mcp_outlook - INFO - Selected best text from method: html2text with score: 131.0064308681672
+2025-05-03 17:07:28,140 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 147.94395796847635
+2025-05-03 17:13:40,789 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-15T23:59:59Z, top: 200, folders: ['Inbox', 'SentItems', 'Drafts']
+2025-05-03 17:13:40,789 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:13:42,810 - mcp_outlook - INFO - Found 109 emails in date range in Inbox.
+2025-05-03 17:13:42,810 - mcp_outlook - INFO - Using query for SentItems: sentDateTime ge 2025-04-01T00:00:00Z and sentDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:13:43,697 - mcp_outlook - INFO - Found 53 emails in date range in SentItems.
+2025-05-03 17:13:43,697 - mcp_outlook - INFO - Using query for Drafts: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:13:43,886 - mcp_outlook - INFO - Found 0 emails in date range in Drafts.
+2025-05-03 17:13:43,962 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.82961783439492
+2025-05-03 17:13:44,697 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 179.1023385539584
+2025-05-03 17:13:45,028 - mcp_outlook - INFO - Selected best text from method: html2text with score: 149.53383458646616
+2025-05-03 17:13:45,543 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.5627240143369
+2025-05-03 17:13:45,767 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 166.56480218281035
+2025-05-03 17:13:45,793 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 73.44736842105263
+2025-05-03 17:13:46,914 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 213.978044891451
+2025-05-03 17:13:47,401 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.93416572077186
+2025-05-03 17:13:47,944 - mcp_outlook - INFO - Selected best text from method: html2text with score: 155.06903991370012
+2025-05-03 17:13:48,433 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.34146341463415
+2025-05-03 17:13:50,212 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 492.6698450536353
+2025-05-03 17:13:50,960 - mcp_outlook - INFO - Selected best text from method: html2text with score: 158.13536444273043
+2025-05-03 17:13:50,987 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 80.22916666666667
+2025-05-03 17:13:51,084 - mcp_outlook - INFO - Selected best text from method: html2text with score: 125.00618238021639
+2025-05-03 17:13:51,340 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 172.78169014084506
+2025-05-03 17:13:51,355 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 75.35483870967741
+2025-05-03 17:13:51,620 - mcp_outlook - INFO - Selected best text from method: html2text with score: 169.7164393395549
+2025-05-03 17:13:52,189 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.04275534441805
+2025-05-03 17:13:53,008 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 130.30406043437205
+2025-05-03 17:13:53,543 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.32954545454544
+2025-05-03 17:13:54,070 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.28187919463087
+2025-05-03 17:13:55,619 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.43972210870453
+2025-05-03 17:13:55,863 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 150.96808510638297
+2025-05-03 17:13:56,210 - mcp_outlook - INFO - Selected best text from method: html2text with score: 133.82407407407408
+2025-05-03 17:13:56,504 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.54054054054055
+2025-05-03 17:13:56,984 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.35637779941578
+2025-05-03 17:13:57,142 - mcp_outlook - INFO - Selected best text from method: html2text with score: 145.27799227799227
+2025-05-03 17:13:57,242 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 129.06887755102042
+2025-05-03 17:13:57,333 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.6685288640596
+2025-05-03 17:13:57,407 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 121.33511586452764
+2025-05-03 17:13:57,493 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 129.07814407814408
+2025-05-03 17:13:57,573 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.994140625
+2025-05-03 17:13:57,744 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 150.99074074074073
+2025-05-03 17:13:58,063 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 187.55345911949686
+2025-05-03 17:13:58,093 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 98.2279792746114
+2025-05-03 17:13:58,966 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 127.6
+2025-05-03 17:13:59,574 - mcp_outlook - INFO - Selected best text from method: html2text with score: 249.31221423905944
+2025-05-03 17:13:59,620 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 73.44736842105263
+2025-05-03 17:13:59,680 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 103.69918699186992
+2025-05-03 17:13:59,917 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.67143321416964
+2025-05-03 17:14:00,664 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 183.89892233370495
+2025-05-03 17:14:00,712 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 87.5945945945946
+2025-05-03 17:14:01,252 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 137.35664335664336
+2025-05-03 17:14:01,718 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 184.24506411561163
+2025-05-03 17:14:02,110 - mcp_outlook - INFO - Selected best text from method: html2text with score: 197.39480019258548
+2025-05-03 17:14:03,126 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 190.68085106382978
+2025-05-03 17:14:03,815 - mcp_outlook - INFO - Selected best text from method: html2text with score: 273.20786156804104
+2025-05-03 17:14:03,860 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 75.44186046511628
+2025-05-03 17:14:04,352 - mcp_outlook - INFO - Selected best text from method: html2text with score: 157.9171332586786
+2025-05-03 17:14:05,222 - mcp_outlook - INFO - Selected best text from method: html2text with score: 315.13177954963635
+2025-05-03 17:14:06,266 - mcp_outlook - INFO - Selected best text from method: html2text with score: 345.03846453320875
+2025-05-03 17:14:07,531 - mcp_outlook - INFO - Selected best text from method: html2text with score: 363.06191422891226
+2025-05-03 17:14:07,779 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 109.70462633451957
+2025-05-03 17:14:08,995 - mcp_outlook - INFO - Selected best text from method: html2text with score: 381.04634721131185
+2025-05-03 17:14:09,308 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.44919786096256
+2025-05-03 17:14:09,949 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.68567141785445
+2025-05-03 17:14:10,543 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 228.11542173325614
+2025-05-03 17:14:12,710 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 660.6295518207282
+2025-05-03 17:14:12,798 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 80.1159420289855
+2025-05-03 17:14:13,112 - mcp_outlook - INFO - Selected best text from method: html2text with score: 141.699604743083
+2025-05-03 17:14:13,644 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 168.78571428571428
+2025-05-03 17:14:13,979 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.0424403183024
+2025-05-03 17:14:14,170 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 147.69435215946845
+2025-05-03 17:14:14,240 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 119.09978768577494
+2025-05-03 17:14:14,266 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 90.63276836158192
+2025-05-03 17:14:14,909 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 246.61682242990653
+2025-05-03 17:14:15,053 - mcp_outlook - INFO - Selected best text from method: html2text with score: 142.41071428571428
+2025-05-03 17:14:15,298 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 199.71578445398188
+2025-05-03 17:14:15,476 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 153.30288784419074
+2025-05-03 17:14:16,009 - mcp_outlook - INFO - Selected best text from method: html2text with score: 152.43501326259945
+2025-05-03 17:14:16,603 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 178.04545454545456
+2025-05-03 17:14:17,143 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 189.29882850009602
+2025-05-03 17:14:17,206 - mcp_outlook - INFO - Selected best text from method: html2text with score: 94.58878504672897
+2025-05-03 17:14:17,227 - mcp_outlook - INFO - Selected best text from method: html2text with score: 56.2945945945946
+2025-05-03 17:14:17,401 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.38952536824877
+2025-05-03 17:14:17,867 - mcp_outlook - INFO - Selected best text from method: html2text with score: 206.48595448021325
+2025-05-03 17:14:18,747 - mcp_outlook - INFO - Selected best text from method: html2text with score: 136.13810316139768
+2025-05-03 17:14:19,366 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 169.05252246026262
+2025-05-03 17:14:19,392 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 93.91044776119404
+2025-05-03 17:14:19,662 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 135.86413902053712
+2025-05-03 17:14:19,788 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 147.6216216216216
+2025-05-03 17:14:19,893 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 151.15784215784214
+2025-05-03 17:14:20,008 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.99447513812154
+2025-05-03 17:14:20,254 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.1353251318102
+2025-05-03 17:14:20,536 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 127.41214057507987
+2025-05-03 17:14:20,858 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.98360655737704
+2025-05-03 17:14:21,031 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 145.5065445026178
+2025-05-03 17:14:21,821 - mcp_outlook - INFO - Selected best text from method: html2text with score: 130.25417439703153
+2025-05-03 17:14:22,514 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 154.48871695680208
+2025-05-03 17:14:22,642 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.3913043478261
+2025-05-03 17:14:22,892 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 149.1934203062961
+2025-05-03 17:14:23,775 - mcp_outlook - INFO - Selected best text from method: html2text with score: 182.38858195211787
+2025-05-03 17:14:23,945 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 122.52589641434264
+2025-05-03 17:14:23,997 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 127.19444444444444
+2025-05-03 17:14:24,136 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 118.74735830931796
+2025-05-03 17:14:24,436 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.69439421338154
+2025-05-03 17:14:24,754 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 169.61736803697397
+2025-05-03 17:14:25,176 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 177.56938227394807
+2025-05-03 17:14:28,794 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 426.8036909919541
+2025-05-03 17:14:29,008 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 148.31499051233396
+2025-05-03 17:14:29,875 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.5734494015234
+2025-05-03 17:14:29,880 - mcp_outlook - INFO - Mejor resultado tiene puntuación demasiado baja (0), devolviendo vacío
+2025-05-03 17:14:30,465 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 185.00428309198452
+2025-05-03 17:14:30,525 - mcp_outlook - INFO - Mejor resultado tiene puntuación demasiado baja (0), devolviendo vacío
+2025-05-03 17:14:30,682 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 157.60433174854728
+2025-05-03 17:14:30,764 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 118.21183800623052
+2025-05-03 17:14:30,995 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 175.47669773635153
+2025-05-03 17:14:31,043 - mcp_outlook - INFO - Selected best text from method: html2text with score: 115.46031746031747
+2025-05-03 17:14:31,082 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 93.48829431438128
+2025-05-03 17:14:31,117 - mcp_outlook - INFO - Selected best text from method: html2text with score: 88.0
+2025-05-03 17:14:31,244 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.68960125097732
+2025-05-03 17:14:31,398 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.18118869013273
+2025-05-03 17:14:31,449 - mcp_outlook - INFO - Selected best text from method: html2text with score: 94.24324324324324
+2025-05-03 17:14:31,571 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.0635838150289
+2025-05-03 17:14:31,954 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 198.2422323372254
+2025-05-03 17:14:32,109 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 133.70462633451956
+2025-05-03 17:14:32,464 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 188.3825857519789
+2025-05-03 17:14:33,195 - mcp_outlook - INFO - Selected best text from method: html2text with score: 261.109756097561
+2025-05-03 17:14:33,628 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 178.11226389997339
+2025-05-03 17:14:34,069 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 203.4897245299519
+2025-05-03 17:14:34,866 - mcp_outlook - INFO - Selected best text from method: html2text with score: 294.1351109342354
+2025-05-03 17:14:35,749 - mcp_outlook - INFO - Selected best text from method: html2text with score: 300.04268589806065
+2025-05-03 17:14:35,843 - mcp_outlook - INFO - Selected best text from method: html2text with score: 133.3146473779385
+2025-05-03 17:14:36,806 - mcp_outlook - INFO - Selected best text from method: html2text with score: 321.052894555479
+2025-05-03 17:14:37,840 - mcp_outlook - INFO - Selected best text from method: html2text with score: 332.9693672581185
+2025-05-03 17:14:38,945 - mcp_outlook - INFO - Selected best text from method: html2text with score: 347.96730119742097
+2025-05-03 17:14:40,307 - mcp_outlook - INFO - Selected best text from method: html2text with score: 371.990240501917
+2025-05-03 17:14:40,426 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 126.5625
+2025-05-03 17:14:40,513 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.56594724220622
+2025-05-03 17:14:40,609 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 133.02127659574467
+2025-05-03 17:14:40,715 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 138.99057714958775
+2025-05-03 17:14:40,744 - mcp_outlook - INFO - Selected best text from method: html2text with score: 82.25842696629213
+2025-05-03 17:14:40,925 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 159.19760479041918
+2025-05-03 17:14:41,092 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.2337870296237
+2025-05-03 17:14:41,133 - mcp_outlook - INFO - Selected best text from method: html2text with score: 56.2945945945946
+2025-05-03 17:14:41,696 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 195.23803363518758
+2025-05-03 17:14:41,964 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.24470134874758
+2025-05-03 17:14:42,120 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 133.1259842519685
+2025-05-03 17:14:42,233 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 132.1931818181818
+2025-05-03 17:14:42,399 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 147.3730255164034
+2025-05-03 17:14:42,487 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.32558139534885
+2025-05-03 17:14:42,603 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 156.85059422750425
+2025-05-03 17:14:42,708 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 136.51237623762376
+2025-05-03 17:14:42,838 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 138.81034482758622
+2025-05-03 17:14:42,880 - mcp_outlook - INFO - Selected best text from method: html2text with score: 77.75
+2025-05-03 17:14:43,028 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 133.72863568215894
+2025-05-03 17:14:43,202 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 127.24751066856331
+2025-05-03 17:14:43,527 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 181.51959428307975
+2025-05-03 17:14:43,622 - mcp_outlook - INFO - Selected best text from method: html2text with score: 131.0064308681672
+2025-05-03 17:14:43,812 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 147.94395796847635
+2025-05-03 17:18:27,989 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-15T23:59:59Z, top: 200, folders: ['Inbox', 'SentItems', 'Drafts']
+2025-05-03 17:18:27,989 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:18:29,840 - mcp_outlook - INFO - Found 109 emails in date range in Inbox.
+2025-05-03 17:18:29,842 - mcp_outlook - INFO - Using query for SentItems: sentDateTime ge 2025-04-01T00:00:00Z and sentDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:18:30,730 - mcp_outlook - INFO - Found 53 emails in date range in SentItems.
+2025-05-03 17:18:30,738 - mcp_outlook - INFO - Using query for Drafts: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:18:30,905 - mcp_outlook - INFO - Found 0 emails in date range in Drafts.
+2025-05-03 17:18:30,985 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.82961783439492
+2025-05-03 17:18:31,559 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 179.1023385539584
+2025-05-03 17:18:31,867 - mcp_outlook - INFO - Selected best text from method: html2text with score: 149.53383458646616
+2025-05-03 17:18:32,453 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.5627240143369
+2025-05-03 17:18:32,662 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 166.56480218281035
+2025-05-03 17:18:32,694 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 73.44736842105263
+2025-05-03 17:18:33,699 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 213.978044891451
+2025-05-03 17:18:34,165 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.93416572077186
+2025-05-03 17:18:34,723 - mcp_outlook - INFO - Selected best text from method: html2text with score: 155.06903991370012
+2025-05-03 17:18:35,151 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.34146341463415
+2025-05-03 17:18:37,047 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 492.6698450536353
+2025-05-03 17:18:37,688 - mcp_outlook - INFO - Selected best text from method: html2text with score: 158.13536444273043
+2025-05-03 17:18:37,726 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 80.22916666666667
+2025-05-03 17:18:37,808 - mcp_outlook - INFO - Selected best text from method: html2text with score: 125.00618238021639
+2025-05-03 17:18:37,997 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 172.78169014084506
+2025-05-03 17:18:38,022 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 75.35483870967741
+2025-05-03 17:18:38,273 - mcp_outlook - INFO - Selected best text from method: html2text with score: 169.7164393395549
+2025-05-03 17:18:38,774 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.04275534441805
+2025-05-03 17:18:39,651 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 130.30406043437205
+2025-05-03 17:18:40,194 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.32954545454544
+2025-05-03 17:18:40,704 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.28187919463087
+2025-05-03 17:18:42,238 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.43972210870453
+2025-05-03 17:18:42,461 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 150.96808510638297
+2025-05-03 17:18:42,726 - mcp_outlook - INFO - Selected best text from method: html2text with score: 133.82407407407408
+2025-05-03 17:18:43,052 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.54054054054055
+2025-05-03 17:18:43,639 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.35637779941578
+2025-05-03 17:18:43,822 - mcp_outlook - INFO - Selected best text from method: html2text with score: 145.27799227799227
+2025-05-03 17:18:43,918 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 129.06887755102042
+2025-05-03 17:18:44,002 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.6685288640596
+2025-05-03 17:18:44,069 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 121.33511586452764
+2025-05-03 17:18:44,154 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 129.07814407814408
+2025-05-03 17:18:44,232 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.994140625
+2025-05-03 17:18:44,388 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 150.99074074074073
+2025-05-03 17:18:44,716 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 187.55345911949686
+2025-05-03 17:18:44,745 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 98.2279792746114
+2025-05-03 17:18:45,533 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 127.6
+2025-05-03 17:18:46,174 - mcp_outlook - INFO - Selected best text from method: html2text with score: 249.31221423905944
+2025-05-03 17:18:46,208 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 73.44736842105263
+2025-05-03 17:18:46,274 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 103.69918699186992
+2025-05-03 17:18:46,471 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.67143321416964
+2025-05-03 17:18:47,115 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 183.89892233370495
+2025-05-03 17:18:47,158 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 87.5945945945946
+2025-05-03 17:18:47,657 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 137.35664335664336
+2025-05-03 17:18:48,099 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 184.24506411561163
+2025-05-03 17:18:48,527 - mcp_outlook - INFO - Selected best text from method: html2text with score: 197.39480019258548
+2025-05-03 17:18:49,538 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 190.68085106382978
+2025-05-03 17:18:50,288 - mcp_outlook - INFO - Selected best text from method: html2text with score: 273.20786156804104
+2025-05-03 17:18:50,341 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 75.44186046511628
+2025-05-03 17:18:50,873 - mcp_outlook - INFO - Selected best text from method: html2text with score: 157.9171332586786
+2025-05-03 17:18:51,694 - mcp_outlook - INFO - Selected best text from method: html2text with score: 315.13177954963635
+2025-05-03 17:18:52,803 - mcp_outlook - INFO - Selected best text from method: html2text with score: 345.03846453320875
+2025-05-03 17:18:54,031 - mcp_outlook - INFO - Selected best text from method: html2text with score: 363.06191422891226
+2025-05-03 17:18:54,260 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 109.70462633451957
+2025-05-03 17:18:55,573 - mcp_outlook - INFO - Selected best text from method: html2text with score: 381.04634721131185
+2025-05-03 17:18:55,827 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.44919786096256
+2025-05-03 17:18:56,472 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.68567141785445
+2025-05-03 17:18:57,051 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 228.11542173325614
+2025-05-03 17:18:59,026 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 660.6295518207282
+2025-05-03 17:18:59,131 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 80.1159420289855
+2025-05-03 17:18:59,472 - mcp_outlook - INFO - Selected best text from method: html2text with score: 141.699604743083
+2025-05-03 17:19:00,008 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 168.78571428571428
+2025-05-03 17:19:00,306 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.0424403183024
+2025-05-03 17:19:00,481 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 147.69435215946845
+2025-05-03 17:19:00,573 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 119.09978768577494
+2025-05-03 17:19:00,612 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 90.63276836158192
+2025-05-03 17:19:01,189 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 246.61682242990653
+2025-05-03 17:19:01,366 - mcp_outlook - INFO - Selected best text from method: html2text with score: 142.41071428571428
+2025-05-03 17:19:01,609 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 199.71578445398188
+2025-05-03 17:19:01,807 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 153.30288784419074
+2025-05-03 17:19:02,456 - mcp_outlook - INFO - Selected best text from method: html2text with score: 152.43501326259945
+2025-05-03 17:19:03,000 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 178.04545454545456
+2025-05-03 17:19:03,441 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 189.29882850009602
+2025-05-03 17:19:03,507 - mcp_outlook - INFO - Selected best text from method: html2text with score: 94.58878504672897
+2025-05-03 17:19:03,526 - mcp_outlook - INFO - Selected best text from method: html2text with score: 56.2945945945946
+2025-05-03 17:19:03,698 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.38952536824877
+2025-05-03 17:19:04,137 - mcp_outlook - INFO - Selected best text from method: html2text with score: 206.48595448021325
+2025-05-03 17:19:05,054 - mcp_outlook - INFO - Selected best text from method: html2text with score: 136.13810316139768
+2025-05-03 17:19:05,630 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 169.05252246026262
+2025-05-03 17:19:05,654 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 93.91044776119404
+2025-05-03 17:19:05,925 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 135.86413902053712
+2025-05-03 17:19:06,050 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 147.6216216216216
+2025-05-03 17:19:06,149 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 151.15784215784214
+2025-05-03 17:19:06,267 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.99447513812154
+2025-05-03 17:19:06,510 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.1353251318102
+2025-05-03 17:19:06,784 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 127.41214057507987
+2025-05-03 17:19:07,192 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.98360655737704
+2025-05-03 17:19:07,363 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 145.5065445026178
+2025-05-03 17:19:08,201 - mcp_outlook - INFO - Selected best text from method: html2text with score: 130.25417439703153
+2025-05-03 17:19:08,855 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 154.48871695680208
+2025-05-03 17:19:09,006 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.3913043478261
+2025-05-03 17:19:09,285 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 149.1934203062961
+2025-05-03 17:19:10,037 - mcp_outlook - INFO - Selected best text from method: html2text with score: 182.38858195211787
+2025-05-03 17:19:10,196 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 122.52589641434264
+2025-05-03 17:19:10,239 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 127.19444444444444
+2025-05-03 17:19:10,371 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 118.74735830931796
+2025-05-03 17:19:10,626 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.69439421338154
+2025-05-03 17:19:10,940 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 169.61736803697397
+2025-05-03 17:19:11,460 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 177.56938227394807
+2025-05-03 17:19:14,789 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 426.8036909919541
+2025-05-03 17:19:15,058 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 148.31499051233396
+2025-05-03 17:19:16,197 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.5734494015234
+2025-05-03 17:19:16,211 - mcp_outlook - INFO - Mejor resultado tiene puntuación demasiado baja (0), devolviendo vacío
+2025-05-03 17:19:16,872 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 185.00428309198452
+2025-05-03 17:19:16,924 - mcp_outlook - INFO - Mejor resultado tiene puntuación demasiado baja (0), devolviendo vacío
+2025-05-03 17:19:17,095 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 157.60433174854728
+2025-05-03 17:19:17,155 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 118.21183800623052
+2025-05-03 17:19:17,373 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 175.47669773635153
+2025-05-03 17:19:17,422 - mcp_outlook - INFO - Selected best text from method: html2text with score: 115.46031746031747
+2025-05-03 17:19:17,476 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 93.48829431438128
+2025-05-03 17:19:17,525 - mcp_outlook - INFO - Selected best text from method: html2text with score: 88.0
+2025-05-03 17:19:17,633 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.68960125097732
+2025-05-03 17:19:17,801 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.18118869013273
+2025-05-03 17:19:17,856 - mcp_outlook - INFO - Selected best text from method: html2text with score: 94.24324324324324
+2025-05-03 17:19:17,952 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.0635838150289
+2025-05-03 17:19:18,303 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 198.2422323372254
+2025-05-03 17:19:18,511 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 133.70462633451956
+2025-05-03 17:19:18,807 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 188.3825857519789
+2025-05-03 17:19:19,396 - mcp_outlook - INFO - Selected best text from method: html2text with score: 261.109756097561
+2025-05-03 17:19:19,864 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 178.11226389997339
+2025-05-03 17:19:20,320 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 203.4897245299519
+2025-05-03 17:19:21,178 - mcp_outlook - INFO - Selected best text from method: html2text with score: 294.1351109342354
+2025-05-03 17:19:22,037 - mcp_outlook - INFO - Selected best text from method: html2text with score: 300.04268589806065
+2025-05-03 17:19:22,144 - mcp_outlook - INFO - Selected best text from method: html2text with score: 133.3146473779385
+2025-05-03 17:19:23,110 - mcp_outlook - INFO - Selected best text from method: html2text with score: 321.052894555479
+2025-05-03 17:19:24,119 - mcp_outlook - INFO - Selected best text from method: html2text with score: 332.9693672581185
+2025-05-03 17:19:25,137 - mcp_outlook - INFO - Selected best text from method: html2text with score: 347.96730119742097
+2025-05-03 17:19:26,395 - mcp_outlook - INFO - Selected best text from method: html2text with score: 371.990240501917
+2025-05-03 17:19:26,532 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 126.5625
+2025-05-03 17:19:26,642 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.56594724220622
+2025-05-03 17:19:26,761 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 133.02127659574467
+2025-05-03 17:19:26,855 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 138.99057714958775
+2025-05-03 17:19:26,895 - mcp_outlook - INFO - Selected best text from method: html2text with score: 82.25842696629213
+2025-05-03 17:19:27,088 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 159.19760479041918
+2025-05-03 17:19:27,248 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.2337870296237
+2025-05-03 17:19:27,277 - mcp_outlook - INFO - Selected best text from method: html2text with score: 56.2945945945946
+2025-05-03 17:19:27,852 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 195.23803363518758
+2025-05-03 17:19:28,062 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.24470134874758
+2025-05-03 17:19:28,182 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 133.1259842519685
+2025-05-03 17:19:28,272 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 132.1931818181818
+2025-05-03 17:19:28,430 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 147.3730255164034
+2025-05-03 17:19:28,521 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.32558139534885
+2025-05-03 17:19:28,652 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 156.85059422750425
+2025-05-03 17:19:28,744 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 136.51237623762376
+2025-05-03 17:19:28,898 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 138.81034482758622
+2025-05-03 17:19:28,930 - mcp_outlook - INFO - Selected best text from method: html2text with score: 77.75
+2025-05-03 17:19:29,098 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 133.72863568215894
+2025-05-03 17:19:29,263 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 127.24751066856331
+2025-05-03 17:19:29,621 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 181.51959428307975
+2025-05-03 17:19:29,709 - mcp_outlook - INFO - Selected best text from method: html2text with score: 131.0064308681672
+2025-05-03 17:19:29,971 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 147.94395796847635
+2025-05-03 17:29:28,969 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-15T23:59:59Z, top: 200, folders: ['Inbox', 'SentItems', 'Drafts']
+2025-05-03 17:29:28,969 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:29:30,796 - mcp_outlook - INFO - Found 109 emails in date range in Inbox.
+2025-05-03 17:29:30,796 - mcp_outlook - INFO - Using query for SentItems: sentDateTime ge 2025-04-01T00:00:00Z and sentDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:29:31,764 - mcp_outlook - INFO - Found 53 emails in date range in SentItems.
+2025-05-03 17:29:31,764 - mcp_outlook - INFO - Using query for Drafts: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:29:31,962 - mcp_outlook - INFO - Found 0 emails in date range in Drafts.
+2025-05-03 17:29:32,061 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.82961783439492
+2025-05-03 17:29:32,649 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 179.1023385539584
+2025-05-03 17:29:32,984 - mcp_outlook - INFO - Selected best text from method: html2text with score: 149.53383458646616
+2025-05-03 17:29:33,462 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.5627240143369
+2025-05-03 17:29:33,681 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 166.56480218281035
+2025-05-03 17:29:33,706 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 73.44736842105263
+2025-05-03 17:29:34,706 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 213.978044891451
+2025-05-03 17:29:35,205 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.93416572077186
+2025-05-03 17:29:35,771 - mcp_outlook - INFO - Selected best text from method: html2text with score: 155.06903991370012
+2025-05-03 17:29:36,212 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.34146341463415
+2025-05-03 17:29:37,957 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 492.6698450536353
+2025-05-03 17:29:38,637 - mcp_outlook - INFO - Selected best text from method: html2text with score: 158.13536444273043
+2025-05-03 17:29:38,667 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 80.22916666666667
+2025-05-03 17:31:20,611 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-15T23:59:59Z, top: 200, folders: Inbox
+2025-05-03 17:31:20,611 - mcp_outlook - INFO - Using query for I: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:32:48,210 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-15T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-03 17:32:48,210 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:32:49,720 - mcp_outlook - INFO - Found 109 emails in date range in Inbox.
+2025-05-03 17:32:49,796 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.82961783439492
+2025-05-03 17:32:50,327 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 179.1023385539584
+2025-05-03 17:32:50,643 - mcp_outlook - INFO - Selected best text from method: html2text with score: 149.53383458646616
+2025-05-03 17:32:51,110 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.5627240143369
+2025-05-03 17:32:51,322 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 166.56480218281035
+2025-05-03 17:32:51,352 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 73.44736842105263
+2025-05-03 17:32:52,338 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 213.978044891451
+2025-05-03 17:32:52,765 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.93416572077186
+2025-05-03 17:32:53,279 - mcp_outlook - INFO - Selected best text from method: html2text with score: 155.06903991370012
+2025-05-03 17:32:53,732 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.34146341463415
+2025-05-03 17:32:55,409 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 492.6698450536353
+2025-05-03 17:32:56,035 - mcp_outlook - INFO - Selected best text from method: html2text with score: 158.13536444273043
+2025-05-03 17:32:56,065 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 80.22916666666667
+2025-05-03 17:32:56,155 - mcp_outlook - INFO - Selected best text from method: html2text with score: 125.00618238021639
+2025-05-03 17:32:56,422 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 172.78169014084506
+2025-05-03 17:32:56,449 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 75.35483870967741
+2025-05-03 17:32:56,833 - mcp_outlook - INFO - Selected best text from method: html2text with score: 169.7164393395549
+2025-05-03 17:32:57,337 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.04275534441805
+2025-05-03 17:32:58,109 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 130.30406043437205
+2025-05-03 17:32:58,731 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.32954545454544
+2025-05-03 17:32:59,180 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.28187919463087
+2025-05-03 17:33:00,631 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.43972210870453
+2025-05-03 17:33:00,833 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 150.96808510638297
+2025-05-03 17:33:01,148 - mcp_outlook - INFO - Selected best text from method: html2text with score: 133.82407407407408
+2025-05-03 17:33:01,445 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.54054054054055
+2025-05-03 17:33:02,000 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.35637779941578
+2025-05-03 17:33:02,145 - mcp_outlook - INFO - Selected best text from method: html2text with score: 145.27799227799227
+2025-05-03 17:33:02,234 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 129.06887755102042
+2025-05-03 17:33:02,335 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.6685288640596
+2025-05-03 17:33:02,402 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 121.33511586452764
+2025-05-03 17:33:02,492 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 129.07814407814408
+2025-05-03 17:33:02,577 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.994140625
+2025-05-03 17:33:02,750 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 150.99074074074073
+2025-05-03 17:33:03,022 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 187.55345911949686
+2025-05-03 17:33:03,046 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 98.2279792746114
+2025-05-03 17:33:03,829 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 127.6
+2025-05-03 17:33:04,361 - mcp_outlook - INFO - Selected best text from method: html2text with score: 249.31221423905944
+2025-05-03 17:33:04,416 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 73.44736842105263
+2025-05-03 17:33:04,492 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 103.69918699186992
+2025-05-03 17:33:04,726 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.67143321416964
+2025-05-03 17:33:05,491 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 183.89892233370495
+2025-05-03 17:33:05,549 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 87.5945945945946
+2025-05-03 17:33:06,052 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 137.35664335664336
+2025-05-03 17:33:06,489 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 184.24506411561163
+2025-05-03 17:33:06,846 - mcp_outlook - INFO - Selected best text from method: html2text with score: 197.39480019258548
+2025-05-03 17:33:07,876 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 190.68085106382978
+2025-05-03 17:33:08,617 - mcp_outlook - INFO - Selected best text from method: html2text with score: 273.20786156804104
+2025-05-03 17:33:08,679 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 75.44186046511628
+2025-05-03 17:33:09,129 - mcp_outlook - INFO - Selected best text from method: html2text with score: 157.9171332586786
+2025-05-03 17:33:09,934 - mcp_outlook - INFO - Selected best text from method: html2text with score: 315.13177954963635
+2025-05-03 17:33:10,978 - mcp_outlook - INFO - Selected best text from method: html2text with score: 345.03846453320875
+2025-05-03 17:33:12,071 - mcp_outlook - INFO - Selected best text from method: html2text with score: 363.06191422891226
+2025-05-03 17:33:12,282 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 109.70462633451957
+2025-05-03 17:33:13,536 - mcp_outlook - INFO - Selected best text from method: html2text with score: 381.04634721131185
+2025-05-03 17:33:13,901 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.44919786096256
+2025-05-03 17:33:14,429 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.68567141785445
+2025-05-03 17:33:15,035 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 228.11542173325614
+2025-05-03 17:33:17,014 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 660.6295518207282
+2025-05-03 17:33:17,126 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 80.1159420289855
+2025-05-03 17:33:17,488 - mcp_outlook - INFO - Selected best text from method: html2text with score: 141.699604743083
+2025-05-03 17:33:17,936 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 168.78571428571428
+2025-05-03 17:33:18,229 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.0424403183024
+2025-05-03 17:33:18,419 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 147.69435215946845
+2025-05-03 17:33:18,511 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 119.09978768577494
+2025-05-03 17:33:18,562 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 90.63276836158192
+2025-05-03 17:33:19,170 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 246.61682242990653
+2025-05-03 17:33:19,353 - mcp_outlook - INFO - Selected best text from method: html2text with score: 142.41071428571428
+2025-05-03 17:33:19,708 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 199.71578445398188
+2025-05-03 17:33:19,871 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 153.30288784419074
+2025-05-03 17:33:20,433 - mcp_outlook - INFO - Selected best text from method: html2text with score: 152.43501326259945
+2025-05-03 17:33:20,979 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 178.04545454545456
+2025-05-03 17:33:21,457 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 189.29882850009602
+2025-05-03 17:33:21,526 - mcp_outlook - INFO - Selected best text from method: html2text with score: 94.58878504672897
+2025-05-03 17:33:21,560 - mcp_outlook - INFO - Selected best text from method: html2text with score: 56.2945945945946
+2025-05-03 17:33:21,800 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.38952536824877
+2025-05-03 17:33:22,274 - mcp_outlook - INFO - Selected best text from method: html2text with score: 206.48595448021325
+2025-05-03 17:33:23,132 - mcp_outlook - INFO - Selected best text from method: html2text with score: 136.13810316139768
+2025-05-03 17:33:23,684 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 169.05252246026262
+2025-05-03 17:33:23,700 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 93.91044776119404
+2025-05-03 17:33:23,930 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 135.86413902053712
+2025-05-03 17:33:24,104 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 147.6216216216216
+2025-05-03 17:33:24,228 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 151.15784215784214
+2025-05-03 17:33:24,348 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.99447513812154
+2025-05-03 17:33:24,566 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.1353251318102
+2025-05-03 17:33:24,828 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 127.41214057507987
+2025-05-03 17:33:25,190 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.98360655737704
+2025-05-03 17:33:25,359 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 145.5065445026178
+2025-05-03 17:33:26,106 - mcp_outlook - INFO - Selected best text from method: html2text with score: 130.25417439703153
+2025-05-03 17:33:26,758 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 154.48871695680208
+2025-05-03 17:33:26,860 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.3913043478261
+2025-05-03 17:33:27,108 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 149.1934203062961
+2025-05-03 17:33:28,002 - mcp_outlook - INFO - Selected best text from method: html2text with score: 182.38858195211787
+2025-05-03 17:33:28,168 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 122.52589641434264
+2025-05-03 17:33:28,210 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 127.19444444444444
+2025-05-03 17:33:28,359 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 118.74735830931796
+2025-05-03 17:33:28,673 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.69439421338154
+2025-05-03 17:33:29,020 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 169.61736803697397
+2025-05-03 17:33:29,426 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 177.56938227394807
+2025-05-03 17:33:33,002 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 426.8036909919541
+2025-05-03 17:33:33,299 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 148.31499051233396
+2025-05-03 17:33:34,292 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.5734494015234
+2025-05-03 17:36:30,025 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-15T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-03 17:36:30,026 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:36:31,590 - mcp_outlook - INFO - Found 109 emails in date range in Inbox.
+2025-05-03 17:36:31,684 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.82961783439492
+2025-05-03 17:36:32,386 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 179.1023385539584
+2025-05-03 17:36:32,672 - mcp_outlook - INFO - Selected best text from method: html2text with score: 149.53383458646616
+2025-05-03 17:36:33,155 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.5627240143369
+2025-05-03 17:36:33,375 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 166.56480218281035
+2025-05-03 17:36:33,397 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 73.44736842105263
+2025-05-03 17:36:34,337 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 213.978044891451
+2025-05-03 17:36:34,826 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.93416572077186
+2025-05-03 17:36:35,331 - mcp_outlook - INFO - Selected best text from method: html2text with score: 155.06903991370012
+2025-05-03 17:36:35,732 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.34146341463415
+2025-05-03 17:36:37,487 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 492.6698450536353
+2025-05-03 17:36:38,181 - mcp_outlook - INFO - Selected best text from method: html2text with score: 158.13536444273043
+2025-05-03 17:36:38,224 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 80.22916666666667
+2025-05-03 17:36:38,307 - mcp_outlook - INFO - Selected best text from method: html2text with score: 125.00618238021639
+2025-05-03 17:36:38,526 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 172.78169014084506
+2025-05-03 17:36:38,554 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 75.35483870967741
+2025-05-03 17:36:38,821 - mcp_outlook - INFO - Selected best text from method: html2text with score: 169.7164393395549
+2025-05-03 17:36:39,373 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.04275534441805
+2025-05-03 17:36:40,084 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 130.30406043437205
+2025-05-03 17:36:40,661 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.32954545454544
+2025-05-03 17:36:41,185 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.28187919463087
+2025-05-03 17:36:42,669 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.43972210870453
+2025-05-03 17:36:42,862 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 150.96808510638297
+2025-05-03 17:36:43,093 - mcp_outlook - INFO - Selected best text from method: html2text with score: 133.82407407407408
+2025-05-03 17:36:43,439 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.54054054054055
+2025-05-03 17:36:43,972 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.35637779941578
+2025-05-03 17:36:44,091 - mcp_outlook - INFO - Selected best text from method: html2text with score: 145.27799227799227
+2025-05-03 17:36:44,186 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 129.06887755102042
+2025-05-03 17:36:44,285 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.6685288640596
+2025-05-03 17:36:44,353 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 121.33511586452764
+2025-05-03 17:36:44,447 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 129.07814407814408
+2025-05-03 17:36:44,545 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.994140625
+2025-05-03 17:36:44,716 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 150.99074074074073
+2025-05-03 17:36:44,992 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 187.55345911949686
+2025-05-03 17:36:45,040 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 98.2279792746114
+2025-05-03 17:36:45,900 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 127.6
+2025-05-03 17:36:46,472 - mcp_outlook - INFO - Selected best text from method: html2text with score: 249.31221423905944
+2025-05-03 17:36:46,510 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 73.44736842105263
+2025-05-03 17:36:46,573 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 103.69918699186992
+2025-05-03 17:36:46,798 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.67143321416964
+2025-05-03 17:36:47,463 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 183.89892233370495
+2025-05-03 17:36:47,495 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 87.5945945945946
+2025-05-03 17:36:48,014 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 137.35664335664336
+2025-05-03 17:36:48,487 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 184.24506411561163
+2025-05-03 17:36:48,849 - mcp_outlook - INFO - Selected best text from method: html2text with score: 197.39480019258548
+2025-05-03 17:36:49,881 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 190.68085106382978
+2025-05-03 17:36:50,560 - mcp_outlook - INFO - Selected best text from method: html2text with score: 273.20786156804104
+2025-05-03 17:36:50,618 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 75.44186046511628
+2025-05-03 17:36:51,123 - mcp_outlook - INFO - Selected best text from method: html2text with score: 157.9171332586786
+2025-05-03 17:36:51,962 - mcp_outlook - INFO - Selected best text from method: html2text with score: 315.13177954963635
+2025-05-03 17:36:53,009 - mcp_outlook - INFO - Selected best text from method: html2text with score: 345.03846453320875
+2025-05-03 17:36:54,236 - mcp_outlook - INFO - Selected best text from method: html2text with score: 363.06191422891226
+2025-05-03 17:36:54,447 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 109.70462633451957
+2025-05-03 17:36:55,699 - mcp_outlook - INFO - Selected best text from method: html2text with score: 381.04634721131185
+2025-05-03 17:36:55,989 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.44919786096256
+2025-05-03 17:36:56,619 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.68567141785445
+2025-05-03 17:36:57,355 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 228.11542173325614
+2025-05-03 17:36:59,327 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 660.6295518207282
+2025-05-03 17:36:59,446 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 80.1159420289855
+2025-05-03 17:36:59,777 - mcp_outlook - INFO - Selected best text from method: html2text with score: 141.699604743083
+2025-05-03 17:37:00,306 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 168.78571428571428
+2025-05-03 17:37:00,605 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.0424403183024
+2025-05-03 17:37:00,788 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 147.69435215946845
+2025-05-03 17:37:00,879 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 119.09978768577494
+2025-05-03 17:37:00,922 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 90.63276836158192
+2025-05-03 17:37:01,532 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 246.61682242990653
+2025-05-03 17:37:01,705 - mcp_outlook - INFO - Selected best text from method: html2text with score: 142.41071428571428
+2025-05-03 17:37:02,022 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 199.71578445398188
+2025-05-03 17:37:02,219 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 153.30288784419074
+2025-05-03 17:37:02,821 - mcp_outlook - INFO - Selected best text from method: html2text with score: 152.43501326259945
+2025-05-03 17:37:03,364 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 178.04545454545456
+2025-05-03 17:37:03,810 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 189.29882850009602
+2025-05-03 17:37:03,862 - mcp_outlook - INFO - Selected best text from method: html2text with score: 94.58878504672897
+2025-05-03 17:37:03,882 - mcp_outlook - INFO - Selected best text from method: html2text with score: 56.2945945945946
+2025-05-03 17:37:04,089 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.38952536824877
+2025-05-03 17:37:04,534 - mcp_outlook - INFO - Selected best text from method: html2text with score: 206.48595448021325
+2025-05-03 17:37:05,427 - mcp_outlook - INFO - Selected best text from method: html2text with score: 136.13810316139768
+2025-05-03 17:37:05,997 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 169.05252246026262
+2025-05-03 17:37:06,019 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 93.91044776119404
+2025-05-03 17:37:06,256 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 135.86413902053712
+2025-05-03 17:37:06,423 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 147.6216216216216
+2025-05-03 17:37:06,519 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 151.15784215784214
+2025-05-03 17:37:06,650 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.99447513812154
+2025-05-03 17:37:06,946 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.1353251318102
+2025-05-03 17:37:07,223 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 127.41214057507987
+2025-05-03 17:37:07,609 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.98360655737704
+2025-05-03 17:37:07,813 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 145.5065445026178
+2025-05-03 17:37:08,587 - mcp_outlook - INFO - Selected best text from method: html2text with score: 130.25417439703153
+2025-05-03 17:37:09,223 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 154.48871695680208
+2025-05-03 17:37:09,359 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.3913043478261
+2025-05-03 17:37:09,561 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 149.1934203062961
+2025-05-03 17:37:10,381 - mcp_outlook - INFO - Selected best text from method: html2text with score: 182.38858195211787
+2025-05-03 17:37:10,533 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 122.52589641434264
+2025-05-03 17:37:10,576 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 127.19444444444444
+2025-05-03 17:37:10,710 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 118.74735830931796
+2025-05-03 17:37:10,967 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.69439421338154
+2025-05-03 17:37:11,305 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 169.61736803697397
+2025-05-03 17:37:11,759 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 177.56938227394807
+2025-05-03 17:37:15,062 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 426.8036909919541
+2025-05-03 17:37:15,276 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 148.31499051233396
+2025-05-03 17:37:16,226 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.5734494015234
+2025-05-03 17:40:31,569 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-15T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-03 17:40:31,569 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:40:33,260 - mcp_outlook - INFO - Found 109 emails in date range in Inbox.
+2025-05-03 17:40:33,336 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.82961783439492
+2025-05-03 17:40:33,888 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 179.1023385539584
+2025-05-03 17:40:34,203 - mcp_outlook - INFO - Selected best text from method: html2text with score: 149.53383458646616
+2025-05-03 17:40:34,751 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.5627240143369
+2025-05-03 17:40:34,961 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 166.56480218281035
+2025-05-03 17:40:34,996 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 73.44736842105263
+2025-05-03 17:40:35,953 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 213.978044891451
+2025-05-03 17:40:36,402 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.93416572077186
+2025-05-03 17:40:36,982 - mcp_outlook - INFO - Selected best text from method: html2text with score: 155.06903991370012
+2025-05-03 17:40:37,448 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.34146341463415
+2025-05-03 17:40:39,134 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 492.6698450536353
+2025-05-03 17:40:39,886 - mcp_outlook - INFO - Selected best text from method: html2text with score: 158.13536444273043
+2025-05-03 17:40:39,910 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 80.22916666666667
+2025-05-03 17:40:40,003 - mcp_outlook - INFO - Selected best text from method: html2text with score: 125.00618238021639
+2025-05-03 17:40:40,177 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 172.78169014084506
+2025-05-03 17:40:40,205 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 75.35483870967741
+2025-05-03 17:40:40,487 - mcp_outlook - INFO - Selected best text from method: html2text with score: 169.7164393395549
+2025-05-03 17:40:40,967 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.04275534441805
+2025-05-03 17:40:41,731 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 130.30406043437205
+2025-05-03 17:40:42,293 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.32954545454544
+2025-05-03 17:40:42,736 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.28187919463087
+2025-05-03 17:40:44,355 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.43972210870453
+2025-05-03 17:40:44,561 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 150.96808510638297
+2025-05-03 17:40:44,798 - mcp_outlook - INFO - Selected best text from method: html2text with score: 133.82407407407408
+2025-05-03 17:40:45,096 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.54054054054055
+2025-05-03 17:40:45,674 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.35637779941578
+2025-05-03 17:40:45,792 - mcp_outlook - INFO - Selected best text from method: html2text with score: 145.27799227799227
+2025-05-03 17:40:45,887 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 129.06887755102042
+2025-05-03 17:40:45,993 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.6685288640596
+2025-05-03 17:40:46,079 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 121.33511586452764
+2025-05-03 17:40:46,169 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 129.07814407814408
+2025-05-03 17:40:46,263 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.994140625
+2025-05-03 17:40:46,415 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 150.99074074074073
+2025-05-03 17:40:46,748 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 187.55345911949686
+2025-05-03 17:40:46,779 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 98.2279792746114
+2025-05-03 17:40:47,481 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 127.6
+2025-05-03 17:40:48,027 - mcp_outlook - INFO - Selected best text from method: html2text with score: 249.31221423905944
+2025-05-03 17:40:48,070 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 73.44736842105263
+2025-05-03 17:40:48,137 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 103.69918699186992
+2025-05-03 17:40:48,378 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.67143321416964
+2025-05-03 17:40:49,077 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 183.89892233370495
+2025-05-03 17:40:49,116 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 87.5945945945946
+2025-05-03 17:40:49,603 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 137.35664335664336
+2025-05-03 17:40:50,035 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 184.24506411561163
+2025-05-03 17:40:50,379 - mcp_outlook - INFO - Selected best text from method: html2text with score: 197.39480019258548
+2025-05-03 17:40:51,495 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 190.68085106382978
+2025-05-03 17:40:52,152 - mcp_outlook - INFO - Selected best text from method: html2text with score: 273.20786156804104
+2025-05-03 17:40:52,208 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 75.44186046511628
+2025-05-03 17:40:52,692 - mcp_outlook - INFO - Selected best text from method: html2text with score: 157.9171332586786
+2025-05-03 17:40:53,600 - mcp_outlook - INFO - Selected best text from method: html2text with score: 315.13177954963635
+2025-05-03 17:40:54,619 - mcp_outlook - INFO - Selected best text from method: html2text with score: 345.03846453320875
+2025-05-03 17:40:55,763 - mcp_outlook - INFO - Selected best text from method: html2text with score: 363.06191422891226
+2025-05-03 17:40:56,003 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 109.70462633451957
+2025-05-03 17:40:57,416 - mcp_outlook - INFO - Selected best text from method: html2text with score: 381.04634721131185
+2025-05-03 17:40:57,686 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.44919786096256
+2025-05-03 17:40:58,250 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.68567141785445
+2025-05-03 17:40:58,801 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 228.11542173325614
+2025-05-03 17:41:00,845 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 660.6295518207282
+2025-05-03 17:41:00,941 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 80.1159420289855
+2025-05-03 17:41:01,258 - mcp_outlook - INFO - Selected best text from method: html2text with score: 141.699604743083
+2025-05-03 17:41:01,729 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 168.78571428571428
+2025-05-03 17:41:02,029 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.0424403183024
+2025-05-03 17:41:02,276 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 147.69435215946845
+2025-05-03 17:41:02,357 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 119.09978768577494
+2025-05-03 17:41:02,388 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 90.63276836158192
+2025-05-03 17:41:03,037 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 246.61682242990653
+2025-05-03 17:41:03,195 - mcp_outlook - INFO - Selected best text from method: html2text with score: 142.41071428571428
+2025-05-03 17:41:03,453 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 199.71578445398188
+2025-05-03 17:41:03,629 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 153.30288784419074
+2025-05-03 17:41:04,177 - mcp_outlook - INFO - Selected best text from method: html2text with score: 152.43501326259945
+2025-05-03 17:41:04,727 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 178.04545454545456
+2025-05-03 17:41:05,291 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 189.29882850009602
+2025-05-03 17:41:05,365 - mcp_outlook - INFO - Selected best text from method: html2text with score: 94.58878504672897
+2025-05-03 17:41:05,392 - mcp_outlook - INFO - Selected best text from method: html2text with score: 56.2945945945946
+2025-05-03 17:41:05,593 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.38952536824877
+2025-05-03 17:41:06,109 - mcp_outlook - INFO - Selected best text from method: html2text with score: 206.48595448021325
+2025-05-03 17:41:06,962 - mcp_outlook - INFO - Selected best text from method: html2text with score: 136.13810316139768
+2025-05-03 17:41:07,548 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 169.05252246026262
+2025-05-03 17:41:07,564 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 93.91044776119404
+2025-05-03 17:41:07,838 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 135.86413902053712
+2025-05-03 17:41:07,974 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 147.6216216216216
+2025-05-03 17:41:08,060 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 151.15784215784214
+2025-05-03 17:41:08,166 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.99447513812154
+2025-05-03 17:41:08,393 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.1353251318102
+2025-05-03 17:41:08,630 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 127.41214057507987
+2025-05-03 17:41:09,004 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.98360655737704
+2025-05-03 17:41:09,223 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 145.5065445026178
+2025-05-03 17:41:09,964 - mcp_outlook - INFO - Selected best text from method: html2text with score: 130.25417439703153
+2025-05-03 17:41:10,571 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 154.48871695680208
+2025-05-03 17:41:10,679 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.3913043478261
+2025-05-03 17:41:10,875 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 149.1934203062961
+2025-05-03 17:41:11,703 - mcp_outlook - INFO - Selected best text from method: html2text with score: 182.38858195211787
+2025-05-03 17:41:11,851 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 122.52589641434264
+2025-05-03 17:41:11,889 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 127.19444444444444
+2025-05-03 17:41:12,081 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 118.74735830931796
+2025-05-03 17:41:12,308 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.69439421338154
+2025-05-03 17:41:12,614 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 169.61736803697397
+2025-05-03 17:41:13,037 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 177.56938227394807
+2025-05-03 17:41:16,306 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 426.8036909919541
+2025-05-03 17:41:16,525 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 148.31499051233396
+2025-05-03 17:41:17,463 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.5734494015234
+2025-05-03 17:48:57,041 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-15T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-03 17:48:57,042 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:48:59,234 - mcp_outlook - INFO - Found 109 emails in date range in Inbox.
+2025-05-03 17:48:59,305 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.82961783439492
+2025-05-03 17:48:59,898 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 179.1023385539584
+2025-05-03 17:49:00,290 - mcp_outlook - INFO - Selected best text from method: html2text with score: 149.53383458646616
+2025-05-03 17:49:00,779 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.5627240143369
+2025-05-03 17:49:01,002 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 166.56480218281035
+2025-05-03 17:49:01,043 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 73.44736842105263
+2025-05-03 17:49:02,037 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 213.978044891451
+2025-05-03 17:49:02,595 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.93416572077186
+2025-05-03 17:49:03,107 - mcp_outlook - INFO - Selected best text from method: html2text with score: 155.06903991370012
+2025-05-03 17:49:03,545 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.34146341463415
+2025-05-03 17:49:05,353 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 492.6698450536353
+2025-05-03 17:49:06,137 - mcp_outlook - INFO - Selected best text from method: html2text with score: 158.13536444273043
+2025-05-03 17:49:06,167 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 80.22916666666667
+2025-05-03 17:49:06,281 - mcp_outlook - INFO - Selected best text from method: html2text with score: 125.00618238021639
+2025-05-03 17:49:06,462 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 172.78169014084506
+2025-05-03 17:49:06,481 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 75.35483870967741
+2025-05-03 17:49:06,715 - mcp_outlook - INFO - Selected best text from method: html2text with score: 169.7164393395549
+2025-05-03 17:49:07,321 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.04275534441805
+2025-05-03 17:49:08,082 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 130.30406043437205
+2025-05-03 17:49:08,579 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.32954545454544
+2025-05-03 17:49:08,972 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.28187919463087
+2025-05-03 17:49:10,730 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.43972210870453
+2025-05-03 17:49:10,961 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 150.96808510638297
+2025-05-03 17:49:11,232 - mcp_outlook - INFO - Selected best text from method: html2text with score: 133.82407407407408
+2025-05-03 17:49:11,596 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.54054054054055
+2025-05-03 17:49:12,101 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.35637779941578
+2025-05-03 17:49:12,213 - mcp_outlook - INFO - Selected best text from method: html2text with score: 145.27799227799227
+2025-05-03 17:49:12,313 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 129.06887755102042
+2025-05-03 17:49:12,394 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.6685288640596
+2025-05-03 17:49:12,449 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 121.33511586452764
+2025-05-03 17:49:12,539 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 129.07814407814408
+2025-05-03 17:49:12,611 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.994140625
+2025-05-03 17:49:12,787 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 150.99074074074073
+2025-05-03 17:49:13,065 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 187.55345911949686
+2025-05-03 17:49:13,096 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 98.2279792746114
+2025-05-03 17:49:13,960 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 127.6
+2025-05-03 17:49:14,548 - mcp_outlook - INFO - Selected best text from method: html2text with score: 249.31221423905944
+2025-05-03 17:49:14,585 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 73.44736842105263
+2025-05-03 17:49:14,654 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 103.69918699186992
+2025-05-03 17:49:14,871 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.67143321416964
+2025-05-03 17:49:15,563 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 183.89892233370495
+2025-05-03 17:49:15,614 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 87.5945945945946
+2025-05-03 17:49:16,143 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 137.35664335664336
+2025-05-03 17:49:16,645 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 184.24506411561163
+2025-05-03 17:49:17,007 - mcp_outlook - INFO - Selected best text from method: html2text with score: 197.39480019258548
+2025-05-03 17:49:17,962 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 190.68085106382978
+2025-05-03 17:49:18,750 - mcp_outlook - INFO - Selected best text from method: html2text with score: 273.20786156804104
+2025-05-03 17:49:18,839 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 75.44186046511628
+2025-05-03 17:49:19,400 - mcp_outlook - INFO - Selected best text from method: html2text with score: 157.9171332586786
+2025-05-03 17:49:20,396 - mcp_outlook - INFO - Selected best text from method: html2text with score: 315.13177954963635
+2025-05-03 17:49:21,528 - mcp_outlook - INFO - Selected best text from method: html2text with score: 345.03846453320875
+2025-05-03 17:49:22,718 - mcp_outlook - INFO - Selected best text from method: html2text with score: 363.06191422891226
+2025-05-03 17:49:22,972 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 109.70462633451957
+2025-05-03 17:49:24,213 - mcp_outlook - INFO - Selected best text from method: html2text with score: 381.04634721131185
+2025-05-03 17:49:24,527 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.44919786096256
+2025-05-03 17:49:25,041 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.68567141785445
+2025-05-03 17:49:25,700 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 228.11542173325614
+2025-05-03 17:49:27,673 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 660.6295518207282
+2025-05-03 17:49:27,818 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 80.1159420289855
+2025-05-03 17:49:28,144 - mcp_outlook - INFO - Selected best text from method: html2text with score: 141.699604743083
+2025-05-03 17:49:28,623 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 168.78571428571428
+2025-05-03 17:49:28,935 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.0424403183024
+2025-05-03 17:49:29,153 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 147.69435215946845
+2025-05-03 17:49:29,218 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 119.09978768577494
+2025-05-03 17:49:29,247 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 90.63276836158192
+2025-05-03 17:49:29,897 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 246.61682242990653
+2025-05-03 17:49:30,083 - mcp_outlook - INFO - Selected best text from method: html2text with score: 142.41071428571428
+2025-05-03 17:49:30,371 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 199.71578445398188
+2025-05-03 17:49:30,544 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 153.30288784419074
+2025-05-03 17:49:31,161 - mcp_outlook - INFO - Selected best text from method: html2text with score: 152.43501326259945
+2025-05-03 17:49:31,779 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 178.04545454545456
+2025-05-03 17:49:32,316 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 189.29882850009602
+2025-05-03 17:49:32,398 - mcp_outlook - INFO - Selected best text from method: html2text with score: 94.58878504672897
+2025-05-03 17:49:32,424 - mcp_outlook - INFO - Selected best text from method: html2text with score: 56.2945945945946
+2025-05-03 17:49:32,619 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.38952536824877
+2025-05-03 17:49:33,061 - mcp_outlook - INFO - Selected best text from method: html2text with score: 206.48595448021325
+2025-05-03 17:49:34,015 - mcp_outlook - INFO - Selected best text from method: html2text with score: 136.13810316139768
+2025-05-03 17:49:34,680 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 169.05252246026262
+2025-05-03 17:49:34,699 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 93.91044776119404
+2025-05-03 17:49:34,971 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 135.86413902053712
+2025-05-03 17:49:35,105 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 147.6216216216216
+2025-05-03 17:49:35,201 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 151.15784215784214
+2025-05-03 17:49:35,312 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.99447513812154
+2025-05-03 17:49:35,538 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.1353251318102
+2025-05-03 17:49:35,814 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 127.41214057507987
+2025-05-03 17:49:36,207 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.98360655737704
+2025-05-03 17:49:36,445 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 145.5065445026178
+2025-05-03 17:49:37,246 - mcp_outlook - INFO - Selected best text from method: html2text with score: 130.25417439703153
+2025-05-03 17:49:37,825 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 154.48871695680208
+2025-05-03 17:49:37,940 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.3913043478261
+2025-05-03 17:49:38,135 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 149.1934203062961
+2025-05-03 17:49:39,039 - mcp_outlook - INFO - Selected best text from method: html2text with score: 182.38858195211787
+2025-05-03 17:49:39,207 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 122.52589641434264
+2025-05-03 17:49:39,258 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 127.19444444444444
+2025-05-03 17:49:39,422 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 118.74735830931796
+2025-05-03 17:49:39,667 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.69439421338154
+2025-05-03 17:49:39,981 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 169.61736803697397
+2025-05-03 17:49:40,512 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 177.56938227394807
+2025-05-03 17:49:43,902 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 426.8036909919541
+2025-05-03 17:49:44,184 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 148.31499051233396
+2025-05-03 17:49:45,046 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.5734494015234
+2025-05-03 17:50:54,086 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-15T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-03 17:50:54,086 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-03 17:50:56,058 - mcp_outlook - INFO - Found 109 emails in date range in Inbox.
+2025-05-03 17:50:56,145 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.82961783439492
+2025-05-03 17:50:56,679 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 179.1023385539584
+2025-05-03 17:50:57,030 - mcp_outlook - INFO - Selected best text from method: html2text with score: 149.53383458646616
+2025-05-03 17:50:57,689 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.5627240143369
+2025-05-03 17:50:57,955 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 166.56480218281035
+2025-05-03 17:50:57,985 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 73.44736842105263
+2025-05-03 17:50:58,926 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 213.978044891451
+2025-05-03 17:50:59,438 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.93416572077186
+2025-05-03 17:51:00,062 - mcp_outlook - INFO - Selected best text from method: html2text with score: 155.06903991370012
+2025-05-03 17:51:00,543 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.34146341463415
+2025-05-03 17:51:02,365 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 492.6698450536353
+2025-05-03 17:51:03,038 - mcp_outlook - INFO - Selected best text from method: html2text with score: 158.13536444273043
+2025-05-03 17:51:03,066 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 80.22916666666667
+2025-05-03 17:51:03,165 - mcp_outlook - INFO - Selected best text from method: html2text with score: 125.00618238021639
+2025-05-03 17:51:03,352 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 172.78169014084506
+2025-05-03 17:51:03,387 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 75.35483870967741
+2025-05-03 17:51:03,637 - mcp_outlook - INFO - Selected best text from method: html2text with score: 169.7164393395549
+2025-05-03 17:51:04,233 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.04275534441805
+2025-05-03 17:51:04,999 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 130.30406043437205
+2025-05-03 17:51:05,537 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.32954545454544
+2025-05-03 17:51:06,065 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 136.28187919463087
+2025-05-03 17:51:07,644 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.43972210870453
+2025-05-03 17:51:07,873 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 150.96808510638297
+2025-05-03 17:51:08,178 - mcp_outlook - INFO - Selected best text from method: html2text with score: 133.82407407407408
+2025-05-03 17:51:08,479 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.54054054054055
+2025-05-03 17:51:09,065 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 139.35637779941578
+2025-05-03 17:51:09,188 - mcp_outlook - INFO - Selected best text from method: html2text with score: 145.27799227799227
+2025-05-03 17:51:09,294 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 129.06887755102042
+2025-05-03 17:51:09,415 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.6685288640596
+2025-05-03 17:51:09,504 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 121.33511586452764
+2025-05-03 17:51:09,610 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 129.07814407814408
+2025-05-03 17:51:09,678 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 131.994140625
+2025-05-03 17:51:09,848 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 150.99074074074073
+2025-05-03 17:51:10,127 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 187.55345911949686
+2025-05-03 17:51:10,148 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 98.2279792746114
+2025-05-03 17:51:10,990 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 127.6
+2025-05-03 17:51:11,552 - mcp_outlook - INFO - Selected best text from method: html2text with score: 249.31221423905944
+2025-05-03 17:51:11,589 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 73.44736842105263
+2025-05-03 17:51:11,671 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 103.69918699186992
+2025-05-03 17:51:11,932 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.67143321416964
+2025-05-03 17:51:12,556 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 183.89892233370495
+2025-05-03 17:51:12,592 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 87.5945945945946
+2025-05-03 17:51:13,032 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 137.35664335664336
+2025-05-03 17:51:13,515 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 184.24506411561163
+2025-05-03 17:51:13,877 - mcp_outlook - INFO - Selected best text from method: html2text with score: 197.39480019258548
+2025-05-03 17:51:15,031 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 190.68085106382978
+2025-05-03 17:51:15,809 - mcp_outlook - INFO - Selected best text from method: html2text with score: 273.20786156804104
+2025-05-03 17:51:15,868 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 75.44186046511628
+2025-05-03 17:51:16,399 - mcp_outlook - INFO - Selected best text from method: html2text with score: 157.9171332586786
+2025-05-03 17:51:17,245 - mcp_outlook - INFO - Selected best text from method: html2text with score: 315.13177954963635
+2025-05-03 17:51:18,294 - mcp_outlook - INFO - Selected best text from method: html2text with score: 345.03846453320875
+2025-05-03 17:51:19,440 - mcp_outlook - INFO - Selected best text from method: html2text with score: 363.06191422891226
+2025-05-03 17:51:19,665 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 109.70462633451957
+2025-05-03 17:51:20,955 - mcp_outlook - INFO - Selected best text from method: html2text with score: 381.04634721131185
+2025-05-03 17:51:21,254 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.44919786096256
+2025-05-03 17:51:21,754 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.68567141785445
+2025-05-03 17:51:22,298 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 228.11542173325614
+2025-05-03 17:51:24,355 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 660.6295518207282
+2025-05-03 17:51:24,456 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 80.1159420289855
+2025-05-03 17:51:24,793 - mcp_outlook - INFO - Selected best text from method: html2text with score: 141.699604743083
+2025-05-03 17:51:25,328 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 168.78571428571428
+2025-05-03 17:51:25,712 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 151.0424403183024
+2025-05-03 17:51:25,883 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 147.69435215946845
+2025-05-03 17:51:25,967 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 119.09978768577494
+2025-05-03 17:51:26,001 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 90.63276836158192
+2025-05-03 17:51:26,687 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 246.61682242990653
+2025-05-03 17:51:26,893 - mcp_outlook - INFO - Selected best text from method: html2text with score: 142.41071428571428
+2025-05-03 17:51:27,241 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 199.71578445398188
+2025-05-03 17:51:27,429 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 153.30288784419074
+2025-05-03 17:51:28,065 - mcp_outlook - INFO - Selected best text from method: html2text with score: 152.43501326259945
+2025-05-03 17:51:28,584 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 178.04545454545456
+2025-05-03 17:51:29,043 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 189.29882850009602
+2025-05-03 17:51:29,113 - mcp_outlook - INFO - Selected best text from method: html2text with score: 94.58878504672897
+2025-05-03 17:51:29,154 - mcp_outlook - INFO - Selected best text from method: html2text with score: 56.2945945945946
+2025-05-03 17:51:29,343 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.38952536824877
+2025-05-03 17:51:29,826 - mcp_outlook - INFO - Selected best text from method: html2text with score: 206.48595448021325
+2025-05-03 17:51:30,720 - mcp_outlook - INFO - Selected best text from method: html2text with score: 136.13810316139768
+2025-05-03 17:51:31,336 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 169.05252246026262
+2025-05-03 17:51:31,351 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 93.91044776119404
+2025-05-03 17:51:31,581 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 135.86413902053712
+2025-05-03 17:51:31,730 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 147.6216216216216
+2025-05-03 17:51:31,841 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 151.15784215784214
+2025-05-03 17:51:31,988 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.99447513812154
+2025-05-03 17:51:32,216 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.1353251318102
+2025-05-03 17:51:32,499 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 127.41214057507987
+2025-05-03 17:51:32,827 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.98360655737704
+2025-05-03 17:51:33,010 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 145.5065445026178
+2025-05-03 17:51:33,716 - mcp_outlook - INFO - Selected best text from method: html2text with score: 130.25417439703153
+2025-05-03 17:51:34,326 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 154.48871695680208
+2025-05-03 17:51:34,467 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.3913043478261
+2025-05-03 17:51:34,697 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 149.1934203062961
+2025-05-03 17:51:35,518 - mcp_outlook - INFO - Selected best text from method: html2text with score: 182.38858195211787
+2025-05-03 17:51:35,659 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 122.52589641434264
+2025-05-03 17:51:35,730 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 127.19444444444444
+2025-05-03 17:51:35,854 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 118.74735830931796
+2025-05-03 17:51:36,100 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 148.69439421338154
+2025-05-03 17:51:36,424 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 169.61736803697397
+2025-05-03 17:51:36,835 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 177.56938227394807
+2025-05-03 17:51:40,309 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 426.8036909919541
+2025-05-03 17:51:40,539 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 148.31499051233396
+2025-05-03 17:51:41,426 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 145.5734494015234
+2025-05-03 18:09:17,022 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-01T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-03 18:09:17,022 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-01T23:59:59Z
+2025-05-03 18:09:17,412 - mcp_outlook - INFO - Found 5 emails in date range in Inbox.
+2025-05-03 18:09:17,498 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 134.82961783439492
+2025-05-03 18:09:18,040 - mcp_outlook - INFO - Selected best text from method: beautifulsoup with score: 179.1023385539584
+2025-05-03 18:09:18,371 - mcp_outlook - INFO - Selected best text from method: html2text with score: 149.53383458646616
+2025-05-03 18:09:18,910 - mcp_outlook - INFO - Selected best text from method: inscriptis with score: 142.5627240143369
+2025-05-03 18:31:25,938 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-01T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-03 18:31:25,943 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-01T23:59:59Z
+2025-05-03 18:31:26,327 - mcp_outlook - INFO - Found 5 emails in date range in Inbox.
+2025-05-03 18:31:26,372 - src.mcp_outlook_server.clean_utils - INFO - Selected best text from method: inscriptis with score: 70.53889674681756
+2025-05-03 18:31:26,455 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 52499, New: 4244
+2025-05-03 18:31:26,520 - src.mcp_outlook_server.clean_utils - INFO - Selected best text from method: beautifulsoup with score: 36.22383720930233
+2025-05-03 18:31:26,655 - src.mcp_outlook_server.clean_utils - INFO - Selected best text from method: inscriptis with score: 101.05696202531647
+2025-05-03 18:31:26,750 - src.mcp_outlook_server.clean_utils - INFO - Detectados caracteres de control excesivos, aplicando limpieza ultra-agresiva
+2025-05-03 18:31:26,750 - src.mcp_outlook_server.clean_utils - INFO - Detectado HTML extremadamente ruidoso, aplicando limpieza radical
+2025-05-03 23:26:03,629 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-01T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-03 23:26:03,629 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-01T23:59:59Z
+2025-05-03 23:26:04,071 - mcp_outlook - INFO - Found 5 emails in date range in Inbox.
+2025-05-03 23:30:56,603 - mcp_outlook - INFO - Downloading raw emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-01T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-03 23:30:56,603 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-01T23:59:59Z
+2025-05-03 23:30:57,029 - mcp_outlook - INFO - Found 5 raw emails in date range in Inbox.
+2025-05-03 23:31:29,356 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-01T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-03 23:31:29,359 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-01T23:59:59Z
+2025-05-03 23:31:29,739 - mcp_outlook - INFO - Found 5 emails in date range in Inbox.
+2025-05-03 23:32:02,006 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-01T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-03 23:32:02,006 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-01T23:59:59Z
+2025-05-03 23:32:02,400 - mcp_outlook - INFO - Found 5 emails in date range in Inbox.
+2025-05-03 23:32:02,453 - src.mcp_outlook_server.clean_utils - INFO - Selected best text from method: inscriptis with score: 70.53889674681756
+2025-05-03 23:32:02,558 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 52499, New: 4244
+2025-05-03 23:32:02,623 - src.mcp_outlook_server.clean_utils - INFO - Selected best text from method: beautifulsoup with score: 36.22383720930233
+2025-05-03 23:32:02,709 - src.mcp_outlook_server.clean_utils - INFO - Selected best text from method: inscriptis with score: 101.05696202531647
+2025-05-03 23:32:02,773 - src.mcp_outlook_server.clean_utils - INFO - Detectados caracteres de control excesivos, aplicando limpieza ultra-agresiva
+2025-05-03 23:32:02,776 - src.mcp_outlook_server.clean_utils - INFO - Detectado HTML extremadamente ruidoso, aplicando limpieza radical
+2025-05-03 23:33:54,103 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-01T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-03 23:33:54,103 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-01T23:59:59Z
+2025-05-03 23:33:54,500 - mcp_outlook - INFO - Found 5 emails in date range in Inbox.
+2025-05-03 23:36:29,741 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-01T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-03 23:36:29,747 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-01T23:59:59Z
+2025-05-03 23:36:30,113 - mcp_outlook - INFO - Found 5 emails in date range in Inbox.
+2025-05-03 23:36:30,150 - src.mcp_outlook_server.clean_utils - INFO - Selected best text from method: inscriptis with score: 70.53889674681756
+2025-05-03 23:36:30,209 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 52499, New: 4244
+2025-05-03 23:36:30,278 - src.mcp_outlook_server.clean_utils - INFO - Selected best text from method: beautifulsoup with score: 36.22383720930233
+2025-05-03 23:36:30,361 - src.mcp_outlook_server.clean_utils - INFO - Selected best text from method: inscriptis with score: 101.05696202531647
+2025-05-03 23:36:30,428 - src.mcp_outlook_server.clean_utils - INFO - Detectados caracteres de control excesivos, aplicando limpieza ultra-agresiva
+2025-05-03 23:36:30,428 - src.mcp_outlook_server.clean_utils - INFO - Detectado HTML extremadamente ruidoso, aplicando limpieza radical
+2025-05-03 23:36:59,041 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-01T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-03 23:36:59,041 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-01T23:59:59Z
+2025-05-03 23:36:59,406 - mcp_outlook - INFO - Found 5 emails in date range in Inbox.
+2025-05-03 23:41:10,487 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-01T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-03 23:41:10,503 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-01T23:59:59Z
+2025-05-03 23:41:10,872 - mcp_outlook - INFO - Found 5 emails in date range in Inbox.
+2025-05-04 06:00:14,408 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-15T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-04 06:00:14,408 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-04 06:00:16,368 - mcp_outlook - INFO - Found 109 emails in date range in Inbox.
+2025-05-04 06:00:16,485 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 36793, New: 1937
+2025-05-04 06:00:16,495 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 47709, New: 2441
+2025-05-04 06:00:16,502 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 38932, New: 1148
+2025-05-04 06:00:16,533 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 48661, New: 3564
+2025-05-04 06:00:16,538 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 1329, New: 127
+2025-05-04 06:00:16,566 - src.mcp_outlook_server.clean_utils - INFO - Text contains repetitive characters: ////////////////////...
+2025-05-04 06:00:16,573 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 63140, New: 891
+2025-05-04 06:00:16,588 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 64899, New: 2197
+2025-05-04 06:00:16,612 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 50406, New: 978
+2025-05-04 06:00:16,628 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 112322, New: 3684
+2025-05-04 06:00:16,641 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 13957, New: 1036
+2025-05-04 06:00:16,658 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 19362, New: 1622
+2025-05-04 06:00:16,667 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 29991, New: 1500
+2025-05-04 06:00:16,689 - src.mcp_outlook_server.clean_utils - INFO - Text contains repetitive characters: ····················...
+2025-05-04 06:00:16,695 - src.mcp_outlook_server.clean_utils - INFO - Text contains repetitive characters: ····················...
+2025-05-04 06:00:16,706 - src.mcp_outlook_server.clean_utils - INFO - Text contains repetitive characters: ····················...
+2025-05-04 06:00:16,711 - src.mcp_outlook_server.clean_utils - INFO - Text contains repetitive characters: ····················...
+2025-05-04 06:00:16,740 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 63305, New: 2081
+2025-05-04 06:00:16,758 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 5217, New: 294
+2025-05-04 06:00:16,772 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 55144, New: 3124
+2025-05-04 06:00:16,783 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 2081, New: 164
+2025-05-04 06:00:16,795 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 45988, New: 1905
+2025-05-04 06:00:16,822 - src.mcp_outlook_server.clean_utils - INFO - Text contains repetitive characters: ////////////////////...
+2025-05-04 06:00:16,833 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 57189, New: 4695
+2025-05-04 06:00:16,870 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 44684, New: 2087
+2025-05-04 06:00:16,953 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 18622, New: 301
+2025-05-04 06:00:16,988 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 18981, New: 1271
+2025-05-04 06:00:17,049 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 32777, New: 586
+2025-05-04 06:00:17,058 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 44753, New: 1366
+2025-05-04 06:00:17,064 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 29854, New: 901
+2025-05-04 06:00:17,115 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 48409, New: 2698
+2025-05-04 06:00:17,126 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 45004, New: 1589
+2025-05-04 06:00:17,146 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 1513, New: 52
+2025-05-04 06:00:17,208 - src.mcp_outlook_server.clean_utils - INFO - Text contains repetitive characters: ////////////////////...
+2025-05-04 06:00:17,237 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 69259, New: 2357
+2025-05-04 06:00:17,252 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 44986, New: 1603
+2025-05-04 06:00:17,268 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 22415, New: 1843
+2025-05-04 06:00:17,314 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 21157, New: 1816
+2025-05-04 06:00:17,325 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 29740, New: 2434
+2025-05-04 06:00:17,339 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 65081, New: 2238
+2025-05-04 06:00:17,375 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 69536, New: 3388
+2025-05-04 06:00:17,469 - src.mcp_outlook_server.clean_utils - WARNING - Ultra-aggressive cleaning removed more than 90% of content! Original: 70805, New: 3022
+2025-05-04 06:19:11,055 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-15T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-04 06:19:11,055 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-04 06:19:12,980 - mcp_outlook - INFO - Found 109 emails in date range in Inbox.
+2025-05-04 06:19:12,986 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 2037 -> 1414 chars
+2025-05-04 06:19:13,012 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 24340 -> 5405 chars
+2025-05-04 06:19:13,031 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 93.23% (23330 -> 1580)
+2025-05-04 06:19:13,032 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 226 -> 218 chars
+2025-05-04 06:19:13,071 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 96.31% (35181 -> 1297)
+2025-05-04 06:19:13,079 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 10044 -> 2340 chars
+2025-05-04 06:19:13,079 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 239 -> 106 chars
+2025-05-04 06:19:13,126 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 42633 -> 9502 chars
+2025-05-04 06:19:13,132 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 226 -> 218 chars
+2025-05-04 06:19:13,176 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 95.02% (36793 -> 1834)
+2025-05-04 06:19:13,231 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 97.60% (47709 -> 1144)
+2025-05-04 06:19:13,270 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 97.39% (38932 -> 1016)
+2025-05-04 06:19:13,317 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 78066 -> 18440 chars
+2025-05-04 06:19:13,358 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 95.36% (48661 -> 2260)
+2025-05-04 06:19:13,367 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 91.50% (1329 -> 113)
+2025-05-04 06:19:13,369 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 3349 -> 1580 chars
+2025-05-04 06:19:13,386 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 10351 -> 3358 chars
+2025-05-04 06:19:13,390 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 198 -> 83 chars
+2025-05-04 06:19:13,400 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 9851 -> 3302 chars
+2025-05-04 06:19:13,458 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 98.59% (63140 -> 889)
+2025-05-04 06:19:13,458 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 271 -> 256 chars
+2025-05-04 06:19:13,519 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 98.26% (64899 -> 1130)
+2025-05-04 06:19:13,557 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 96.61% (36112 -> 1223)
+2025-05-04 06:19:13,558 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 475 -> 457 chars
+2025-05-04 06:19:13,609 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 98.06% (50406 -> 976)
+2025-05-04 06:19:13,680 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 97.70% (112322 -> 2584)
+2025-05-04 06:19:13,680 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 484 -> 466 chars
+2025-05-04 06:19:13,687 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 92.59% (13957 -> 1034)
+2025-05-04 06:19:13,687 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 485 -> 467 chars
+2025-05-04 06:19:13,687 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 479 -> 461 chars
+2025-05-04 06:19:13,703 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 93.40% (19362 -> 1277)
+2025-05-04 06:19:13,733 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 96.08% (29991 -> 1177)
+2025-05-04 06:19:13,772 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 96.80% (37416 -> 1198)
+2025-05-04 06:19:13,786 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 6895 -> 1579 chars
+2025-05-04 06:19:13,800 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 5022 -> 1223 chars
+2025-05-04 06:19:13,813 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 3625 -> 1687 chars
+2025-05-04 06:19:13,822 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 4572 -> 658 chars
+2025-05-04 06:19:13,842 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 5360 -> 1254 chars
+2025-05-04 06:19:13,868 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 3482 -> 1561 chars
+2025-05-04 06:19:13,883 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 90.34% (12018 -> 1161)
+2025-05-04 06:19:13,912 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 15545 -> 4781 chars
+2025-05-04 06:19:13,917 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 396 -> 235 chars
+2025-05-04 06:19:13,974 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 98.42% (63305 -> 1002)
+2025-05-04 06:19:14,005 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 31096 -> 9170 chars
+2025-05-04 06:19:14,009 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 239 -> 106 chars
+2025-05-04 06:19:14,022 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 94.40% (5217 -> 292)
+2025-05-04 06:19:14,048 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 10173 -> 3801 chars
+2025-05-04 06:19:14,079 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 94.73% (55144 -> 2905)
+2025-05-04 06:19:14,092 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 92.17% (2081 -> 163)
+2025-05-04 06:19:14,122 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 98.18% (45988 -> 836)
+2025-05-04 06:19:14,159 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 31686 -> 6227 chars
+2025-05-04 06:19:14,183 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 16384 -> 5083 chars
+2025-05-04 06:19:14,226 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 92.85% (57189 -> 4089)
+2025-05-04 06:19:14,276 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 38741 -> 11273 chars
+2025-05-04 06:19:14,282 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 91.61% (1239 -> 104)
+2025-05-04 06:19:14,333 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 95.38% (44684 -> 2064)
+2025-05-04 06:19:14,386 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 48878 -> 13883 chars
+2025-05-04 06:19:14,448 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 56632 -> 15742 chars
+2025-05-04 06:19:14,530 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 68229 -> 17261 chars
+2025-05-04 06:19:14,552 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 98.39% (18622 -> 299)
+2025-05-04 06:19:14,627 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 73752 -> 18791 chars
+2025-05-04 06:19:14,645 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 93.51% (18981 -> 1232)
+2025-05-04 06:19:14,688 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 96.02% (38971 -> 1551)
+2025-05-04 06:19:14,720 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 31342 -> 5565 chars
+2025-05-04 06:19:14,722 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 305 -> 290 chars
+2025-05-04 06:19:14,794 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 89094 -> 25081 chars
+2025-05-04 06:19:14,794 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 415 -> 190 chars
+2025-05-04 06:19:14,839 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 98.28% (32777 -> 564)
+2025-05-04 06:19:14,883 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 97.11% (44753 -> 1294)
+2025-05-04 06:19:14,919 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 97.37% (29854 -> 786)
+2025-05-04 06:19:14,938 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 11756 -> 1261 chars
+2025-05-04 06:19:14,947 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 3879 -> 1082 chars
+2025-05-04 06:19:14,958 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 90.51% (2054 -> 195)
+2025-05-04 06:19:15,007 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 30553 -> 7198 chars
+2025-05-04 06:19:15,018 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 8070 -> 2200 chars
+2025-05-04 06:19:15,036 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 13140 -> 5058 chars
+2025-05-04 06:19:15,050 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 12185 -> 1846 chars
+2025-05-04 06:19:15,102 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 94.50% (48409 -> 2662)
+2025-05-04 06:19:15,145 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 96.63% (45004 -> 1515)
+2025-05-04 06:19:15,208 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 32040 -> 6566 chars
+2025-05-04 06:19:15,214 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 91.01% (3069 -> 276)
+2025-05-04 06:19:15,226 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 97.09% (1513 -> 44)
+2025-05-04 06:19:15,252 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 10678 -> 2379 chars
+2025-05-04 06:19:15,297 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 21576 -> 6068 chars
+2025-05-04 06:19:15,372 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 98.14% (69259 -> 1287)
+2025-05-04 06:19:15,422 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 96.61% (44986 -> 1526)
+2025-05-04 06:19:15,430 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 380 -> 156 chars
+2025-05-04 06:19:15,459 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 95.43% (22415 -> 1025)
+2025-05-04 06:19:15,477 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 9259 -> 1823 chars
+2025-05-04 06:19:15,494 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 5005 -> 1231 chars
+2025-05-04 06:19:15,512 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 7340 -> 1191 chars
+2025-05-04 06:19:15,553 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 14046 -> 2970 chars
+2025-05-04 06:19:15,583 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 95.27% (21157 -> 1000)
+2025-05-04 06:19:15,607 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 94.66% (29740 -> 1588)
+2025-05-04 06:19:15,623 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 12057 -> 1570 chars
+2025-05-04 06:19:15,657 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 98.22% (65081 -> 1157)
+2025-05-04 06:19:15,711 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 95.90% (42563 -> 1746)
+2025-05-04 06:19:15,726 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 5949 -> 1367 chars
+2025-05-04 06:19:15,744 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 8508 -> 2038 chars
+2025-05-04 06:19:15,817 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 95.44% (69536 -> 3174)
+2025-05-04 06:19:15,819 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 4756 -> 1212 chars
+2025-05-04 06:19:15,827 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 2852 -> 492 chars
+2025-05-04 06:19:15,836 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 4828 -> 1251 chars
+2025-05-04 06:19:15,848 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 10829 -> 3448 chars
+2025-05-04 06:19:15,866 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 12609 -> 5000 chars
+2025-05-04 06:19:15,901 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 18554 -> 6821 chars
+2025-05-04 06:19:16,030 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 136181 -> 19468 chars
+2025-05-04 06:19:16,046 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 10189 -> 2649 chars
+2025-05-04 06:19:16,075 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 97.26% (70805 -> 1939)
+2025-05-04 06:22:25,597 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-15T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-04 06:22:25,598 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-04 06:22:27,289 - mcp_outlook - INFO - Found 109 emails in date range in Inbox.
+2025-05-04 06:22:27,294 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 2037 -> 1414 chars
+2025-05-04 06:22:27,323 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 24340 -> 5405 chars
+2025-05-04 06:22:27,347 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 93.23% (23330 -> 1580)
+2025-05-04 06:22:27,347 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 226 -> 218 chars
+2025-05-04 06:22:27,382 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 96.31% (35181 -> 1297)
+2025-05-04 06:22:27,397 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 10044 -> 2340 chars
+2025-05-04 06:22:27,397 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 239 -> 106 chars
+2025-05-04 06:22:27,453 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 42633 -> 9502 chars
+2025-05-04 06:22:27,455 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 226 -> 218 chars
+2025-05-04 06:22:27,473 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 95.02% (36793 -> 1834)
+2025-05-04 06:22:27,522 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 97.60% (47709 -> 1144)
+2025-05-04 06:22:27,541 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 97.39% (38932 -> 1016)
+2025-05-04 06:22:27,592 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 78066 -> 18440 chars
+2025-05-04 06:22:27,639 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 95.36% (48661 -> 2260)
+2025-05-04 06:22:27,646 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 91.50% (1329 -> 113)
+2025-05-04 06:22:27,649 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 3349 -> 1580 chars
+2025-05-04 06:22:27,658 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 10351 -> 3358 chars
+2025-05-04 06:22:27,663 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 198 -> 83 chars
+2025-05-04 06:22:27,674 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 9851 -> 3302 chars
+2025-05-04 06:22:27,754 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 98.59% (63140 -> 889)
+2025-05-04 06:22:27,756 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 271 -> 256 chars
+2025-05-04 06:22:27,817 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 98.26% (64899 -> 1130)
+2025-05-04 06:22:27,847 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 96.61% (36112 -> 1223)
+2025-05-04 06:22:27,851 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 475 -> 457 chars
+2025-05-04 06:22:27,902 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 98.06% (50406 -> 976)
+2025-05-04 06:22:27,996 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 97.70% (112322 -> 2584)
+2025-05-04 06:22:27,996 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 484 -> 466 chars
+2025-05-04 06:22:28,010 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 92.59% (13957 -> 1034)
+2025-05-04 06:22:28,014 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 485 -> 467 chars
+2025-05-04 06:22:28,016 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 479 -> 461 chars
+2025-05-04 06:22:28,045 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 93.40% (19362 -> 1277)
+2025-05-04 06:22:28,078 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 96.08% (29991 -> 1177)
+2025-05-04 06:22:28,133 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 96.80% (37416 -> 1198)
+2025-05-04 06:22:28,142 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 6895 -> 1579 chars
+2025-05-04 06:22:28,162 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 5022 -> 1223 chars
+2025-05-04 06:22:28,173 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 3625 -> 1687 chars
+2025-05-04 06:22:28,180 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 4572 -> 658 chars
+2025-05-04 06:22:28,184 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 5360 -> 1254 chars
+2025-05-04 06:22:28,191 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 3482 -> 1561 chars
+2025-05-04 06:22:28,203 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 90.34% (12018 -> 1161)
+2025-05-04 06:22:28,229 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 15545 -> 4781 chars
+2025-05-04 06:22:28,232 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 396 -> 235 chars
+2025-05-04 06:22:28,280 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 98.42% (63305 -> 1002)
+2025-05-04 06:22:28,317 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 31096 -> 9170 chars
+2025-05-04 06:22:28,319 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 239 -> 106 chars
+2025-05-04 06:22:28,324 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 94.40% (5217 -> 292)
+2025-05-04 06:22:28,345 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 10173 -> 3801 chars
+2025-05-04 06:22:28,383 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 94.73% (55144 -> 2905)
+2025-05-04 06:22:28,390 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 92.17% (2081 -> 163)
+2025-05-04 06:22:28,409 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 98.18% (45988 -> 836)
+2025-05-04 06:22:28,433 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 31686 -> 6227 chars
+2025-05-04 06:22:28,463 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 16384 -> 5083 chars
+2025-05-04 06:22:28,515 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 92.85% (57189 -> 4089)
+2025-05-04 06:22:28,567 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 38741 -> 11273 chars
+2025-05-04 06:22:28,575 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 91.61% (1239 -> 104)
+2025-05-04 06:22:28,613 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 95.38% (44684 -> 2064)
+2025-05-04 06:22:28,675 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 48878 -> 13883 chars
+2025-05-04 06:22:28,734 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 56632 -> 15742 chars
+2025-05-04 06:22:28,808 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 68229 -> 17261 chars
+2025-05-04 06:22:28,809 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 98.39% (18622 -> 299)
+2025-05-04 06:22:28,875 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 73752 -> 18791 chars
+2025-05-04 06:22:28,898 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 93.51% (18981 -> 1232)
+2025-05-04 06:22:28,936 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 96.02% (38971 -> 1551)
+2025-05-04 06:22:28,966 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 31342 -> 5565 chars
+2025-05-04 06:22:28,966 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 305 -> 290 chars
+2025-05-04 06:22:29,022 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 89094 -> 25081 chars
+2025-05-04 06:22:29,022 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 415 -> 190 chars
+2025-05-04 06:22:29,048 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 98.28% (32777 -> 564)
+2025-05-04 06:22:29,076 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 97.11% (44753 -> 1294)
+2025-05-04 06:22:29,096 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 97.37% (29854 -> 786)
+2025-05-04 06:22:29,112 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 11756 -> 1261 chars
+2025-05-04 06:22:29,129 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 3879 -> 1082 chars
+2025-05-04 06:22:29,133 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 90.51% (2054 -> 195)
+2025-05-04 06:22:29,181 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 30553 -> 7198 chars
+2025-05-04 06:22:29,191 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 8070 -> 2200 chars
+2025-05-04 06:22:29,205 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 13140 -> 5058 chars
+2025-05-04 06:22:29,219 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 12185 -> 1846 chars
+2025-05-04 06:22:29,251 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 94.50% (48409 -> 2662)
+2025-05-04 06:22:29,284 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 96.63% (45004 -> 1515)
+2025-05-04 06:22:29,320 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 32040 -> 6566 chars
+2025-05-04 06:22:29,328 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 91.01% (3069 -> 276)
+2025-05-04 06:22:29,337 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 97.09% (1513 -> 44)
+2025-05-04 06:22:29,356 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 10678 -> 2379 chars
+2025-05-04 06:22:29,383 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 21576 -> 6068 chars
+2025-05-04 06:22:29,422 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 98.14% (69259 -> 1287)
+2025-05-04 06:22:29,462 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 96.61% (44986 -> 1526)
+2025-05-04 06:22:29,466 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 380 -> 156 chars
+2025-05-04 06:22:29,487 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 95.43% (22415 -> 1025)
+2025-05-04 06:22:29,501 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 9259 -> 1823 chars
+2025-05-04 06:22:29,511 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 5005 -> 1231 chars
+2025-05-04 06:22:29,522 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 7340 -> 1191 chars
+2025-05-04 06:22:29,543 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 14046 -> 2970 chars
+2025-05-04 06:22:29,558 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 95.27% (21157 -> 1000)
+2025-05-04 06:22:29,580 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 94.66% (29740 -> 1588)
+2025-05-04 06:22:29,594 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 12057 -> 1570 chars
+2025-05-04 06:22:29,639 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 98.22% (65081 -> 1157)
+2025-05-04 06:22:29,678 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 95.90% (42563 -> 1746)
+2025-05-04 06:22:29,682 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 5949 -> 1367 chars
+2025-05-04 06:22:29,696 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 8508 -> 2038 chars
+2025-05-04 06:22:29,755 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 95.44% (69536 -> 3174)
+2025-05-04 06:22:29,765 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 4756 -> 1212 chars
+2025-05-04 06:22:29,768 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 2852 -> 492 chars
+2025-05-04 06:22:29,773 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 4828 -> 1251 chars
+2025-05-04 06:22:29,793 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 10829 -> 3448 chars
+2025-05-04 06:22:29,814 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 12609 -> 5000 chars
+2025-05-04 06:22:29,839 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 18554 -> 6821 chars
+2025-05-04 06:22:29,988 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 136181 -> 19468 chars
+2025-05-04 06:22:29,998 - src.mcp_outlook_server.clean_utils - INFO - Content cleaned: 10189 -> 2649 chars
+2025-05-04 06:22:30,027 - src.mcp_outlook_server.clean_utils - WARNING - Content reduced by 97.26% (70805 -> 1939)
+2025-05-04 06:26:46,135 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-15T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-04 06:26:46,135 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-04 06:26:47,956 - mcp_outlook - INFO - Found 109 emails in date range in Inbox.
+2025-05-04 07:37:31,711 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-15T23:59:59Z, top: 200, folders: ['Inbox']
+2025-05-04 07:37:31,711 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-15T23:59:59Z
+2025-05-04 07:37:33,748 - mcp_outlook - INFO - Found 109 emails in date range in Inbox.
+2025-05-04 12:36:54,441 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-05-01T00:00:00Z and 2025-05-15T23:59:59Z, top: 100, folders: ['Inbox', 'SentItems']
+2025-05-04 12:36:54,442 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-05-01T00:00:00Z and receivedDateTime le 2025-05-15T23:59:59Z
+2025-05-04 12:36:55,105 - mcp_outlook - INFO - Found 14 emails in date range in Inbox.
+2025-05-04 12:36:55,105 - mcp_outlook - INFO - Using query for SentItems: sentDateTime ge 2025-05-01T00:00:00Z and sentDateTime le 2025-05-15T23:59:59Z
+2025-05-04 12:36:55,322 - mcp_outlook - INFO - Found 1 emails in date range in SentItems.
+2025-05-04 12:39:02,549 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-05-01T00:00:00Z and 2025-05-15T23:59:59Z, top: 100, folders: ['Inbox', 'SentItems']
+2025-05-04 12:39:02,549 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-05-01T00:00:00Z and receivedDateTime le 2025-05-15T23:59:59Z
+2025-05-04 12:39:03,144 - mcp_outlook - INFO - Found 14 emails in date range in Inbox.
+2025-05-04 12:39:03,146 - mcp_outlook - INFO - Using query for SentItems: sentDateTime ge 2025-05-01T00:00:00Z and sentDateTime le 2025-05-15T23:59:59Z
+2025-05-04 12:39:03,360 - mcp_outlook - INFO - Found 1 emails in date range in SentItems.
+2025-05-04 12:52:06,162 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-05-01T00:00:00Z and 2025-05-15T23:59:59Z, top: 100, folders: ['Inbox', 'SentItems']
+2025-05-04 12:52:06,168 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-05-01T00:00:00Z and receivedDateTime le 2025-05-15T23:59:59Z
+2025-05-04 13:04:46,740 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-05-01T00:00:00Z and 2025-05-15T23:59:59Z, top: 100, folders: ['Inbox', 'SentItems']
+2025-05-04 13:04:46,740 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-05-01T00:00:00Z and receivedDateTime le 2025-05-15T23:59:59Z
+2025-05-04 13:04:47,331 - mcp_outlook - INFO - Found 14 emails in date range in Inbox.
+2025-05-04 13:04:47,331 - mcp_outlook - INFO - Using query for SentItems: sentDateTime ge 2025-05-01T00:00:00Z and sentDateTime le 2025-05-15T23:59:59Z
+2025-05-04 13:04:47,543 - mcp_outlook - INFO - Found 1 emails in date range in SentItems.
+2025-05-04 13:09:26,593 - mcp_outlook - INFO - Downloading emails for user sss@Sofias.ai between 2025-04-01T00:00:00Z and 2025-04-07T23:59:59Z, top: 100, folders: ['Inbox']
+2025-05-04 13:09:26,593 - mcp_outlook - INFO - Using query for Inbox: receivedDateTime ge 2025-04-01T00:00:00Z and receivedDateTime le 2025-04-07T23:59:59Z
+2025-05-04 13:09:27,731 - mcp_outlook - INFO - Found 43 emails in date range in Inbox.

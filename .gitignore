@@ -8,3 +8,7 @@ venv*
 dist
 .env
 .venv
+
+# Test and coverage
+*test*
+*results*

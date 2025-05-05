@@ -34,6 +34,26 @@ The server is built with efficiency and clarity in mind:
 - Uses environment variables for secure configuration
 - Supports accessing multiple user mailboxes through application permissions
 
+### Recent Optimizations
+
+The codebase has been recently optimized with the following improvements:
+
+1. **Enhanced Exception Handling**
+   - Implementation of decorators (`exception_handler` and `safe_operation`) for consistent error handling
+   - More robust error recovery, ensuring the service remains functional even when processing problematic emails
+
+2. **Performance Improvements**
+   - Consolidated text processing pipeline in `clean_utils.py` reducing processing overhead
+   - Optimized attribute access patterns in `format_utils.py` for faster message parsing
+   - Streamlined regular expressions for better text processing efficiency
+
+3. **Code Maintainability**
+   - Reduced codebase size by approximately 50% while maintaining full functionality
+   - Improved function organization with better separation of concerns
+   - Enhanced code readability with clearer structure and purpose
+
+These optimizations improve the reliability and performance of the service without changing its core functionality or external interfaces. All tools continue to operate with the same parameters and return values, but with better internal processing.
+
 ## Setup
 
 1. Register an app in Azure AD
