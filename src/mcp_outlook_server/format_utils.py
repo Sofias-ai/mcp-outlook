@@ -1,19 +1,16 @@
-from typing import Any, Tuple
-from .clean_utils import clean_email_content
 import re, json, logging
 from datetime import datetime
 from functools import wraps
+from typing import Any, Tuple
 
-# Configure logging
 logger = logging.getLogger(__name__)
 
 def safe_operation(default_return=None):
-    """Decorator to handle exceptions in attribute access operations"""
+    # Handle exceptions in operations.
     def decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
-            try:
-                return func(*args, **kwargs)
+            try: return func(*args, **kwargs)
             except Exception as e:
                 logger.debug(f"Error in {func.__name__}: {e}")
                 return default_return
@@ -22,167 +19,118 @@ def safe_operation(default_return=None):
 
 @safe_operation()
 def get_message_attribute(obj: Any, paths: list, default=None) -> Any:
-    """Unified function to get attributes from message objects"""
-    if not obj:
-        return default
+    # Get attributes from message objects.
+    if not obj: return default
     
-    # Fast path for direct attribute access
-    for path in paths:
-        # Handle nested attributes
+    if hasattr(obj, 'to_json'): # Try JSON serialization for Microsoft Graph objects.
+        try:
+            data_dict = json.loads(obj.to_json())
+            for path in paths:
+                if path in data_dict and data_dict[path]: return data_dict[path]
+        except Exception as e: logger.debug(f"Error in JSON serialization: {e}")
+    
+    for path in paths: # Fast path for direct attribute access.
         if '.' in path:
-            parts = path.split('.')
-            current = obj
-            for part in parts:
-                if not hasattr(current, part) or (current := getattr(current, part)) is None:
-                    break
-            else:
-                if current:
-                    logger.debug(f"Found attribute via nested path: {path}")
-                    return current
-        # Simple attribute access
-        elif hasattr(obj, path) and (val := getattr(obj, path)):
-            logger.debug(f"Found attribute via direct access: {path}")
-            return val
+            parts, current = path.split('.'), obj
+            try:
+                for part in parts: current = getattr(current, part)
+                if current is not None: return current
+            except AttributeError: continue
+        elif hasattr(obj, path) and (val := getattr(obj, path)) is not None: return val
     
-    # Check properties dictionary
-    if hasattr(obj, 'properties'):
-        props = obj.properties
+    if hasattr(obj, 'properties') and (props := obj.properties): # Check properties dictionary.
         for path in paths:
-            if path in props and props[path]:
-                logger.debug(f"Found attribute via properties: {path}")
-                return props[path]
-    
-    # Try JSON serialization as last resort
-    if hasattr(obj, 'to_json'):
-        data_dict = json.loads(obj.to_json())
-        for path in paths:
-            if path in data_dict and data_dict[path]:
-                logger.debug(f"Found attribute via JSON: {path}")
-                return data_dict[path]
-    
+            if path in props and props[path]: return props[path]
     return default
 
 def get_sender_info(message: Any) -> Tuple[str, str]:
-    """Extract sender name and email from a message"""
-    # Common paths for sender information
-    email_paths = [
-        'sender.emailAddress.address', 'from_.emailAddress.address',
-        'from.emailAddress.address', 'sender.email_address.address',
-        'from_.email_address.address'
-    ]
-    name_paths = [
-        'sender.emailAddress.name', 'from_.emailAddress.name', 
-        'from.emailAddress.name', 'sender.email_address.name',
-        'from_.email_address.name'
-    ]
-    
-    # Try getting the email and matching name
+    # Extract sender name and email.
+    email_paths = ['sender.emailAddress.address', 'from_.emailAddress.address', 'from.emailAddress.address']
+    name_paths = ['sender.emailAddress.name', 'from_.emailAddress.name', 'from.emailAddress.name']
     sender_email = get_message_attribute(message, email_paths, '')
     sender_name = get_message_attribute(message, name_paths, '') if sender_email else ""
-    
     return sender_name, sender_email
 
-def get_date(message: Any) -> Any:
-    """Extract date from a message with formatting"""
-    # Common date paths
-    date_paths = [
-        'receivedDateTime', 'received_date_time', 'sentDateTime', 'sent_date_time', 
-        'createdDateTime', 'created_date_time', 'lastModifiedDateTime', 'last_modified_date_time'
-    ]
-    
-    date_value = get_message_attribute(message, date_paths)
-    
-    # Format the date if found
-    if not date_value:
-        return "Unknown"
-    
+def format_date_string(date_value: Any) -> str:
+    # Format date to string.
+    if not date_value: return "Unknown"
     try:
         if isinstance(date_value, str):
-            if 'T' in date_value:
-                date_value = datetime.fromisoformat(date_value.replace('Z', '+00:00'))
+            dt_obj = None
+            if 'T' in date_value: dt_obj = datetime.fromisoformat(date_value.replace('Z', '+00:00'))
             else:
-                for fmt in ['%Y-%m-%d %H:%M:%S', '%Y/%m/%d %H:%M:%S', '%d/%m/%Y %H:%M:%S']:
-                    try:
-                        date_value = datetime.strptime(date_value, fmt)
-                        break
-                    except ValueError:
-                        continue
-        
-        if isinstance(date_value, datetime):
-            return date_value.strftime('%Y-%m-%d %H:%M:%S')
-        
-        return str(date_value)
+                for fmt in ('%Y-%m-%d %H:%M:%S', '%Y/%m/%d %H:%M:%S', '%d/%m/%Y %H:%M:%S'):
+                    try: dt_obj = datetime.strptime(date_value, fmt); break
+                    except ValueError: continue
+            date_value = dt_obj if dt_obj else date_value
+        return date_value.strftime('%Y-%m-%d %H:%M:%S') if isinstance(date_value, datetime) else str(date_value)
     except Exception as e:
-        logger.warning(f"Error formatting date: {e}")
+        logger.warning(f"Error formatting date '{date_value}': {e}")
         return str(date_value)
+
+def get_date(message: Any) -> str:
+    # Extract and format date from message.
+    date_paths_prop = ['receivedDateTime', 'sentDateTime', 'createdDateTime', 'lastModifiedDateTime']
+    date_paths_attr = ['received_datetime', 'sent_datetime', 'created_datetime', 'last_modified_datetime']
+    
+    date_val = None
+    if hasattr(message, 'properties') and message.properties:
+        for path in date_paths_prop:
+            if path in message.properties and message.properties[path]:
+                date_val = message.properties[path]; break
+    if not date_val: date_val = get_message_attribute(message, date_paths_attr)
+    
+    return format_date_string(date_val) if date_val else "Unknown"
 
 @safe_operation()
 def format_email_output(message: Any, skip_cleaning: bool = False, as_text=False) -> Any:
-    """Formats an email by cleaning its HTML content"""
-    if as_text:
-        return format_email_as_text(message)
-    
-    if skip_cleaning or not message:
+    # Clean email body content (HTML to text) or format as text string.
+    if as_text: return format_email_as_text(message)
+    if skip_cleaning or not message or not hasattr(message, 'body') or not message.body:
         return message
     
-    # Clean HTML content if present
-    if hasattr(message, 'body') and message.body:
-        body = message.body
-        content = get_message_attribute(body, ['content'], '')
-        content_type = get_message_attribute(body, ['content_type', 'contentType'], '').lower()
-        
-        if content_type == 'html' and content:
-            clean_text = clean_email_content(content)
-            
-            # Update the body content
-            if hasattr(body, 'set_property'):
-                body.set_property('content', clean_text)
-                body.set_property('contentType', 'text')
-            elif hasattr(body, 'content'):
-                body.content = clean_text
-                if hasattr(body, 'contentType'):
-                    body.contentType = 'text'
+    body = message.body
+    content = get_message_attribute(body, ['content'], '')
+    content_type = get_message_attribute(body, ['content_type', 'contentType'], '').lower()
     
+    if content_type == 'html' and content:
+        from .clean_utils import clean_email_content # Local import to avoid circularity.
+        clean_content = clean_email_content(content)
+        if hasattr(body, 'set_property'):
+            body.set_property('content', clean_content); body.set_property('contentType', 'text')
+        elif hasattr(body, 'content'): # Fallback for objects without set_property.
+            body.content = clean_content
+            if hasattr(body, 'contentType'): body.contentType = 'text'
     return message
 
 @safe_operation("")
 def format_email_as_text(message: Any) -> str:
-    """Creates a plain text representation of an email"""
-    if not message:
-        return "[No message data]"
+    # Format email as a plain text string.
+    if not message: return "[No message data]"
     
-    # Extract basic message information
     subject = get_message_attribute(message, ['subject'], 'No Subject')
     sender_name, sender_email = get_sender_info(message)
-    formatted_date = get_date(message)
-    message_id = get_message_attribute(message, ['id'], 'Unknown ID')
+    sender_display = f'{sender_name} <{sender_email}>' if sender_name else sender_email or 'Unknown'
     
-    # Build the formatted output
     lines = [
-        f"EMAIL: {subject}",
-        f"From: {f'{sender_name} <{sender_email}>' if sender_name else sender_email or 'Unknown'}",
-        f"Date: {formatted_date}",
-        f"ID: {message_id}"
+        f"EMAIL: {subject}", f"From: {sender_display}",
+        f"Date: {get_date(message)}", f"ID: {get_message_attribute(message, ['id'], 'Unknown ID')}"
     ]
     
-    # Extract and format content
-    content = ""
-    content_type = "text"
-    
+    content, content_type = "", "text"
     if hasattr(message, 'body') and message.body:
         content = get_message_attribute(message.body, ['content'], '')
         content_type = get_message_attribute(message.body, ['content_type', 'contentType'], 'text').lower()
     
-    lines.append(f"Type: {content_type}")
-    lines.append("-" * 50)
+    lines.extend([f"Type: {content_type}", "-" * 50])
     
     if content:
         if content_type == 'html':
+            from .clean_utils import clean_email_content # Local import.
             lines.append(clean_email_content(content))
-        else:
-            lines.append(re.sub(r'\n{3,}', '\n\n', 
-                      re.sub(r'[\x00-\x09\x0B\x0C\x0E-\x1F\x7F]', '', content)))
-    else:
-        lines.append("[No Content]")
+        else: # Basic cleaning for non-HTML plain text.
+            cleaned_plain = re.sub(r'[\x00-\x09\x0B\x0C\x0E-\x1F\x7F]', '', content or "")
+            lines.append(re.sub(r'\n{3,}', '\n\n', cleaned_plain))
+    else: lines.append("[No Content]")
     
     return '\n'.join(lines)

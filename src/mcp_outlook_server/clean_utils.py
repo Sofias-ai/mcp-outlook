@@ -1,12 +1,13 @@
-import re, logging, html2text, unicodedata
+import re, logging, html, html2text, unicodedata
 from bs4 import BeautifulSoup
 from functools import wraps
+from typing import Any, List, Dict
+from .format_utils import get_date, get_sender_info, get_message_attribute
 
-# Configure logging
 logger = logging.getLogger(__name__)
 
 def exception_handler(default_return=""):
-    """Decorator to handle exceptions in text processing functions"""
+    # Handle exceptions.
     def decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
@@ -14,117 +15,191 @@ def exception_handler(default_return=""):
                 return func(*args, **kwargs)
             except Exception as e:
                 logger.error(f"Error in {func.__name__}: {e}")
-                return default_return if args[0] is None else args[0]
+                return default_return if args and args[0] is None else (args[0] if args else default_return)
         return wrapper
     return decorator
 
 @exception_handler()
 def clean_text(text, aggressive=False):
-    """Cleans and normalizes text"""
-    if not text: return ""
+    # Clean and normalize text.
+    if not text: 
+        return ""
     
-    # Remove BOM, zero-width, and control characters
-    text = re.sub(r'[\ufeff\u200b-\u200f\u2028\u2029\u202a-\u202e\x00-\x09\x0B\x0C\x0E-\x1F\x7F]', '', text)
+    text = re.sub(r'[\ufeff\u200b-\u200f\u2028\u2029\u202a-\u202e\x00-\x09\x0B\x0C\x0E-\x1F\x7F]', '', text) # Remove invisible/control chars.
     
-    # Additional aggressive cleaning
     if aggressive:
-        text = re.sub(r'[\u2060-\u2064\u206A-\u206F\u00AD\u034F]', '', text)  # Remove invisible chars
-        text = re.sub(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])', '', text)     # Remove ANSI codes
+        text = re.sub(r'[\u2060-\u2064\u206A-\u206F\u00AD\u034F]', '', text) # Remove additional formatting chars.
+        text = re.sub(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])', '', text) # Remove ANSI escape sequences.
+        text = re.sub(r'[^\w\s\.\,\!\?\;:\-\'"áéíóúñüÁÉÍÓÚÑÜ¿¡]', ' ', text) # Remove non-standard punctuation.
     
-    # Normalize whitespace
-    text = re.sub(r'\s+', ' ', text)
-    text = re.sub(r'^ +| +$', '', text, flags=re.MULTILINE)
+    text = re.sub(r'\s+', ' ', text) # Normalize whitespace.
+    text = re.sub(r'^ +| +$', '', text, flags=re.MULTILINE) # Trim leading/trailing spaces per line.
     
-    # Normalize Unicode
+    lines = text.split('\n')
+    # Remove lines with only special characters or empty after strip.
+    clean_lines = [line for line in lines if line.strip() and not re.match(r'^[\s\-\*\+\=\|\_\#\~\`]*$', line.strip())]
+    text = '\n'.join(clean_lines)
     return unicodedata.normalize('NFC', text)
 
 @exception_handler()
 def html_to_text(html_content):
-    """Converts HTML to plain text with improved formatting"""
-    if not html_content: return ""
+    # Convert HTML to plain text.
+    if not html_content: 
+        return ""
     
-    # Parse HTML
+    try: html_content = html.unescape(html_content) # Decode HTML entities.
+    except Exception as e: logger.debug(f"Error unescaping HTML: {e}")
+
     soup = BeautifulSoup(html_content, 'html.parser')
     
-    # Clean up unwanted elements
-    for tag in soup(['script', 'style']):
-        tag.decompose()
+    for tag_name in ['script', 'style', 'nav', 'footer', 'header', 'aside', 'noscript', 'form', 'input', 'button', 'meta', 'link']:
+        for tag in soup.find_all(tag_name):
+            tag.decompose() # Remove unwanted elements.
     
-    # Replace images with placeholder
-    for img in soup.find_all('img'):
-        img.replace_with('[Image]')
-    
-    # Add spacing around tables
-    for table in soup.find_all('table'):
-        table.insert_before('\n')
-        table.insert_after('\n')
-    
-    # Convert to text
     h = html2text.HTML2Text()
-    h.ignore_links = False
+    h.ignore_links = True
+    h.ignore_images = True
+    h.ignore_tables = True
+    h.ignore_emphasis = True
     h.body_width = 0
-    h.images_to_alt = True
-    h.protect_links = True
-    
+    h.unicode_snob = True
+    h.ul_item_mark = ' ' 
+    h.emphasis_mark = ''
+    h.single_line_break = True
+
     text = h.handle(str(soup))
     
-    # Fix common formatting issues
-    text = re.sub(r'!\[\]\([^)]+\)', '[Image]', text)
-    text = re.sub(r'\[Image\]\(<\[Link\]\)', '[Image]', text)
-    text = re.sub(r'\[([^]]+)\]\(<\[Link\]\)', r'[\1]', text)
-    text = re.sub(r'\[([^]]+)\]\(mailto:[^)]+\)', r'[\1]', text)
+    text = re.sub(r'<[^>]+>', '', text) # Remove any remaining HTML tags.
+    text = re.sub(r'\!\[.*?\]\(.*?\)|\[.*?\]\(.*?\)|\\[cid:[^\]]*\\]|\\[[^\]]*\\]', '', text, flags=re.IGNORECASE) # Remove markdown images/links, cids, brackets.
+    text = re.sub(r'\|[\s\-\|]*\||^\s*\||\|\s*$|\s*\|\s*', ' ', text, flags=re.MULTILINE) # Clean table remnants.
+    text = re.sub(r'[\*\_]{2,}|[\#\=\-\+]{2,}', '', text) # Remove excessive formatting chars.
+    text = re.sub(r'[ \t]+', ' ', text) # Normalize spaces/tabs.
+    text = re.sub(r'\n\s*\n', '\n\n', text) # Ensure max one blank line.
+    text = re.sub(r'^\s+|\s+$', '', text, flags=re.MULTILINE) # Trim leading/trailing whitespace from each line.
     
-    # Clean up excessive formatting
-    text = re.sub(r'---(\s*\|?\s*---)*', '---', text)
-    text = re.sub(r'(\n\s*[-]+\s*\n)+', '\n\n', text)
-    text = re.sub(r'\n\s*\|\s*\n', '\n\n', text)
-    text = re.sub(r'\n{3,}', '\n\n', text)
+    # Remove empty lines or lines with only residual non-alphanumeric characters.
+    lines = text.split('\n')
+    clean_lines = [line for line in lines if line.strip() and re.search(r'[a-zA-Z0-9]', line)]
+    text = '\n'.join(clean_lines)
     
-    return text
+    return text.strip()
 
 @exception_handler()
 def process_text(text):
-    """Combined function for text processing operations"""
-    if not text:
+    # Process text for cleaner output.
+    if not text: 
         return ""
     
-    # Remove URLs and references
-    url_patterns = [
-        r'https?://\S+', r'ftp://\S+', r'www\.\S+\.[a-zA-Z]{2,}(/\S*)?',
-        r'mailto:\S+', r'tel:[+\d\s\(\)-]+',
-        r'[a-zA-Z0-9_\-\.]+\.(com|org|net|io|ai|app|co|edu|gov|mil|biz|info|me|tv|xyz|eu|uk|es|de|fr)(/\S*)?'
+    url_pattern_list = [ # More comprehensive TLD list.
+        r'https?://[^\s\n<>()\[\]]+', r'ftp://[^\s\n<>()\[\]]+', r'www\.[^\s\n<>()\[\]]+',
+        r'mailto:[^\s\n<>()\[\]]+', r'tel:[+\d\s\(\)\-]+',
+        r'[a-zA-Z0-9_\-\.]+\.(?:com|org|net|io|ai|app|co|edu|gov|mil|biz|info|me|tv|xyz|eu|uk|es|de|fr|cat|gl|eus|online|site|website|tech|shop|store|agency|solutions|services|studio|media|press|news|blog|dev|design|digital|global|world|live|life|today|fun|game|click|link|support|help|contact|legal|privacy|terms|secure|login|signin|signup|register|account|dashboard|admin|api|cdn|static|img|images|assets|files|uploads|downloads|content|public|private|src|js|css|fonts|themes|plugins|modules|components|widgets|includes|partials|templates|layouts|views|pages|routes|controllers|models|utils|helpers|lib|vendor|node_modules|bower_components|jspm_packages|webjars)(?:/[^\s\n<>()\[\]]*)?'
     ]
-    for pattern in url_patterns:
-        text = re.sub(pattern, '[Link]', text)
-    
-    # Remove duplicate lines
+    for pattern in url_pattern_list: 
+        text = re.sub(pattern, '', text, flags=re.IGNORECASE) # Remove URLs and links.
+
+    text = re.sub(r'[•·▪▫◦‣⁃]', '-', text) # Normalize bullet points.
+    text = re.sub(r'[\"\'`‘’“”«»]', '"', text) # Normalize quotes.
+    text = re.sub(r'[–—―]', '-', text) # Normalize dashes.
+    text = re.sub(r'…', '...', text) # Normalize ellipsis.
+    text = re.sub(r'©|®|™', '', text) # Remove copyright/trademark symbols.
+
     lines = text.split('\n')
-    unique_lines = []
-    prev_line = None
-    for line in lines:
-        if not re.match(r'^\s*[\|\-]+\s*$', line) and line != prev_line:
-            unique_lines.append(line)
-        prev_line = line
-    
-    # Look for disclaimers and trim content
+    unique_lines, prev_line_hash = [], None
+    for line in lines: # Remove duplicate consecutive lines and very short/artifact lines.
+        stripped_line = line.strip()
+        current_hash = hash(stripped_line)
+        if stripped_line and re.search(r'[a-zA-Z0-9]', stripped_line) and current_hash != prev_line_hash and len(stripped_line) > 1:
+            unique_lines.append(stripped_line)
+            prev_line_hash = current_hash
     result = '\n'.join(unique_lines)
-    disclaimer_match = re.search(r'(?i)(confidential|disclaimer|privileged|legal notice|aviso legal|email\s+disclaimer|this email and any files|this message and any attachments)', result)
-    if disclaimer_match:
-        result = result[:disclaimer_match.start()].strip()
     
-    return result
+    disclaimer_patterns = [ # Patterns for removing common email footers/disclaimers.
+        r'(?i)\b(confidential|disclaimer|privileged|legal notice|aviso legal|important notice)\b.{0,500}',
+        r'(?i)\b(this email and any files|this message and any attachments|the information contained in this email)\b.{0,500}',
+        r'(?i)\b(unsubscribe|manage preferences|privacy policy|terms of service|view in browser|view as a web page)\b.{0,300}',
+        r'(?i)\b(copyright|all rights reserved|© \d{4})\b.{0,200}',
+        r'(?i)\b(sent from my |enviado desde mi |powered by |get the app)\b.{0,100}',
+        r'(?i)---------- Forwarded message ----------|From: .* Sent: .* To: .* Subject: .*'
+    ]
+    for pattern in disclaimer_patterns:
+        match = re.search(pattern, result)
+        if match and match.start() > len(result) * 0.6: # Truncate if disclaimer is in the latter part.
+            result = result[:match.start()].strip()
+            result = re.sub(r'\n{2,}$', '\n', result) 
+            break 
+        elif match: logger.debug(f"Potential early disclaimer pattern '{pattern}', not truncating: {match.group(0)[:100]}...")
+
+    result = re.sub(r'\n{3,}', '\n\n', result) # Limit consecutive line breaks.
+    result = re.sub(r'[ \t]{2,}', ' ', result).strip() # Limit consecutive spaces.
+    lines = result.split('\n') # Remove lines that became empty after disclaimer removal.
+    result = '\n'.join([line for line in lines if line.strip() and re.search(r'[a-zA-Z0-9]', line)])
+    return result.strip()
 
 def clean_email_content(html_content, aggressive=True):
-    """Main pipeline for cleaning email content"""
+    # Clean email content (HTML or plain).
     if not html_content: return ""
-    
     try:
-        # Apply processing pipeline
-        text = clean_text(html_content, aggressive)
-        text = html_to_text(text)
-        text = process_text(text)
-        return re.sub(r'\n{3,}', '\n\n', text)
+        text_from_html = html_to_text(html_content)
+        cleaned_text = clean_text(text_from_html, aggressive=aggressive)
+        processed_text = process_text(cleaned_text)
+        return re.sub(r'\n{3,}', '\n\n', processed_text).strip()
     except Exception as e:
-        logger.error(f"Error in email cleaning pipeline: {e}")
-        # Fallback cleanup
-        return re.sub(r'<[^>]+>', ' ', html_content).strip()
+        logger.error(f"Error in email cleaning pipeline: {e}. Falling back.")
+        try: # Fallback strategy.
+            fallback_text = html_to_text(html_content) 
+            if fallback_text: fallback_text = process_text(fallback_text)
+            text_content = fallback_text or html_content
+            text_content = re.sub(r'<[^>]+>', ' ', text_content)
+            return re.sub(r'\s+', ' ', text_content).strip()
+        except Exception as fallback_e: # Absolute last resort.
+            logger.error(f"Error in fallback email cleaning: {fallback_e}")
+            text = re.sub(r'<[^>]+>', ' ', html_content)
+            return re.sub(r'\s+', ' ', text).strip()
+
+def format_email_structured(message: Any) -> Dict[str, Any]:
+    # Format email into a structured dictionary.
+    if not message:
+        return {"remitente": "Desconocido", "fecha": "Desconocida", "copiados": [], "asunto": "Sin asunto", "resumen": "No disponible", "cuerpo": "Contenido no disponible", "id": "Desconocido"}
+    
+    sender_name, sender_email = get_sender_info(message)
+    fecha_raw = get_date(message)
+    fecha = "Desconocida" if fecha_raw == "Unknown" else fecha_raw
+    remitente = f"{sender_name} <{sender_email}>" if sender_name else (sender_email or "Desconocido")
+    
+    copiados = []
+    try:
+        for cc_type in ['ccRecipients', 'bccRecipients']:
+            recipients = get_message_attribute(message, [cc_type])
+            if recipients:
+                for recipient in recipients:
+                    if hasattr(recipient, 'emailAddress'):
+                        email_addr = recipient.emailAddress
+                        name = get_message_attribute(email_addr, ['name'], "")
+                        email = get_message_attribute(email_addr, ['address'], "")
+                        if email: copiados.append(f"{name} <{email}>" if name else email)
+    except Exception: pass
+    
+    asunto = get_message_attribute(message, ['subject'], "Sin asunto")
+    cuerpo_raw, content_type = "", "text"
+    try:
+        if hasattr(message, 'body') and message.body:
+            cuerpo_raw = get_message_attribute(message.body, ['content'], "")
+            content_type = get_message_attribute(message.body, ['content_type', 'contentType'], 'text').lower()
+    except Exception: pass
+    
+    cuerpo = clean_email_content(cuerpo_raw, aggressive=True) if content_type == 'html' else process_text(clean_text(cuerpo_raw or "", aggressive=True))
+    if not cuerpo.strip(): cuerpo = "Contenido no disponible"
+        
+    if cuerpo == "Contenido no disponible": resumen = "No disponible"
+    else:
+        resumen_text = re.sub(r'\s+', ' ', cuerpo.replace('\n', ' ')).strip()
+        resumen = (resumen_text[:150] + "..." if len(resumen_text) > 150 else resumen_text)
+        if not resumen.strip(): resumen = "Contenido procesado, resumen no extraíble."
+
+    message_id = get_message_attribute(message, ['id'], "Desconocido")
+    return {"remitente": remitente, "fecha": fecha, "copiados": copiados, "asunto": asunto, "resumen": resumen, "cuerpo": cuerpo, "id": message_id}
+
+def format_emails_list_structured(messages: List[Any]) -> List[Dict[str, Any]]:
+    # Format a list of emails into structured dictionaries.
+    return [format_email_structured(msg) for msg in messages] if messages else []
