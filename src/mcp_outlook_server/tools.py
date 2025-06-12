@@ -1,7 +1,9 @@
+import base64, mimetypes, os
 from functools import wraps
 from typing import Optional, List, Dict, Any
 from .common import mcp, graph_client, _fmt
 from . import resources
+import os  # Añadido para manejo de nombres de archivo
 
 def _handle_outlook_operation(func):
     @wraps(func)
@@ -17,32 +19,48 @@ def _handle_outlook_operation(func):
 def get_email_tool(message_id: str, user_email: str) -> Optional[Dict[str, Any]]:
     return resources.get_email_by_id(message_id, user_email, structured=True)
 
-@mcp.tool(name="Search_Outlook_Emails", description="Searches emails using OData filter syntax (e.g., \"subject eq 'Update'\", \"isRead eq false\").")
+@mcp.tool(name="Search_Outlook_Emails", description="Searches emails using OData filter syntax (e.g., 'subject eq \'Update\'', 'isRead eq false', date ranges, sender, etc.).")
 @_handle_outlook_operation
-def search_emails_tool(query: str, user_email: str, top: int = 10, folders: Optional[List[str]] = None) -> List[Dict[str, Any]]:
-    return resources.search_emails(query, user_email, top, folders or [], structured=True)
+def search_emails_tool(user_email: str, query_filter: Optional[str] = None, top: int = 10, folders: Optional[List[str]] = None) -> List[Dict[str, Any]]:
+    return resources.search_emails(user_email, query_filter, folders, top, structured=True)
 
-@mcp.tool(name="Download_Outlook_Emails_By_Date", description="Downloads emails received within a specific date range (ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ).")
+@mcp.tool(name="Create_Outlook_Draft_Email",description="Creates a new draft email with the specified subject, body, recipients, optional category y adjuntos.")
 @_handle_outlook_operation
-def download_emails_by_date_tool(start_date: str, end_date: str, user_email: str, top: int = 100, folders: Optional[List[str]] = None) -> List[Dict[str, Any]]:
-    return resources.download_emails_by_date(start_date, end_date, user_email, top, folders or [], structured=True)
-
-@mcp.tool(name="Create_Outlook_Draft_Email", description="Creates a new draft email with the specified subject, body, and recipients.")
-@_handle_outlook_operation
-def create_draft_email_tool(subject: str, body: str, to_recipients: List[str], user_email: str, cc_recipients: Optional[List[str]] = None, bcc_recipients: Optional[List[str]] = None, body_type: str = "HTML") -> Dict[str, Any]:
-    draft = graph_client.users[user_email].messages.add(subject=subject, body=body, to_recipients=to_recipients).execute_query()
-    for attr, value in [("ccRecipients", cc_recipients), ("bccRecipients", bcc_recipients)]:
-        if value: draft.set_property(attr, _fmt(value))
+def create_draft_email_tool(subject: str, body: str, to_recipients: List[str], user_email: str, cc_recipients: Optional[List[str]] = None, bcc_recipients: Optional[List[str]] = None, body_type: str = "HTML", category: Optional[str] = None, file_paths: Optional[List[str]] = None) -> Dict[str, Any]:
+    builder = graph_client.users[user_email].messages.add(subject=subject, body=body, to_recipients=to_recipients)
+    for attr, value in [("ccRecipients", cc_recipients), ("bccRecipients", bcc_recipients), ("categories", [category] if category else None)]:
+        if value: builder.set_property(attr, _fmt(value) if attr.endswith("Recipients") else value)
+    if file_paths:
+        for path in file_paths:
+            raw = open(path, "rb").read()
+            b64 = base64.b64encode(raw).decode()
+            ctype = mimetypes.guess_type(path)[0] or "application/octet-stream"
+            builder = builder.add_file_attachment(os.path.basename(path), content_type=ctype, base64_content=b64)
+    draft = builder.execute_query()
     return {"id": draft.id, "web_link": draft.web_link}
 
-@mcp.tool(name="Update_Outlook_Draft_Email", description="Updates an existing draft email specified by its ID.")
+@mcp.tool(name="Update_Outlook_Draft_Email",description="Updates an existing draft email specified by su ID, incluyendo adjuntos locales opcionales.")
 @_handle_outlook_operation
-def update_draft_email_tool(message_id: str, user_email: str, subject: Optional[str] = None, body: Optional[str] = None, to_recipients: Optional[List[str]] = None, cc_recipients: Optional[List[str]] = None, bcc_recipients: Optional[List[str]] = None, body_type: Optional[str] = None) -> Dict[str, Any]:
+def update_draft_email_tool(message_id: str, user_email: str, subject: Optional[str] = None, body: Optional[str] = None, to_recipients: Optional[List[str]] = None, cc_recipients: Optional[List[str]] = None, bcc_recipients: Optional[List[str]] = None, body_type: Optional[str] = None, category: Optional[str] = None, file_paths: Optional[List[str]] = None) -> Dict[str, Any]:
     msg = graph_client.users[user_email].messages[message_id].get().execute_query()
     if not getattr(msg, "is_draft", True): raise ValueError("Only draft messages can be updated.")
-    for attr, value, transform in [("subject", subject, None), ("body", body, lambda b: {"contentType": body_type or "Text", "content": b}), ("toRecipients", to_recipients, _fmt), ("ccRecipients", cc_recipients, _fmt), ("bccRecipients", bcc_recipients, _fmt)]:
+    for attr, value, transform in [
+        ("subject", subject, None),
+        ("body", body, lambda b: {"contentType": body_type or "Text", "content": b}),
+        ("toRecipients", to_recipients, _fmt),
+        ("ccRecipients", cc_recipients, _fmt),
+        ("bccRecipients", bcc_recipients, _fmt),
+        ("categories", [category] if category else None, None)
+    ]:
         if value is not None: msg.set_property(attr, transform(value) if transform else value)
-    updated = msg.update().execute_query()
+    builder = msg.update()
+    if file_paths:
+        for path in file_paths:
+            raw = open(path, "rb").read()
+            b64 = base64.b64encode(raw).decode()
+            ctype = mimetypes.guess_type(path)[0] or "application/octet-stream"
+            builder = builder.add_file_attachment(os.path.basename(path), content_type=ctype, base64_content=b64)
+    updated = builder.execute_query()
     return {"id": updated.id, "web_link": updated.web_link}
 
 @mcp.tool(name="Delete_Outlook_Email", description="Deletes an email by its ID.")

@@ -1,196 +1,268 @@
-# Outlook MCP Server
+# MCP Outlook Server
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+An MCP (Model Context Protocol) server for interacting with Microsoft Outlook through Microsoft Graph API. This server provides advanced tools for searching, managing, and cleaning emails with HTML and text content processing capabilities.
 
-A lightweight MCP Server for seamless integration with Microsoft Outlook, enabling MCP clients to interact with emails for specific users. Developed by [sofias tech](https://github.com/sofias/).
+## Key Features
 
-## Features
+### 🔍 Advanced Email Search
+- Unified search across multiple folders (Inbox, SentItems, Drafts)
+- Full support for OData filters
+- Automatic pagination for extensive results
+- Structured result formatting
 
-This server provides a clean interface to Outlook email resources through the Model Context Protocol (MCP), with operations for reading, searching, creating, updating, and deleting emails.
+### 📧 Email Management
+- Draft creation with local attachments
+- Updating existing drafts
+- Email deletion
+- Support for categories and multiple recipients (TO, CC, BCC)
 
-### Tools
+### 🧹 Advanced Content Cleaning
+- Intelligent HTML to plain text conversion
+- Automatic noise and disclaimer removal
+- Character and format normalization
+- Boilerplate detection and truncation
 
-The server implements the following tools:
+### 📊 Structured Formatting
+- Consistent dictionary format output
+- Automatic metadata extraction (sender, date, subject, etc.)
+- Automatic content summaries
+- Robust error handling
 
-- `Get_Outlook_Email`: Retrieves a specific email by its unique ID.
-- `Search_Outlook_Emails`: Searches emails using OData filter syntax (e.g., "subject eq 'Update'", "isRead eq false") across multiple folders.
-- `Download_Outlook_Emails_By_Date`: Downloads emails within a specific date range using ISO 8601 format (YYYY-MM-DDTHH:MM:SSZ).
-- `Create_Outlook_Draft_Email`: Creates a new draft email with the specified subject, body, and recipients.
-- `Update_Outlook_Draft_Email`: Updates an existing draft email specified by its ID.
-- `Delete_Outlook_Email`: Deletes an email by its ID (moves it to the Deleted Items folder).
+## Installation
 
-All tools require a `user_email` parameter to specify which mailbox to access.
+### Prerequisites
+- Python 3.8+
+- Azure AD application registration with Microsoft Graph permissions
+- Configured environment variables
 
-## Architecture
-
-The server is built with efficiency and clarity in mind:
-
-- Utilizes the Microsoft Graph API via the `office365-rest-python-client` library
-- Modular design with clear separation between:
-  - `resources.py`: Core API functionality for interacting with Outlook
-  - `tools.py`: MCP tool definitions that wrap resource functions
-  - `common.py`: Shared components and configuration
-  - `server.py`: Main entry point that initializes and runs the MCP server
-- Uses environment variables for secure configuration
-- Supports accessing multiple user mailboxes through application permissions
-
-### Recent Optimizations
-
-The codebase has been recently optimized with the following improvements:
-
-1. **Enhanced Exception Handling**
-   - Implementation of decorators (`exception_handler` and `safe_operation`) for consistent error handling
-   - More robust error recovery, ensuring the service remains functional even when processing problematic emails
-
-2. **Performance Improvements**
-   - Consolidated text processing pipeline in `clean_utils.py` reducing processing overhead
-   - Optimized attribute access patterns in `format_utils.py` for faster message parsing
-   - Streamlined regular expressions for better text processing efficiency
-
-3. **Code Maintainability**
-   - Reduced codebase size by approximately 50% while maintaining full functionality
-   - Improved function organization with better separation of concerns
-   - Enhanced code readability with clearer structure and purpose
-
-These optimizations improve the reliability and performance of the service without changing its core functionality or external interfaces. All tools continue to operate with the same parameters and return values, but with better internal processing.
-
-## Setup
-
-1. Register an app in Azure AD
-2. Grant the necessary Microsoft Graph API permissions at the application level (not delegated):
-   - `Mail.ReadWrite`
-   - `Mail.Send`
-   - `User.Read`
-3. Obtain the client ID, tenant ID, and create a client secret
-4. Have an admin grant consent for these permissions at the organization level
-
-## Environment Variables
-
-Create a `.env` file with the following variables:
-
-- `ID_CLIENT`: Your Azure AD application client ID.
-- `APP_SECRET`: Your Azure AD application client secret.
-- `TENANT_ID`: Your Microsoft Directory (tenant) ID.
-
-Note: The user email is now passed as a parameter to each tool rather than being defined as an environment variable.
-
-## Quickstart
-
-### Installation
-
-Install the package in editable mode for development:
-
+### Dependencies
 ```bash
-pip install -e .
+pip install mcp fastmcp office365-rest-python-client python-dotenv beautifulsoup4 html2text
 ```
 
-Or install from PyPI once published:
+### Azure AD Configuration
 
-```bash
-pip install mcp-outlook
+1. Register a new application in Azure AD
+2. Configure the following Microsoft Graph permissions:
+   - `Mail.Read` - Read user emails
+   - `Mail.ReadWrite` - Create, update and delete emails
+   - `Mail.Send` - Send emails (if needed)
+   - `User.Read` - Read basic user profile
+
+3. Generate a client secret
+
+### Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+ID_CLIENT=your_azure_client_id
+APP_SECRET=your_azure_client_secret
+TENANT_ID=your_azure_tenant_id
 ```
 
-Using uv:
+## Usage
 
+### Starting the Server
 ```bash
-uv pip install mcp-outlook
+python -m mcp_outlook_server.server
 ```
 
-### Claude Desktop Integration
+### Available Tools
 
-To integrate with Claude Desktop, update the configuration file:
+#### 1. Get_Outlook_Email
+Retrieves a specific email by its unique ID.
 
-On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
-On macOS: `~/Library/Application\ Support/Claude/claude_desktop_config.json`
+**Parameters:**
+- `message_id` (str): Unique message ID
+- `user_email` (str): Email of the mailbox owner
 
-#### Standard Integration
-
+**Example response:**
 ```json
-"mcpServers": {
-  "outlook": {
-    "command": "mcp-outlook",
-    "env": {
-      "ID_CLIENT": "your-app-id",
-      "APP_SECRET": "your-app-secret",
-      "TENANT_ID": "your-tenant-id"
-    }
+{
+  "success": true,
+  "data": {
+    "sender": "John Doe <john@example.com>",
+    "date": "2024-01-15 10:30:00",
+    "cc": ["maria@example.com"],
+    "subject": "Project meeting",
+    "summary": "Meeting confirmation to discuss project progress...",
+    "body": "Complete email content clean and formatted",
+    "id": "AAMkAGE1M2IyNGNmLWI4MjktNDUyZi1iMzA4LTViNDI3NzhlOGM2NgBGAAAAAADUuTiuQqVlSKDGAz"
   }
 }
 ```
 
-#### Using uvx
+#### 2. Search_Outlook_Emails
+Advanced email search with OData filter support.
 
-```json
-"mcpServers": {
-  "outlook": {
-    "command": "uvx",
-    "args": [
-      "mcp-outlook"
-    ],
-    "env": {
-      "ID_CLIENT": "your-app-id",
-      "APP_SECRET": "your-app-secret",
-      "TENANT_ID": "your-tenant-id"
-    }
-  }
-}
+**Parameters:**
+- `user_email` (str): User email
+- `query_filter` (str, optional): OData filter
+- `top` (int, optional): Maximum number of results (default: 10)
+- `folders` (List[str], optional): Folders to search (default: ["Inbox", "SentItems", "Drafts"])
+
+**OData filter examples:**
+```javascript
+// Unread emails
+"isRead eq false"
+
+// Emails from specific sender
+"from/emailAddress/address eq 'user@example.com'"
+
+// Emails with specific subject
+"subject eq 'Monthly report'"
+
+// Emails received in last 7 days
+"receivedDateTime ge 2024-01-01T00:00:00Z"
+
+// Combined filters
+"isRead eq false and importance eq 'high'"
 ```
 
-## Development
+#### 3. Create_Outlook_Draft_Email
+Creates a new draft email with support for attachments and categories.
 
-### Requirements
+**Parameters:**
+- `subject` (str): Email subject
+- `body` (str): Message body
+- `to_recipients` (List[str]): List of primary recipients
+- `user_email` (str): User email
+- `cc_recipients` (List[str], optional): CC recipients
+- `bcc_recipients` (List[str], optional): BCC recipients
+- `body_type` (str, optional): Body type ("HTML" or "Text")
+- `category` (str, optional): Email category
+- `file_paths` (List[str], optional): File paths to attach
 
-- Python 3.10+
-- Dependencies listed in `pyproject.toml`
-
-### Local Development
-
-1. Clone the repository.
-2. Create a virtual environment:
-
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   ```
-3. Install development dependencies:
-
-   ```bash
-   pip install -e .
-   ```
-4. Create a `.env` file in the project root with your Azure AD app credentials:
-
-   ```dotenv
-   ID_CLIENT=your-app-id
-   APP_SECRET=your-app-secret
-   TENANT_ID=your-tenant-id
-   ```
-5. Run the server:
-
-   ```bash
-   python -m mcp_outlook_server
-   ```
-
-   *Note: Ensure the module name matches your main execution script if different.*
-
-### Debugging
-
-For debugging the MCP server, you can use the [MCP Inspector](https://github.com/modelcontextprotocol/inspector):
-
-```bash
-npx @modelcontextprotocol/inspector -- python -m mcp_outlook_server
+**Example:**
+```python
+create_draft_email_tool(
+    subject="Project report",
+    body="<p>Please find the requested report attached.</p>",
+    to_recipients=["client@example.com"],
+    cc_recipients=["supervisor@company.com"],
+    user_email="my.email@company.com",
+    category="Work",
+    file_paths=["C:/documents/report.pdf", "C:/documents/data.xlsx"]
+)
 ```
 
-## Example Usage
+#### 4. Update_Outlook_Draft_Email
+Updates an existing draft, including adding new attachments.
 
-When using the tools through Claude or another MCP client, you'll need to specify the user email for each operation:
+**Parameters:**
+- `message_id` (str): ID of the draft to update
+- `user_email` (str): User email
+- All optional parameters from `Create_Outlook_Draft_Email`
 
-- "Get emails from last week for user@example.com"
-- "Search for emails with 'Project Update' in the subject for john.doe@company.com"
-- "Create a draft email for sarah@example.com to send to the team"
-- "Delete the email with ID ABC123 from user@example.com's inbox"
+#### 5. Delete_Outlook_Email
+Deletes an email by its ID.
+
+**Parameters:**
+- `message_id` (str): ID of the message to delete
+- `user_email` (str): User email
+
+## Technical Features
+
+### Content Cleaning System
+
+The server includes an advanced cleaning system that:
+
+1. **Converts HTML to plain text** using html2text with optimized configuration
+2. **Removes unwanted elements**: scripts, styles, metadata, etc.
+3. **Normalizes text**: special characters, spaces, line breaks
+4. **Detects and truncates disclaimers**: identifies legal/boilerplate text patterns
+5. **Generates automatic summaries**: extracts first 150 relevant characters
+
+### Robust Error Handling
+
+- Exception handling decorators on all critical operations
+- Fallback strategies for content processing
+- Detailed logging for debugging
+- Input parameter validation
+
+### Performance Optimizations
+
+- Automatic pagination for extensive searches
+- Page limits to avoid timeouts
+- Result caching when appropriate
+- Parallel content processing when possible
+
+## Project Structure
+
+```
+mcp-outlook/
+├── src/
+│   └── mcp_outlook_server/
+│       ├── __init__.py
+│       ├── server.py          # Server entry point
+│       ├── common.py          # Configuration and common utilities
+│       ├── tools.py           # MCP tool definitions
+│       ├── resources.py       # Resource access logic
+│       ├── format_utils.py    # Format and extraction utilities
+│       └── clean_utils.py     # Content cleaning system
+├── .env                       # Environment variables (don't include in git)
+├── requirements.txt
+└── README.md
+```
+
+## Logging
+
+The server generates detailed logs in:
+- File: `mcp_outlook.log`
+- Console: Standard output
+
+Logging configuration in `common.py` with INFO level by default.
+
+## Troubleshooting
+
+### Authentication Error
+- Verify environment variables are correctly configured
+- Confirm Azure AD application has necessary permissions
+- Check that tenant ID is correct
+
+### Search Errors
+- Validate OData filter syntax
+- Verify user has access to specified folders
+- Check logs for specific Graph API errors
+
+### Attachment Issues
+- Confirm file paths exist and are accessible
+- Verify files don't exceed Outlook size limits
+- Check file read permissions
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/new-functionality`)
+3. Commit changes (`git commit -am 'Add new functionality'`)
+4. Push to branch (`git push origin feature/new-functionality`)
+5. Create a Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+MIT License
 
-Copyright (c) 2024 sofias tech
+Copyright (c) 2024
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+## Support
+
+To report bugs or request new features, please open an issue in the repository.

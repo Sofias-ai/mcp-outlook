@@ -114,7 +114,18 @@ def process_text(text):
             prev_line_hash = current_hash
     result = '\n'.join(unique_lines)
     
-    disclaimer_patterns = [ # Patterns for removing common email footers/disclaimers.
+    # Eliminar saltos de línea y espacios excesivos
+    result = re.sub(r'\n{3,}', '\n\n', result)
+    result = re.sub(r'[ \t]{2,}', ' ', result).strip()
+    lines = result.split('\n')
+    result = '\n'.join([line for line in lines if line.strip() and re.search(r'[a-zA-Z0-9]', line)])
+    # Corte agresivo de boilerplate/disclaimers
+    result = remove_email_noise(result)
+    return result.strip()
+
+def remove_email_noise(text: str) -> str:
+    # Trunca el texto en el primer patrón típico de ruido/boilerplate/disclaimer.
+    noise_patterns = [
         r'(?i)\b(confidential|disclaimer|privileged|legal notice|aviso legal|important notice)\b.{0,500}',
         r'(?i)\b(this email and any files|this message and any attachments|the information contained in this email)\b.{0,500}',
         r'(?i)\b(unsubscribe|manage preferences|privacy policy|terms of service|view in browser|view as a web page)\b.{0,300}',
@@ -122,19 +133,11 @@ def process_text(text):
         r'(?i)\b(sent from my |enviado desde mi |powered by |get the app)\b.{0,100}',
         r'(?i)---------- Forwarded message ----------|From: .* Sent: .* To: .* Subject: .*'
     ]
-    for pattern in disclaimer_patterns:
-        match = re.search(pattern, result)
-        if match and match.start() > len(result) * 0.6: # Truncate if disclaimer is in the latter part.
-            result = result[:match.start()].strip()
-            result = re.sub(r'\n{2,}$', '\n', result) 
-            break 
-        elif match: logger.debug(f"Potential early disclaimer pattern '{pattern}', not truncating: {match.group(0)[:100]}...")
-
-    result = re.sub(r'\n{3,}', '\n\n', result) # Limit consecutive line breaks.
-    result = re.sub(r'[ \t]{2,}', ' ', result).strip() # Limit consecutive spaces.
-    lines = result.split('\n') # Remove lines that became empty after disclaimer removal.
-    result = '\n'.join([line for line in lines if line.strip() and re.search(r'[a-zA-Z0-9]', line)])
-    return result.strip()
+    for pattern in noise_patterns:
+        match = re.search(pattern, text)
+        if match and match.start() > len(text) * 0.6: # Truncate if disclaimer is in the latter part.
+            return text[:match.start()].strip()
+    return text
 
 def clean_email_content(html_content, aggressive=True):
     # Clean email content (HTML or plain).
