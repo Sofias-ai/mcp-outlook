@@ -37,3 +37,13 @@ def get_email_by_id(message_id: str, user_email: str, as_text: bool = True, stru
         return format_email_structured(message) if structured else format_email_output(message, as_text=as_text)
     except Exception:
         return None
+
+def search_emails_no_body(user_email: str, query_filter: Optional[str] = None, folders: Optional[List[str]] = None, top: int = 10, as_text: bool = True, structured: bool = True) -> List[Any]:
+    """Same as search_emails but removes the 'body' and 'cuerpo' fields from each email in the result."""
+    emails = search_emails(user_email, query_filter, folders, top, as_text, structured)
+    if isinstance(emails, list):
+        for email in emails:
+            if isinstance(email, dict):
+                email.pop('body', None)
+                email.pop('cuerpo', None)
+    return emails

@@ -68,3 +68,8 @@ def update_draft_email_tool(message_id: str, user_email: str, subject: Optional[
 def delete_email_tool(message_id: str, user_email: str) -> Dict[str, Any]:
     graph_client.users[user_email].messages[message_id].delete_object().execute_query()
     return {"message": f"Email {message_id} deleted successfully."}
+
+@mcp.tool(name="Search_Outlook_Emails_No_Body", description="Busca correos usando filtros OData y devuelve todo menos el cuerpo del correo.")
+@_handle_outlook_operation
+def search_emails_no_body_tool(user_email: str, query_filter: Optional[str] = None, top: int = 10, folders: Optional[List[str]] = None) -> List[Dict[str, Any]]:
+    return resources.search_emails_no_body(user_email, query_filter, folders, top, structured=True)

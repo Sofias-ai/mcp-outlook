@@ -9,6 +9,7 @@ An MCP (Model Context Protocol) server for interacting with Microsoft Outlook th
 - Full support for OData filters
 - Automatic pagination for extensive results
 - Structured result formatting
+- **NEW**: Performance-optimized search without email body content
 
 ### 📧 Email Management
 - Draft creation with local attachments
@@ -118,6 +119,45 @@ Advanced email search with OData filter support.
 
 // Combined filters
 "isRead eq false and importance eq 'high'"
+```
+
+#### 2b. Search_Outlook_Emails_No_Body *(New)*
+Performance-optimized email search that excludes email body content for faster processing and reduced data transfer.
+
+**Parameters:**
+- `user_email` (str): User email
+- `query_filter` (str, optional): OData filter (same syntax as Search_Outlook_Emails)
+- `top` (int, optional): Maximum number of results (default: 10)
+- `folders` (List[str], optional): Folders to search (default: ["Inbox", "SentItems", "Drafts"])
+
+**Key Benefits:**
+- **Faster performance**: Excludes body content processing
+- **Reduced bandwidth**: Smaller response payload
+- **Ideal for listings**: Perfect for email previews and list views
+- **Same filtering**: Full OData filter support maintained
+
+**Use Cases:**
+- Quick email listing and previews
+- Performance-critical searches when body content is not needed
+- Bandwidth-constrained environments
+- Building email selection interfaces
+
+**Example response:**
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "sender": "John Doe <john@example.com>",
+      "date": "2024-01-15 10:30:00",
+      "cc": ["maria@example.com"],
+      "subject": "Project meeting",
+      "summary": "Meeting confirmation to discuss project progress...",
+      "id": "AAMkAGE1M2IyNGNmLWI4MjktNDUyZi1iMzA4LTViNDI3NzhlOGM2NgBGAAAAAADUuTiuQqVlSKDGAz"
+      // Note: 'body' and 'cuerpo' fields are excluded
+    }
+  ]
+}
 ```
 
 #### 3. Create_Outlook_Draft_Email
