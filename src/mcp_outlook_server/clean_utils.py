@@ -184,21 +184,23 @@ def format_email_structured(message: Any) -> Dict[str, Any]:
     except Exception: pass
     
     asunto = get_message_attribute(message, ['subject'], "Sin asunto")
-    cuerpo_raw, content_type = "", "text"
-    try:
-        if hasattr(message, 'body') and message.body:
-            cuerpo_raw = get_message_attribute(message.body, ['content'], "")
-            content_type = get_message_attribute(message.body, ['content_type', 'contentType'], 'text').lower()
-    except Exception: pass
-    
-    cuerpo = clean_email_content(cuerpo_raw, aggressive=True) if content_type == 'html' else process_text(clean_text(cuerpo_raw or "", aggressive=True))
-    if not cuerpo.strip(): cuerpo = "Contenido no disponible"
-        
-    if cuerpo == "Contenido no disponible": resumen = "No disponible"
+    resumen = get_message_attribute(message, ['bodyPreview'])
+    if resumen is not None:
+        cuerpo = "Contenido no disponible"
     else:
-        resumen_text = re.sub(r'\s+', ' ', cuerpo.replace('\n', ' ')).strip()
-        resumen = (resumen_text[:150] + "..." if len(resumen_text) > 150 else resumen_text)
-        if not resumen.strip(): resumen = "Contenido procesado, resumen no extraíble."
+        cuerpo_raw, content_type = "", "text"
+        try:
+            if hasattr(message, 'body') and message.body:
+                cuerpo_raw = get_message_attribute(message.body, ['content'], "")
+                content_type = get_message_attribute(message.body, ['content_type', 'contentType'], 'text').lower()
+        except Exception: pass
+        cuerpo = clean_email_content(cuerpo_raw, aggressive=True) if content_type == 'html' else process_text(clean_text(cuerpo_raw or "", aggressive=True))
+        if not cuerpo.strip(): cuerpo = "Contenido no disponible"
+        if cuerpo == "Contenido no disponible": resumen = "No disponible"
+        else:
+            resumen_text = re.sub(r'\s+', ' ', cuerpo.replace('\n', ' ')).strip()
+            resumen = (resumen_text[:150] + "..." if len(resumen_text) > 150 else resumen_text)
+            if not resumen.strip(): resumen = "Contenido procesado, resumen no extraíble."
 
     message_id = get_message_attribute(message, ['id'], "Desconocido")
     return {"remitente": remitente, "fecha": fecha, "copiados": copiados, "asunto": asunto, "resumen": resumen, "cuerpo": cuerpo, "id": message_id}

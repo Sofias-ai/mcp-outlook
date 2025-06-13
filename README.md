@@ -133,6 +133,7 @@ Performance-optimized email search that excludes email body content for faster p
 **Key Benefits:**
 - **Faster performance**: Excludes body content processing
 - **Reduced bandwidth**: Smaller response payload
+- **Uses native Microsoft Graph `bodyPreview` field** for the summary, which is more efficient and consistent than manual summary generation
 - **Ideal for listings**: Perfect for email previews and list views
 - **Same filtering**: Full OData filter support maintained
 
@@ -152,9 +153,9 @@ Performance-optimized email search that excludes email body content for faster p
       "date": "2024-01-15 10:30:00",
       "cc": ["maria@example.com"],
       "subject": "Project meeting",
-      "summary": "Meeting confirmation to discuss project progress...",
+      "summary": "Hi team, I wanted to schedule our weekly project review for Thursday at 2pm. Please confirm your availability and we'll send out the meeting invite. The agenda will cover...",
       "id": "AAMkAGE1M2IyNGNmLWI4MjktNDUyZi1iMzA4LTViNDI3NzhlOGM2NgBGAAAAAADUuTiuQqVlSKDGAz"
-      // Note: 'body' and 'cuerpo' fields are excluded
+      // Note: 'body' and 'cuerpo' fields are excluded, and 'summary' uses Microsoft Graph's bodyPreview
     }
   ]
 }
