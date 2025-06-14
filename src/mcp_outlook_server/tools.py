@@ -27,7 +27,9 @@ def search_emails_tool(user_email: str, query_filter: Optional[str] = None, top:
 @mcp.tool(name="Create_Outlook_Draft_Email",description="Creates a new draft email with the specified subject, body, recipients, optional category y adjuntos.")
 @_handle_outlook_operation
 def create_draft_email_tool(subject: str, body: str, to_recipients: List[str], user_email: str, cc_recipients: Optional[List[str]] = None, bcc_recipients: Optional[List[str]] = None, body_type: str = "HTML", category: Optional[str] = None, file_paths: Optional[List[str]] = None) -> Dict[str, Any]:
+    body_content = {"content": body, "contentType": body_type}
     builder = graph_client.users[user_email].messages.add(subject=subject, body=body, to_recipients=to_recipients)
+    builder.set_property("body", body_content)
     for attr, value in [("ccRecipients", cc_recipients), ("bccRecipients", bcc_recipients), ("categories", [category] if category else None)]:
         if value: builder.set_property(attr, _fmt(value) if attr.endswith("Recipients") else value)
     if file_paths:
