@@ -164,12 +164,10 @@ def format_email_structured(message: Any) -> Dict[str, Any]:
     # Format email into a structured dictionary.
     if not message:
         return {"remitente": "Desconocido", "fecha": "Desconocida", "copiados": [], "asunto": "Sin asunto", "resumen": "No disponible", "cuerpo": "Contenido no disponible", "id": "Desconocido"}
-    
     sender_name, sender_email = get_sender_info(message)
     fecha_raw = get_date(message)
     fecha = "Desconocida" if fecha_raw == "Unknown" else fecha_raw
     remitente = f"{sender_name} <{sender_email}>" if sender_name else (sender_email or "Desconocido")
-    
     copiados = []
     try:
         for cc_type in ['ccRecipients', 'bccRecipients']:
@@ -182,29 +180,58 @@ def format_email_structured(message: Any) -> Dict[str, Any]:
                         email = get_message_attribute(email_addr, ['address'], "")
                         if email: copiados.append(f"{name} <{email}>" if name else email)
     except Exception: pass
-    
     asunto = get_message_attribute(message, ['subject'], "Sin asunto")
-    resumen = get_message_attribute(message, ['bodyPreview'])
-    if resumen is not None:
-        cuerpo = "Contenido no disponible"
+    cuerpo_raw, content_type = "", "text"
+    try:
+        if hasattr(message, 'body') and message.body:
+            body = message.body
+            # Compatibilidad: puede ser dict o tener atributos
+            if isinstance(body, dict):
+                cuerpo_raw = body.get('content', "")
+                content_type = body.get('contentType', body.get('content_type', 'text')).lower()
+            else:
+                cuerpo_raw = getattr(body, 'content', "")
+                content_type = getattr(body, 'contentType', getattr(body, 'content_type', 'text')).lower()
+    except Exception: pass
+    cuerpo = clean_email_content(cuerpo_raw, aggressive=True) if content_type == 'html' else process_text(clean_text(cuerpo_raw or "", aggressive=True))
+    if not cuerpo.strip(): cuerpo = "Contenido no disponible"
+    if cuerpo == "Contenido no disponible": resumen = "No disponible"
     else:
-        cuerpo_raw, content_type = "", "text"
-        try:
-            if hasattr(message, 'body') and message.body:
-                cuerpo_raw = get_message_attribute(message.body, ['content'], "")
-                content_type = get_message_attribute(message.body, ['content_type', 'contentType'], 'text').lower()
-        except Exception: pass
-        cuerpo = clean_email_content(cuerpo_raw, aggressive=True) if content_type == 'html' else process_text(clean_text(cuerpo_raw or "", aggressive=True))
-        if not cuerpo.strip(): cuerpo = "Contenido no disponible"
-        if cuerpo == "Contenido no disponible": resumen = "No disponible"
-        else:
-            resumen_text = re.sub(r'\s+', ' ', cuerpo.replace('\n', ' ')).strip()
-            resumen = (resumen_text[:150] + "..." if len(resumen_text) > 150 else resumen_text)
-            if not resumen.strip(): resumen = "Contenido procesado, resumen no extraíble."
-
+        resumen_text = re.sub(r'\s+', ' ', cuerpo.replace('\n', ' ')).strip()
+        resumen = (resumen_text[:150] + "..." if len(resumen_text) > 150 else resumen_text)
+        if not resumen.strip(): resumen = "Contenido procesado, resumen no extraíble."
     message_id = get_message_attribute(message, ['id'], "Desconocido")
     return {"remitente": remitente, "fecha": fecha, "copiados": copiados, "asunto": asunto, "resumen": resumen, "cuerpo": cuerpo, "id": message_id}
 
 def format_emails_list_structured(messages: List[Any]) -> List[Dict[str, Any]]:
     # Format a list of emails into structured dictionaries.
     return [format_email_structured(msg) for msg in messages] if messages else []
+
+def format_email_structured_no_body(message: Any) -> Dict[str, Any]:
+    # Fromat email into a structured dictionary without body content.
+    if not message:
+        return {"remitente": "Desconocido", "fecha": "Desconocida", "copiados": [], "asunto": "Sin asunto", "resumen": "No disponible", "cuerpo": "Contenido no disponible", "id": "Desconocido"}
+    sender_name, sender_email = get_sender_info(message)
+    fecha_raw = get_date(message)
+    fecha = "Desconocida" if fecha_raw == "Unknown" else fecha_raw
+    remitente = f"{sender_name} <{sender_email}>" if sender_name else (sender_email or "Desconocido")
+    copiados = []
+    try:
+        for cc_type in ['ccRecipients', 'bccRecipients']:
+            recipients = get_message_attribute(message, [cc_type])
+            if recipients:
+                for recipient in recipients:
+                    if hasattr(recipient, 'emailAddress'):
+                        email_addr = recipient.emailAddress
+                        name = get_message_attribute(email_addr, ['name'], "")
+                        email = get_message_attribute(email_addr, ['address'], "")
+                        if email: copiados.append(f"{name} <{email}>" if name else email)
+    except Exception: pass
+    asunto = get_message_attribute(message, ['subject'], "Sin asunto")
+    resumen = get_message_attribute(message, ['bodyPreview'], "No disponible")
+    cuerpo = "Contenido no disponible"
+    message_id = get_message_attribute(message, ['id'], "Desconocido")
+    return {"remitente": remitente, "fecha": fecha, "copiados": copiados, "asunto": asunto, "resumen": resumen, "cuerpo": cuerpo, "id": message_id}
+
+def format_emails_list_structured_no_body(messages: List[Any]) -> List[Dict[str, Any]]:
+    return [format_email_structured_no_body(msg) for msg in messages] if messages else []

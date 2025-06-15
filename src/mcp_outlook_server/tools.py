@@ -3,7 +3,6 @@ from functools import wraps
 from typing import Optional, List, Dict, Any
 from .common import mcp, graph_client, _fmt
 from . import resources
-import os  # Añadido para manejo de nombres de archivo
 
 def _handle_outlook_operation(func):
     @wraps(func)
@@ -23,6 +22,21 @@ def get_email_tool(message_id: str, user_email: str) -> Optional[Dict[str, Any]]
 @_handle_outlook_operation
 def search_emails_tool(user_email: str, query_filter: Optional[str] = None, top: int = 10, folders: Optional[List[str]] = None) -> List[Dict[str, Any]]:
     return resources.search_emails(user_email, query_filter, folders, top, structured=True)
+
+@mcp.tool(name="Search_Outlook_Emails_No_Body", description="Busca correos usando filtros OData y devuelve todo menos el cuerpo del correo.")
+@_handle_outlook_operation
+def search_emails_no_body_tool(user_email: str, query_filter: Optional[str] = None, top: int = 10, folders: Optional[List[str]] = None) -> List[Dict[str, Any]]:
+    return resources.search_emails_no_body(user_email, query_filter, folders, top, structured=True)
+
+@mcp.tool(name="Search_Outlook_Emails_By_Search_Query", description="Busca correos usando el parámetro $search (KQL), permite búsquedas por destinatario, asunto, etc. Devuelve todos los campos.")
+@_handle_outlook_operation
+def search_emails_by_search_query_tool(user_email: str, search_query: str, top: int = 10, folders: Optional[List[str]] = None) -> List[Dict[str, Any]]:
+    return resources.search_emails_by_search_query(user_email, search_query, folders, top, structured=True)
+
+@mcp.tool(name="Search_Outlook_Emails_No_Body_By_Search_Query", description="Busca correos usando el parámetro $search (KQL), permite búsquedas por destinatario, asunto, etc. Devuelve todo menos el cuerpo.")
+@_handle_outlook_operation
+def search_emails_no_body_by_search_query_tool(user_email: str, search_query: str, top: int = 10, folders: Optional[List[str]] = None) -> List[Dict[str, Any]]:
+    return resources.search_emails_no_body_by_search_query(user_email, search_query, folders, top, structured=True)
 
 @mcp.tool(name="Create_Outlook_Draft_Email",description="Creates a new draft email with the specified subject, body, recipients, optional category y adjuntos.")
 @_handle_outlook_operation
@@ -70,8 +84,3 @@ def update_draft_email_tool(message_id: str, user_email: str, subject: Optional[
 def delete_email_tool(message_id: str, user_email: str) -> Dict[str, Any]:
     graph_client.users[user_email].messages[message_id].delete_object().execute_query()
     return {"message": f"Email {message_id} deleted successfully."}
-
-@mcp.tool(name="Search_Outlook_Emails_No_Body", description="Busca correos usando filtros OData y devuelve todo menos el cuerpo del correo.")
-@_handle_outlook_operation
-def search_emails_no_body_tool(user_email: str, query_filter: Optional[str] = None, top: int = 10, folders: Optional[List[str]] = None) -> List[Dict[str, Any]]:
-    return resources.search_emails_no_body(user_email, query_filter, folders, top, structured=True)

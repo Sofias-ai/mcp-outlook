@@ -5,11 +5,13 @@ An MCP (Model Context Protocol) server for interacting with Microsoft Outlook th
 ## Key Features
 
 ### 🔍 Advanced Email Search
-- Unified search across multiple folders (Inbox, SentItems, Drafts)
-- Full support for OData filters
-- Automatic pagination for extensive results
-- Structured result formatting
-- **NEW**: Performance-optimized search without email body content
+- **Dual search methods**: OData filters + KQL (Keyword Query Language)
+- **Performance optimization**: Body/No-Body variants for all search functions
+- **Unified search** across multiple folders (Inbox, SentItems, Drafts)
+- **Natural language searches** with KQL support ("from:john meeting today")
+- **Precise filtering** with OData ("isRead eq false and importance eq 'high'")
+- **Automatic pagination** for extensive results
+- **Structured result formatting**
 
 ### 📧 Email Management
 - Draft creation with local attachments
@@ -69,6 +71,20 @@ TENANT_ID=your_azure_tenant_id
 python -m mcp_outlook_server.server
 ```
 
+### 🎯 Function Selection Guide
+
+**Choose the right function for your use case:**
+
+| **Use Case** | **Recommended Function** | **Reason** |
+|--------------|-------------------------|------------|
+| **Email listing/previews** | `Search_Outlook_Emails_No_Body` or `Search_Outlook_Emails_No_Body_By_Search_Query` | Faster, reduced bandwidth |
+| **Reading full email content** | `Get_Outlook_Email` | Complete email with formatted body |
+| **Natural language search** | `Search_Outlook_Emails_By_Search_Query` | KQL supports content-based searches |
+| **Precise filtering** | `Search_Outlook_Emails` | OData filters for exact criteria |
+| **Performance-critical apps** | Functions ending with `_No_Body` | Optimized for speed |
+| **Content analysis** | `Search_Outlook_Emails` or `Search_Outlook_Emails_By_Search_Query` | Full body content included |
+| **Building email clients** | `Search_Outlook_Emails_No_Body` + `Get_Outlook_Email` | List view + detail view pattern |
+
 ### Available Tools
 
 #### 1. Get_Outlook_Email
@@ -121,7 +137,7 @@ Advanced email search with OData filter support.
 "isRead eq false and importance eq 'high'"
 ```
 
-#### 2b. Search_Outlook_Emails_No_Body *(New)*
+#### 2b. Search_Outlook_Emails_No_Body *(Performance Optimized)*
 Performance-optimized email search that excludes email body content for faster processing and reduced data transfer.
 
 **Parameters:**
@@ -143,7 +159,68 @@ Performance-optimized email search that excludes email body content for faster p
 - Bandwidth-constrained environments
 - Building email selection interfaces
 
-**Example response:**
+#### 3. Search_Outlook_Emails_By_Search_Query *(KQL Search)*
+Advanced search using Microsoft Graph's KQL (Keyword Query Language) search parameter. More powerful for natural language and content-based searches.
+
+**Parameters:**
+- `user_email` (str): User email
+- `search_query` (str): KQL search query
+- `top` (int, optional): Maximum number of results (default: 10)
+- `folders` (List[str], optional): Folders to search (default: ["Inbox", "SentItems", "Drafts"])
+
+**KQL Search Examples:**
+```javascript
+// Search by sender name or email
+"from:john@example.com" or "from:John Doe"
+
+// Search in subject and body
+"meeting agenda"
+
+// Search by recipient
+"to:maria@company.com"
+
+// Complex searches
+"subject:urgent AND from:boss@company.com"
+
+// Date-based searches
+"received:today" or "received:last week"
+
+// Attachment searches
+"hasattachment:true"
+
+// Keyword combinations
+"project AND deadline NOT completed"
+```
+
+**When to use KQL vs OData:**
+- **Use KQL** (`Search_Outlook_Emails_By_Search_Query`) for:
+  - Natural language searches
+  - Content-based searches (searching within email body)
+  - Complex keyword combinations
+  - Searches involving attachments
+  - Date-relative searches ("today", "last week")
+
+- **Use OData** (`Search_Outlook_Emails`) for:
+  - Precise property-based filtering
+  - Boolean logic on specific fields
+  - Exact date/time ranges
+  - Flag-based searches (isRead, importance)
+
+#### 3b. Search_Outlook_Emails_No_Body_By_Search_Query *(KQL + Performance)*
+Combines the power of KQL search with performance optimization by excluding email body content.
+
+**Parameters:**
+- `user_email` (str): User email
+- `search_query` (str): KQL search query (same syntax as Search_Outlook_Emails_By_Search_Query)
+- `top` (int, optional): Maximum number of results (default: 10)
+- `folders` (List[str], optional): Folders to search (default: ["Inbox", "SentItems", "Drafts"])
+
+**Best for:**
+- Fast KQL-based searches when you only need email metadata
+- Building search result previews with KQL capabilities
+- Performance-critical applications using natural language search
+
+**Example response for all search functions:**
 ```json
 {
   "success": true,
@@ -155,13 +232,13 @@ Performance-optimized email search that excludes email body content for faster p
       "subject": "Project meeting",
       "summary": "Hi team, I wanted to schedule our weekly project review for Thursday at 2pm. Please confirm your availability and we'll send out the meeting invite. The agenda will cover...",
       "id": "AAMkAGE1M2IyNGNmLWI4MjktNDUyZi1iMzA4LTViNDI3NzhlOGM2NgBGAAAAAADUuTiuQqVlSKDGAz"
-      // Note: 'body' and 'cuerpo' fields are excluded, and 'summary' uses Microsoft Graph's bodyPreview
+      // Note: 'body' field only included in full search functions
     }
   ]
 }
 ```
 
-#### 3. Create_Outlook_Draft_Email
+#### 4. Create_Outlook_Draft_Email
 Creates a new draft email with support for attachments and categories.
 
 **Parameters:**
@@ -188,7 +265,7 @@ create_draft_email_tool(
 )
 ```
 
-#### 4. Update_Outlook_Draft_Email
+#### 5. Update_Outlook_Draft_Email
 Updates an existing draft, including adding new attachments.
 
 **Parameters:**
@@ -196,12 +273,78 @@ Updates an existing draft, including adding new attachments.
 - `user_email` (str): User email
 - All optional parameters from `Create_Outlook_Draft_Email`
 
-#### 5. Delete_Outlook_Email
+#### 6. Delete_Outlook_Email
 Deletes an email by its ID.
 
 **Parameters:**
 - `message_id` (str): ID of the message to delete
 - `user_email` (str): User email
+
+## 💡 Practical Examples
+
+### Example 1: Building an Email Client Interface
+```python
+# Step 1: Get email list for preview (fast)
+emails = search_emails_no_body_tool(
+    user_email="user@company.com",
+    query_filter="isRead eq false",
+    top=20
+)
+
+# Step 2: When user selects an email, get full content
+full_email = get_email_tool(
+    message_id=selected_email_id,
+    user_email="user@company.com"
+)
+```
+
+### Example 2: Smart Content Search
+```python
+# Natural language search using KQL
+meetings = search_emails_by_search_query_tool(
+    user_email="user@company.com", 
+    search_query="meeting AND (today OR tomorrow)",
+    top=10
+)
+
+# Precise filtering using OData
+urgent_unread = search_emails_tool(
+    user_email="user@company.com",
+    query_filter="isRead eq false and importance eq 'high'",
+    top=5
+)
+```
+
+### Example 3: Performance-Optimized Searches
+```python
+# Fast search for email previews without body processing
+preview_results = search_emails_no_body_by_search_query_tool(
+    user_email="user@company.com",
+    search_query="from:boss@company.com project",
+    top=50
+)
+```
+
+### Example 4: Draft Management
+```python
+# Create draft with attachments
+draft = create_draft_email_tool(
+    subject="Weekly Report",
+    body="<h1>Weekly Status</h1><p>Please find attached...</p>",
+    to_recipients=["team@company.com"],
+    user_email="user@company.com",
+    category="Work",
+    file_paths=["C:/reports/weekly.pdf"]
+)
+
+# Update the draft
+update_draft_email_tool(
+    message_id=draft['id'],
+    user_email="user@company.com",
+    subject="Weekly Report - Updated",
+    cc_recipients=["manager@company.com"]
+)
+```
 
 ## Technical Features
 

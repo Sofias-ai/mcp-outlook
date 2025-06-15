@@ -2,6 +2,7 @@ import os, logging
 from dotenv import load_dotenv
 from mcp.server.fastmcp import FastMCP
 from office365.graph_client import GraphClient
+import requests
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     handlers=[logging.FileHandler('mcp_outlook.log'), logging.StreamHandler()])
@@ -22,3 +23,16 @@ mcp = FastMCP(name="mcp_outlook",
               instructions="This server provides tools to interact with Outlook emails. "
                           "Each tool requires a user_email parameter to specify which mailbox to access.")
 graph_client = GraphClient(tenant=TENANT_ID).with_client_secret(client_id=ID_CLIENT, client_secret=APP_SECRET)
+
+def _get_graph_access_token():
+    # Get a fresh token using client credentials (same as graph_client)
+    token_url = f"https://login.microsoftonline.com/{TENANT_ID}/oauth2/v2.0/token"
+    data = {
+        "client_id": ID_CLIENT,
+        "client_secret": APP_SECRET,
+        "scope": "https://graph.microsoft.com/.default",
+        "grant_type": "client_credentials"
+    }
+    resp = requests.post(token_url, data=data)
+    resp.raise_for_status()
+    return resp.json()["access_token"]
