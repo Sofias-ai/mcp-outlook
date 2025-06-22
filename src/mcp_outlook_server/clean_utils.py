@@ -30,7 +30,7 @@ def clean_text(text, aggressive=False):
     if aggressive:
         text = re.sub(r'[\u2060-\u2064\u206A-\u206F\u00AD\u034F]', '', text) # Remove additional formatting chars.
         text = re.sub(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])', '', text) # Remove ANSI escape sequences.
-        text = re.sub(r'[^\w\s\.\,\!\?\;:\-\'"áéíóúñüÁÉÍÓÚÑÜ¿¡]', ' ', text) # Remove non-standard punctuation.
+        text = re.sub(r'[^\w\s\.,!\?;:\-\'"áéíóúñüÁÉÍÓÚÑÜ¿¡@]', ' ', text) # Remove non-standard punctuation, allowing @.
     
     text = re.sub(r'\s+', ' ', text) # Normalize whitespace.
     text = re.sub(r'^ +| +$', '', text, flags=re.MULTILINE) # Trim leading/trailing spaces per line.
@@ -92,8 +92,7 @@ def process_text(text):
     
     url_pattern_list = [ # More comprehensive TLD list.
         r'https?://[^\s\n<>()\[\]]+', r'ftp://[^\s\n<>()\[\]]+', r'www\.[^\s\n<>()\[\]]+',
-        r'mailto:[^\s\n<>()\[\]]+', r'tel:[+\d\s\(\)\-]+',
-        r'[a-zA-Z0-9_\-\.]+\.(?:com|org|net|io|ai|app|co|edu|gov|mil|biz|info|me|tv|xyz|eu|uk|es|de|fr|cat|gl|eus|online|site|website|tech|shop|store|agency|solutions|services|studio|media|press|news|blog|dev|design|digital|global|world|live|life|today|fun|game|click|link|support|help|contact|legal|privacy|terms|secure|login|signin|signup|register|account|dashboard|admin|api|cdn|static|img|images|assets|files|uploads|downloads|content|public|private|src|js|css|fonts|themes|plugins|modules|components|widgets|includes|partials|templates|layouts|views|pages|routes|controllers|models|utils|helpers|lib|vendor|node_modules|bower_components|jspm_packages|webjars)(?:/[^\s\n<>()\[\]]*)?'
+        r'mailto:[^\s\n<>()\[\]]+', r'tel:[+\d\s\(\)\-]+'
     ]
     for pattern in url_pattern_list: 
         text = re.sub(pattern, '', text, flags=re.IGNORECASE) # Remove URLs and links.
