@@ -280,6 +280,26 @@ Deletes an email by its ID.
 - `message_id` (str): ID of the message to delete
 - `user_email` (str): User email
 
+## 🆕 New in 0.1.11
+
+### Reply Drafts with Preserved Conversation History
+- The `create_draft_email_tool` function now supports a `reply_to_id` parameter.
+- When replying to a message, the draft will automatically include the full content (including formatting and conversation history) of the original message, just like Outlook does.
+- No extra formatting is applied: the original HTML or plain text is preserved for maximum fidelity.
+- This makes replies and conversation threads in drafts visually identical to those in the Outlook client.
+
+#### Example usage
+```python
+create_draft_email_tool(
+    subject="Re: Project Update",
+    body="Thank you for the update!",
+    to_recipients=["user@example.com"],
+    user_email="me@example.com",
+    reply_to_id="AAMkAGI2..."
+)
+```
+This will create a draft that includes your reply and the full original message content, preserving all formatting and previous conversation history.
+
 ## 💡 Practical Examples
 
 ### Example 1: Building an Email Client Interface

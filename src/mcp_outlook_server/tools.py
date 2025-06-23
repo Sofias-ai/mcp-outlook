@@ -38,9 +38,17 @@ def search_emails_by_search_query_tool(user_email: str, search_query: str, top: 
 def search_emails_no_body_by_search_query_tool(user_email: str, search_query: str, top: int = 10, folders: Optional[List[str]] = None) -> List[Dict[str, Any]]:
     return resources.search_emails_no_body_by_search_query(user_email, search_query, folders, top, structured=True)
 
-@mcp.tool(name="Create_Outlook_Draft_Email",description="Creates a new draft email with the specified subject, body, recipients, optional category y adjuntos.")
+@mcp.tool(name="Create_Outlook_Draft_Email",description="Creates a new draft email, optionally replying to a message and including its full content as history.")
 @_handle_outlook_operation
-def create_draft_email_tool(subject: str, body: str, to_recipients: List[str], user_email: str, cc_recipients: Optional[List[str]] = None, bcc_recipients: Optional[List[str]] = None, body_type: str = "HTML", category: Optional[str] = None, file_paths: Optional[List[str]] = None) -> Dict[str, Any]:
+def create_draft_email_tool(subject: str, body: str, to_recipients: List[str], user_email: str, cc_recipients: Optional[List[str]] = None, bcc_recipients: Optional[List[str]] = None, body_type: str = "HTML", category: Optional[str] = None, file_paths: Optional[List[str]] = None, reply_to_id: Optional[str] = None) -> Dict[str, Any]:
+    if reply_to_id:
+        original = resources.get_raw_email_by_id(reply_to_id, user_email)
+        if hasattr(original, 'body') and hasattr(original.body, 'content'):
+            content = original.body.content
+            if body_type.upper() == "HTML":
+                body = f"{body}<br><hr><br>{content}"
+            else:
+                body = f"{body}\n\n{'-'*40}\n\n{content}"
     body_content = {"content": body, "contentType": body_type}
     builder = graph_client.users[user_email].messages.add(subject=subject, body=body, to_recipients=to_recipients)
     builder.set_property("body", body_content)
