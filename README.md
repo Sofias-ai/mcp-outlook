@@ -59,8 +59,8 @@ pip install mcp fastmcp office365-rest-python-client python-dotenv beautifulsoup
 Create a `.env` file in the project root:
 
 ```env
-ID_CLIENT=your_azure_client_id
-APP_SECRET=your_azure_client_secret
+CLIENT_ID=your_azure_client_id
+CLIENT_SECRET=your_azure_client_secret
 TENANT_ID=your_azure_tenant_id
 ```
 
