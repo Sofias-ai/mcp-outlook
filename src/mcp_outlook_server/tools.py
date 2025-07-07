@@ -41,19 +41,20 @@ def search_emails_no_body_by_search_query_tool(user_email: str, search_query: st
 @mcp.tool(name="Create_Outlook_Draft_Email",description="Creates a new draft email, optionally replying to a message and including its full content as history.")
 @_handle_outlook_operation
 def create_draft_email_tool(subject: str, body: str, to_recipients: List[str], user_email: str, cc_recipients: Optional[List[str]] = None, bcc_recipients: Optional[List[str]] = None, body_type: str = "HTML", category: Optional[str] = None, file_paths: Optional[List[str]] = None, reply_to_id: Optional[str] = None) -> Dict[str, Any]:
-    if reply_to_id:
-        
+    
+    if reply_to_id:    
         headers = {"Authorization": f"Bearer {_get_graph_access_token()}", "Content-Type": "application/json"}
         response = requests.post(f"https://graph.microsoft.com/v1.0/users/{user_email}/messages/{reply_to_id}/createReply", 
                                headers=headers, json={"comment": body})
         response.raise_for_status()
         draft_id = response.json()["id"]
         
-        if cc_recipients or bcc_recipients:
+        if cc_recipients or bcc_recipients or category:
             msg = graph_client.users[user_email].messages[draft_id].get().execute_query()
-            for attr, value in [("ccRecipients", cc_recipients), ("bccRecipients", bcc_recipients)]:
-                if value: msg.set_property(attr, _fmt(value))
+            for attr, value in [("ccRecipients", cc_recipients), ("bccRecipients", bcc_recipients), ("categories", [category] if category else None)]:
+                if value: msg.set_property(attr, _fmt(value) if attr.endswith("Recipients") else value)
             msg.update().execute_query()
+            
         if file_paths:
             msg = graph_client.users[user_email].messages[draft_id]
             for path in file_paths:
