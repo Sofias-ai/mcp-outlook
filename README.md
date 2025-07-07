@@ -64,6 +64,8 @@ CLIENT_SECRET=your_azure_client_secret
 TENANT_ID=your_azure_tenant_id
 ```
 
+**Note:** Make sure to use exactly these variable names (`CLIENT_ID`, `CLIENT_SECRET`, `TENANT_ID`) as they are required by the server.
+
 ## Usage
 
 ### Starting the Server
@@ -421,9 +423,17 @@ Logging configuration in `common.py` with INFO level by default.
 ## Troubleshooting
 
 ### Authentication Error
-- Verify environment variables are correctly configured
+- Verify environment variables are correctly configured in `.env` file:
+  - `CLIENT_ID`: Your Azure application (client) ID
+  - `CLIENT_SECRET`: Your Azure application client secret
+  - `TENANT_ID`: Your Azure tenant (directory) ID
 - Confirm Azure AD application has necessary permissions
 - Check that tenant ID is correct
+- Ensure the `.env` file is in the project root directory
+
+### Common Environment Variable Issues
+- **Error: "Missing required environment variables"**: Make sure variable names match exactly (`CLIENT_ID`, `CLIENT_SECRET`, `TENANT_ID`)
+- **Error: "Authentication failed"**: Verify the client secret hasn't expired and values are correct
 
 ### Search Errors
 - Validate OData filter syntax
