@@ -125,7 +125,3 @@ def search_emails_no_body_by_search_query(user_email: str, search_query: str, fo
     return format_emails_list_structured_search_no_body(all_messages) if structured else (
         [format_email_output(msg, as_text=True) for msg in all_messages] if as_text else [format_email_output(msg, as_text=False) for msg in all_messages]
     )
-
-def get_raw_email_by_id(message_id: str, user_email: str) -> Any:
-    # Devuelve el email tal cual, sin limpiar ni formatear
-    return graph_client.users[user_email].messages[message_id].get().execute_query()

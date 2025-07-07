@@ -1,7 +1,7 @@
-import base64, mimetypes, os
+import base64, mimetypes, os, requests
 from functools import wraps
 from typing import Optional, List, Dict, Any
-from .common import mcp, graph_client, _fmt
+from .common import mcp, graph_client, _fmt, _get_graph_access_token
 from . import resources
 
 def _handle_outlook_operation(func):
@@ -42,15 +42,30 @@ def search_emails_no_body_by_search_query_tool(user_email: str, search_query: st
 @_handle_outlook_operation
 def create_draft_email_tool(subject: str, body: str, to_recipients: List[str], user_email: str, cc_recipients: Optional[List[str]] = None, bcc_recipients: Optional[List[str]] = None, body_type: str = "HTML", category: Optional[str] = None, file_paths: Optional[List[str]] = None, reply_to_id: Optional[str] = None) -> Dict[str, Any]:
     if reply_to_id:
-        original = resources.get_raw_email_by_id(reply_to_id, user_email)
-        if hasattr(original, 'body') and hasattr(original.body, 'content'):
-            content = original.body.content
-            if body_type.upper() == "HTML":
-                body = f"{body}<br><hr><br>{content}"
-            else:
-                body = f"{body}\n\n{'-'*40}\n\n{content}"
+        
+        headers = {"Authorization": f"Bearer {_get_graph_access_token()}", "Content-Type": "application/json"}
+        response = requests.post(f"https://graph.microsoft.com/v1.0/users/{user_email}/messages/{reply_to_id}/createReply", 
+                               headers=headers, json={"comment": body})
+        response.raise_for_status()
+        draft_id = response.json()["id"]
+        
+        if cc_recipients or bcc_recipients:
+            msg = graph_client.users[user_email].messages[draft_id].get().execute_query()
+            for attr, value in [("ccRecipients", cc_recipients), ("bccRecipients", bcc_recipients)]:
+                if value: msg.set_property(attr, _fmt(value))
+            msg.update().execute_query()
+        if file_paths:
+            msg = graph_client.users[user_email].messages[draft_id]
+            for path in file_paths:
+                raw = open(path, "rb").read()
+                b64 = base64.b64encode(raw).decode()
+                ctype = mimetypes.guess_type(path)[0] or "application/octet-stream"
+                msg = msg.add_file_attachment(os.path.basename(path), content_type=ctype, base64_content=b64)
+            msg.execute_query()
+        return {"id": draft_id, "web_link": f"https://outlook.office365.com/owa/?ItemID={draft_id}&exvsurl=1&viewmodel=ReadMessageItem"}
+    
     body_content = {"content": body, "contentType": body_type}
-    builder = graph_client.users[user_email].messages.add(subject=subject, body=body, to_recipients=to_recipients)
+    builder = graph_client.users[user_email].messages.add(subject=subject, to_recipients=to_recipients)
     builder.set_property("body", body_content)
     for attr, value in [("ccRecipients", cc_recipients), ("bccRecipients", bcc_recipients), ("categories", [category] if category else None)]:
         if value: builder.set_property(attr, _fmt(value) if attr.endswith("Recipients") else value)
@@ -61,7 +76,7 @@ def create_draft_email_tool(subject: str, body: str, to_recipients: List[str], u
             ctype = mimetypes.guess_type(path)[0] or "application/octet-stream"
             builder = builder.add_file_attachment(os.path.basename(path), content_type=ctype, base64_content=b64)
     draft = builder.execute_query()
-    return {"id": draft.id, "web_link": draft.web_link}
+    return {"id": draft.id, "web_link": getattr(draft, 'web_link', None)}
 
 @mcp.tool(name="Update_Outlook_Draft_Email",description="Updates an existing draft email specified by su ID, incluyendo adjuntos locales opcionales.")
 @_handle_outlook_operation
