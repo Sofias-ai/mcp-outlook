@@ -56,27 +56,52 @@ def _fetch_emails_by_search(user_email: str, search_query: str, folders: Optiona
     
     return _fetch_from_folders(user_email, folders or DEFAULT_FOLDERS, top, fetch_from_folder)
 
-def _format_results(messages: List[Any], structured: bool, as_text: bool, formatter_structured, formatter_unstructured=None) -> List[Any]:
-    """Unified result formatting logic"""
-    if structured: return formatter_structured(messages)
+def _format_results(messages: List[Any], structured: bool, as_text: bool, formatter_structured, formatter_unstructured=None, fields: Optional[List[str]] = None) -> List[Any]:
+    """Unified result formatting logic with optional field filtering"""
+    if structured: 
+        result = formatter_structured(messages)
+        return _filter_fields(result, fields) if fields else result
     if formatter_unstructured: return formatter_unstructured(messages)
     return [format_email_output(msg, as_text=as_text) for msg in messages]
 
+def _filter_fields(data: List[dict], fields: List[str]) -> List[dict]:
+    """Filter dictionary keys to only include specified fields"""
+    if not fields or not data: return data
+    sample_keys = set(data[0].keys()) if data else set()
+    
+    if 'subject' in sample_keys or 'from' in sample_keys:
+
+        kql_field_mapping = {
+            'subject': 'subject', 'sender': 'from', 'from': 'from', 
+            'date': 'receivedDateTime', 'cc': 'ccRecipients', 'body': 'body', 
+            'summary': 'bodyPreview', 'id': 'id'
+        }
+        actual_fields = [kql_field_mapping.get(f, f) for f in fields]
+    else:
+
+        odata_field_mapping = {
+            'subject': 'asunto', 'sender': 'remitente', 'from': 'remitente', 
+            'date': 'fecha', 'cc': 'copiados', 'body': 'cuerpo', 'summary': 'resumen', 'id': 'id'
+        }
+        actual_fields = [odata_field_mapping.get(f, f) for f in fields]
+    
+    return [{k: v for k, v in email.items() if k in actual_fields} for email in data]
+
 def search_emails(user_email: str, query_filter: Optional[str] = None, folders: Optional[List[str]] = None, 
-                 top: int = 10, as_text: bool = True, structured: bool = True, include_body: bool = True) -> List[Any]:
+                 top: int = 10, as_text: bool = True, structured: bool = True, include_body: bool = True, fields: Optional[List[str]] = None) -> List[Any]:
     """Unified email search with OData filters"""
     select_fields = None if include_body else SELECT_FIELDS_NO_BODY
     messages = _fetch_emails(user_email, query_filter, folders, top, select_fields)
     formatter = format_emails_list_structured if include_body else format_emails_list_structured_no_body
-    return _format_results(messages, structured, as_text, formatter)
+    return _format_results(messages, structured, as_text, formatter, fields=fields)
 
 def search_emails_by_search_query(user_email: str, search_query: str, folders: Optional[List[str]] = None, 
-                                 top: int = 10, as_text: bool = True, structured: bool = True, include_body: bool = True) -> List[Any]:
+                                 top: int = 10, as_text: bool = True, structured: bool = True, include_body: bool = True, fields: Optional[List[str]] = None) -> List[Any]:
     """Unified email search with KQL queries"""
     select_fields = None if include_body else SELECT_FIELDS_NO_BODY
     messages = _fetch_emails_by_search(user_email, search_query, folders, top, select_fields)
     formatter = format_emails_list_structured_search if include_body else format_emails_list_structured_search_no_body
-    return _format_results(messages, structured, as_text, formatter)
+    return _format_results(messages, structured, as_text, formatter, fields=fields)
 
 def get_email_by_id(message_id: str, user_email: str, as_text: bool = True, structured: bool = True) -> Optional[Any]:
     message = graph_client.users[user_email].messages[message_id].get().execute_query()

@@ -128,13 +128,29 @@ Retrieves a specific email by its unique ID.
 ```
 
 #### 2. Search_Outlook_Emails
-Advanced email search with OData filter support.
+Advanced email search with OData filter support and optional field selection.
 
 **Parameters:**
 - `user_email` (str): User email
 - `query_filter` (str, optional): OData filter
 - `top` (int, optional): Maximum number of results (default: 10)
 - `folders` (List[str], optional): Folders to search (default: ["Inbox", "SentItems", "Drafts"])
+- `fields` (List[str], optional): **NEW** - Specific fields to return (e.g., `['subject', 'sender', 'date', 'id']`)
+
+**🎯 Field Selection Examples:**
+```javascript
+// Get only essential metadata
+fields: ['subject', 'sender', 'date', 'id']
+
+// Get summary information without full body
+fields: ['subject', 'sender', 'summary', 'date']
+
+// Get recipients and categorization
+fields: ['subject', 'sender', 'cc', 'date', 'id']
+
+// All available fields
+fields: ['subject', 'sender', 'date', 'id', 'body', 'summary', 'cc']
+```
 
 **OData filter examples (Validated ✅):**
 ```javascript
@@ -180,6 +196,7 @@ Performance-optimized email search that excludes email body content for faster p
 - `query_filter` (str, optional): OData filter (same syntax as Search_Outlook_Emails)
 - `top` (int, optional): Maximum number of results (default: 10)
 - `folders` (List[str], optional): Folders to search (default: ["Inbox", "SentItems", "Drafts"])
+- `fields` (List[str], optional): **NEW** - Specific fields to return (optimized for no-body searches)
 
 **Key Benefits:**
 - **Faster performance**: Excludes body content processing
@@ -202,6 +219,7 @@ Advanced search using Microsoft Graph's KQL (Keyword Query Language) search para
 - `search_query` (str): KQL search query
 - `top` (int, optional): Maximum number of results (default: 10)
 - `folders` (List[str], optional): Folders to search (default: ["Inbox", "SentItems", "Drafts"])
+- `fields` (List[str], optional): **NEW** - Specific fields to return with intelligent KQL/OData mapping
 
 **KQL Search Examples (Validated ✅):**
 ```javascript
@@ -262,6 +280,7 @@ Combines the power of KQL search with performance optimization by excluding emai
 - `search_query` (str): KQL search query (same syntax as Search_Outlook_Emails_By_Search_Query)
 - `top` (int, optional): Maximum number of results (default: 10)
 - `folders` (List[str], optional): Folders to search (default: ["Inbox", "SentItems", "Drafts"])
+- `fields` (List[str], optional): **NEW** - Specific fields to return (optimized for KQL no-body searches)
 
 **Best for:**
 - Fast KQL-based searches when you only need email metadata
@@ -280,11 +299,47 @@ Combines the power of KQL search with performance optimization by excluding emai
       "subject": "Project meeting",
       "summary": "Hi team, I wanted to schedule our weekly project review for Thursday at 2pm. Please confirm your availability and we'll send out the meeting invite. The agenda will cover...",
       "id": "AAMkAGE1M2IyNGNmLWI4MjktNDUyZi1iMzA4LTViNDI3NzhlOGM2NgBGAAAAAADUuTiuQqVlSKDGAz"
-      // Note: 'body' field only included in full search functions
+      // Note: 'body' field only included in full search functions unless specifically requested in 'fields'
     }
   ]
 }
 ```
+
+**🎯 Field Selection Response Examples:**
+```json
+// With fields: ['subject', 'sender', 'id']
+{
+  "data": [
+    {
+      "asunto": "Project meeting",        // OData results use Spanish keys
+      "remitente": "John Doe <john@example.com>",
+      "id": "AAMkAGE1M2IyNGNmLWI4..."
+    }
+  ]
+}
+
+// KQL search with fields: ['subject', 'sender', 'date']
+{
+  "data": [
+    {
+      "subject": "Project meeting",       // KQL results use English keys
+      "from": "John Doe <john@example.com>",
+      "receivedDateTime": "2024-01-15 10:30:00"
+    }
+  ]
+}
+```
+
+**Field Mapping Reference:**
+| Standard Field | OData Key (Spanish) | KQL Key (English) |
+|---------------|-------------------|------------------|
+| `subject` | `asunto` | `subject` |
+| `sender` | `remitente` | `from` |
+| `date` | `fecha` | `receivedDateTime` |
+| `cc` | `copiados` | `ccRecipients` |
+| `body` | `cuerpo` | `body` |
+| `summary` | `resumen` | `bodyPreview` |
+| `id` | `id` | `id` |
 
 #### 4. Create_Outlook_Draft_Email
 Creates a new draft email with support for attachments and categories.
@@ -328,7 +383,7 @@ Deletes an email by its ID.
 - `message_id` (str): ID of the message to delete
 - `user_email` (str): User email
 
-## 🆕 Latest Updates (v0.1.12+)
+## 🆕 Latest Updates (v0.1.15+)
 
 ### Major Refactoring & Optimization
 - **Unified Resource Architecture**: Complete refactoring of `resources.py` with unified search logic and pagination
@@ -343,6 +398,13 @@ Deletes an email by its ID.
 - **Combined Logic Operations**: Complex AND/OR filtering with multiple conditions
 - **Performance Optimized**: Smart body inclusion/exclusion based on use case
 - **Extensive Testing**: Thoroughly validated against real mailbox data (sss@sofias.ai)
+
+### 🎯 NEW: Field Selection Feature
+- **Selective Data Retrieval**: All search tools now support a `fields` parameter for returning only specific email fields
+- **Bandwidth Optimization**: Reduce response size by selecting only needed fields (e.g., `['subject', 'sender', 'date', 'id']`)
+- **Dual Mapping Support**: Intelligent field mapping for both OData (Spanish keys) and KQL (English keys) search results
+- **Autogen Compatible**: Returns arrays optimized for AI agent frameworks and automated processing
+- **Flexible Field Names**: Supports standardized field names (`subject`, `sender`, `date`, `id`, `body`, `summary`, `cc`) across all search methods
 
 ### Reply Drafts with Preserved Conversation History
 - The `create_draft_email_tool` function supports a `reply_to_id` parameter
@@ -411,13 +473,29 @@ urgent_unread = search_emails_tool(
 )
 ```
 
-### Example 3: Performance-Optimized Searches
+### Example 3: Performance-Optimized Searches with Field Selection
 ```python
 # Fast search for email previews without body processing
 preview_results = search_emails_no_body_by_search_query_tool(
     user_email="user@company.com",
     search_query="from:boss@company.com project",
     top=50
+)
+
+# Get only essential fields for UI display
+essential_data = search_emails_tool(
+    user_email="user@company.com",
+    query_filter="isRead eq false",
+    fields=['subject', 'sender', 'date', 'id'],
+    top=100
+)
+
+# Bandwidth-optimized search for autogen/AI processing
+ai_optimized = search_emails_by_search_query_tool(
+    user_email="user@company.com",
+    search_query="meeting AND urgent",
+    fields=['subject', 'sender', 'summary'],
+    top=20
 )
 ```
 
@@ -443,6 +521,16 @@ update_draft_email_tool(
 ```
 
 ## Technical Features
+
+### Field Selection System (NEW in v0.1.15+)
+
+The server now supports selective field retrieval across all search functions:
+
+1. **Standardized Field Names**: Use consistent field names (`subject`, `sender`, `date`, `id`, `body`, `summary`, `cc`) across all search methods
+2. **Intelligent Mapping**: Automatic detection and mapping between OData (Spanish keys) and KQL (English keys) result formats
+3. **Bandwidth Optimization**: Return only needed fields to reduce response size and improve performance
+4. **Autogen Compatibility**: Optimized array responses for AI agent frameworks and automated processing
+5. **Flexible Implementation**: Works with both full and no-body search variants
 
 ### Unified Architecture (Latest)
 
@@ -476,10 +564,12 @@ The server includes an advanced cleaning system that:
 ### Performance Optimizations
 
 - **Smart Body Inclusion**: `include_body=False` for 2-3x performance improvement
+- **Field Selection**: NEW - Return only specific fields to reduce bandwidth and processing time
 - **Native Graph Features**: Leverages `bodyPreview` for summaries when available
 - **Unified Pagination**: Consistent page limits to avoid timeouts
 - **Optimized Queries**: Reduced API calls through intelligent batching
 - **Memory Efficient**: Processes large result sets without memory bloat
+- **Dual Mapping System**: Efficient field mapping for both OData and KQL result formats
 
 ## Project Structure
 
@@ -502,10 +592,11 @@ mcp-outlook/
 
 ### Recent Architecture Changes
 
-- **`resources.py`**: Completely refactored with unified search logic, eliminated duplicate functions
-- **`tools.py`**: Streamlined tool definitions, improved attachment handling, consolidated helpers
-- **Performance**: Added configurable `include_body` parameter across all search functions
-- **Testing**: Comprehensive validation documented in `TEST_RESULTS.md`
+- **`resources.py`**: Completely refactored with unified search logic, eliminated duplicate functions, added field selection system
+- **`tools.py`**: Streamlined tool definitions, improved attachment handling, consolidated helpers, added `fields` parameter support
+- **Performance**: Added configurable `include_body` parameter and field selection across all search functions
+- **Field Mapping**: Implemented dual mapping system for OData (Spanish) and KQL (English) result compatibility
+- **Testing**: Comprehensive validation documented in conversation history, including field selection scenarios
 
 ## Logging
 
@@ -543,16 +634,20 @@ Logging configuration in `common.py` with INFO level by default.
 
 ### Performance Issues
 - Use `_No_Body` functions for listings and previews (2-3x faster)
+- Use `fields` parameter to return only needed data (reduces bandwidth and processing time)
 - Limit `top` parameter to reasonable values (10-50 for UI, 100+ for batch processing)
 - Consider search scope - searching specific folders is faster than all folders
 - For large datasets, implement pagination using multiple calls
+- Field selection examples: `['subject', 'sender', 'id']` for lists, `['subject', 'sender', 'summary', 'date']` for previews
 
 ### Search Issues  
 - **OData syntax**: Ensure proper quoting and escaping of string values
 - **Date formats**: Use ISO 8601 format with timezone (e.g., `2025-07-01T00:00:00Z`)
 - **Field names**: Use exact field names (`from/emailAddress/address`, not `from.email`)
 - **KQL queries**: Don't mix OData and KQL syntax in the same query
-- Check the validation results in `TEST_RESULTS.md` for confirmed working examples
+- **Field selection**: Use standardized field names (`subject`, `sender`, `date`, `id`, `body`, `summary`, `cc`)
+- **Result format**: OData returns Spanish keys, KQL returns English keys - field mapping handles this automatically
+- Check the validation results in conversation history for confirmed working examples
 
 ## Contributing
 
