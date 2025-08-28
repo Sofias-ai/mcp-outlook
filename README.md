@@ -24,6 +24,7 @@ An MCP (Model Context Protocol) server for interacting with Microsoft Outlook th
 - Automatic noise and disclaimer removal
 - Character and format normalization
 - Boilerplate detection and truncation
+- Optional lightweight mode to skip deep HTML cleaning (`clean_body=False`)
 
 ### 📊 Structured Formatting
 - Consistent dictionary format output
@@ -62,6 +63,8 @@ Create a `.env` file in the project root:
 CLIENT_ID=your_azure_client_id
 CLIENT_SECRET=your_azure_client_secret
 TENANT_ID=your_azure_tenant_id
+# Optional: comma separated folders to search by default
+OUTLOOK_DEFAULT_FOLDERS=Inbox,SentItems,Drafts
 ```
 
 **Note:** Make sure to use exactly these variable names (`CLIENT_ID`, `CLIENT_SECRET`, `TENANT_ID`) as they are required by the server.
