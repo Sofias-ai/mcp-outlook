@@ -83,54 +83,73 @@ def get_date(message: Any) -> str:
     return format_date_string(date_val) if date_val else "Unknown"
 
 @safe_operation()
-def format_email_output(message: Any, skip_cleaning: bool = False, as_text=False) -> Any:
-    # Clean email body content (HTML to text) or format as text string.
-    if as_text: return format_email_as_text(message)
-    if skip_cleaning or not message or not hasattr(message, 'body') or not message.body:
+def format_email_output(
+    message: Any, skip_cleaning: bool = False, as_text: bool = False, deep_clean: bool = True
+) -> Any:
+    """Normalise the email body or return as plain text."""
+
+    if as_text:
+        return format_email_as_text(message, deep_clean=deep_clean)
+    if skip_cleaning or not message or not hasattr(message, "body") or not message.body:
         return message
-    
+
     body = message.body
-    content = get_message_attribute(body, ['content'], '')
-    content_type = get_message_attribute(body, ['content_type', 'contentType'], '').lower()
-    
-    if content_type == 'html' and content:
-        from .clean_utils import clean_email_content # Local import to avoid circularity.
-        clean_content = clean_email_content(content)
-        if hasattr(body, 'set_property'):
-            body.set_property('content', clean_content); body.set_property('contentType', 'text')
-        elif hasattr(body, 'content'): # Fallback for objects without set_property.
+    content = get_message_attribute(body, ["content"], "")
+    content_type = get_message_attribute(body, ["content_type", "contentType"], "").lower()
+
+    if content_type == "html" and content:
+        from .clean_utils import clean_email_content  # Local import to avoid circularity.
+
+        clean_content = clean_email_content(content, deep_clean=deep_clean)
+        if hasattr(body, "set_property"):
+            body.set_property("content", clean_content)
+            body.set_property("contentType", "text")
+        elif hasattr(body, "content"):
             body.content = clean_content
-            if hasattr(body, 'contentType'): body.contentType = 'text'
+            if hasattr(body, "contentType"):
+                body.contentType = "text"
     return message
 
 @safe_operation("")
-def format_email_as_text(message: Any) -> str:
-    # Format email as a plain text string.
-    if not message: return "[No message data]"
-    
-    subject = get_message_attribute(message, ['subject'], 'No Subject')
+def format_email_as_text(message: Any, deep_clean: bool = True) -> str:
+    """Render an email object as a plain text string."""
+
+    if not message:
+        return "[No message data]"
+
+    subject = get_message_attribute(message, ["subject"], "No Subject")
     sender_name, sender_email = get_sender_info(message)
-    sender_display = f'{sender_name} <{sender_email}>' if sender_name else sender_email or 'Unknown'
-    
+    sender_display = (
+        f"{sender_name} <{sender_email}>" if sender_name else sender_email or "Unknown"
+    )
+
     lines = [
-        f"EMAIL: {subject}", f"From: {sender_display}",
-        f"Date: {get_date(message)}", f"ID: {get_message_attribute(message, ['id'], 'Unknown ID')}"
+        f"EMAIL: {subject}",
+        f"From: {sender_display}",
+        f"Date: {get_date(message)}",
+        f"ID: {get_message_attribute(message, ['id'], 'Unknown ID')}",
     ]
-    
+
     content, content_type = "", "text"
-    if hasattr(message, 'body') and message.body:
-        content = get_message_attribute(message.body, ['content'], '')
-        content_type = get_message_attribute(message.body, ['content_type', 'contentType'], 'text').lower()
-    
+    if hasattr(message, "body") and message.body:
+        content = get_message_attribute(message.body, ["content"], "")
+        content_type = get_message_attribute(
+            message.body, ["content_type", "contentType"], "text"
+        ).lower()
+
     lines.extend([f"Type: {content_type}", "-" * 50])
-    
+
     if content:
-        if content_type == 'html':
-            from .clean_utils import clean_email_content # Local import.
-            lines.append(clean_email_content(content))
-        else: # Basic cleaning for non-HTML plain text.
-            cleaned_plain = re.sub(r'[\x00-\x09\x0B\x0C\x0E-\x1F\x7F]', '', content or "")
-            lines.append(re.sub(r'\n{3,}', '\n\n', cleaned_plain))
-    else: lines.append("[No Content]")
-    
-    return '\n'.join(lines)
+        if content_type == "html":
+            from .clean_utils import clean_email_content  # Local import.
+
+            lines.append(clean_email_content(content, deep_clean=deep_clean))
+        else:  # Basic cleaning for non-HTML plain text.
+            cleaned_plain = re.sub(
+                r"[\x00-\x09\x0B\x0C\x0E-\x1F\x7F]", "", content or ""
+            )
+            lines.append(re.sub(r"\n{3,}", "\n\n", cleaned_plain))
+    else:
+        lines.append("[No Content]")
+
+    return "\n".join(lines)
